@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
+  base: process.env.GITHUB_ACTIONS ? '/oceandex/' : '/',
   build: {
     // Species data is bundled intentionally — suppress warning
     chunkSizeWarningLimit: 700,
@@ -21,8 +22,8 @@ export default defineConfig({
         background_color: '#f0fdfa',
         display: 'standalone',
         orientation: 'portrait',
-        scope: '/',
-        start_url: '/',
+        scope: process.env.GITHUB_ACTIONS ? '/oceandex/' : '/',
+        start_url: process.env.GITHUB_ACTIONS ? '/oceandex/' : '/',
         categories: ['education', 'lifestyle'],
         lang: 'es',
         dir: 'ltr',
@@ -39,7 +40,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}'],
-        navigateFallback: '/index.html',
+        navigateFallback: process.env.GITHUB_ACTIONS ? '/oceandex/index.html' : '/index.html',
         navigateFallbackDenylist: [/^\/api/],
         runtimeCaching: [
           {
