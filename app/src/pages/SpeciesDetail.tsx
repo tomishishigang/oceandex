@@ -3,6 +3,7 @@ import { speciesById } from '../data/species'
 import { categoryMap } from '../data/categories'
 import { t, locale } from '../hooks/useLocale'
 import { MarkAsSeen } from '../components/MarkAsSeen'
+import { href } from '../base'
 
 export function SpeciesDetail() {
   const { params } = useRoute()
@@ -14,7 +15,7 @@ export function SpeciesDetail() {
       <div class="px-4 py-16 text-center">
         <div class="text-5xl mb-3">🌊</div>
         <p class="text-ocean-500 font-medium">{t('detail.not_found')}</p>
-        <a href="/" class="text-ocean-600 underline text-sm mt-3 inline-block">
+        <a href={href("/")} class="text-ocean-600 underline text-sm mt-3 inline-block">
           ← {t('detail.back')}
         </a>
       </div>
@@ -67,7 +68,7 @@ export function SpeciesDetail() {
 
         {/* Back button overlay */}
         <a
-          href="/"
+          href={href("/")}
           class="absolute top-3 left-3 bg-black/40 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full no-underline hover:bg-black/60 transition-colors"
         >
           ← {t('detail.back')}

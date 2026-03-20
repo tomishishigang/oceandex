@@ -1,4 +1,5 @@
 import { useRoute, useLocation } from 'preact-iso'
+import { href } from '../base'
 import { t, locale } from '../hooks/useLocale'
 import {
   useLiveQuery,
@@ -32,7 +33,7 @@ export function DiveSessionDetail() {
       <div class="px-4 py-16 text-center">
         <div class="text-5xl mb-3">🤿</div>
         <p class="text-ocean-500">Inmersión no encontrada</p>
-        <a href="/log" class="text-ocean-600 underline text-sm mt-3 inline-block">
+        <a href={href("/log")} class="text-ocean-600 underline text-sm mt-3 inline-block">
           ← {t('detail.back')}
         </a>
       </div>
@@ -42,7 +43,7 @@ export function DiveSessionDetail() {
   async function handleDelete() {
     if (confirm(t('log.delete_confirm'))) {
       await deleteSession(sessionId)
-      route('/log')
+      route(href('/log'))
     }
   }
 
@@ -53,7 +54,7 @@ export function DiveSessionDetail() {
   return (
     <div class="px-4 py-4 pb-6">
       {/* Back */}
-      <a href="/log" class="text-sm text-ocean-500 no-underline mb-3 inline-block">
+      <a href={href("/log")} class="text-sm text-ocean-500 no-underline mb-3 inline-block">
         ← {t('detail.back')}
       </a>
 
@@ -91,7 +92,7 @@ export function DiveSessionDetail() {
                   key={sighting.id}
                   class="bg-white rounded-xl p-3 shadow-sm border border-ocean-100 flex items-center gap-3"
                 >
-                  <a href={`/species/${sp.id}`} class="shrink-0 no-underline">
+                  <a href={href(`/species/${sp.id}`)} class="shrink-0 no-underline">
                     {sp.primary_photo?.url_medium ? (
                       <img
                         src={sp.primary_photo.url_medium}
@@ -105,7 +106,7 @@ export function DiveSessionDetail() {
                       </div>
                     )}
                   </a>
-                  <a href={`/species/${sp.id}`} class="flex-1 min-w-0 no-underline text-ocean-950">
+                  <a href={href(`/species/${sp.id}`)} class="flex-1 min-w-0 no-underline text-ocean-950">
                     <p class="text-sm font-semibold truncate">{name}</p>
                     <p class="text-[10px] text-ocean-500 italic truncate">{sp.scientific_name}</p>
                   </a>
@@ -124,7 +125,7 @@ export function DiveSessionDetail() {
           <div class="text-center py-8">
             <p class="text-ocean-400 text-sm">{t('log.no_sightings')}</p>
             <a
-              href="/"
+              href={href("/")}
               class="text-ocean-600 text-sm font-medium no-underline mt-2 inline-block"
             >
               {t('nav.species')} →

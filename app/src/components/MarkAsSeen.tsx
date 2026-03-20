@@ -1,5 +1,6 @@
 import { useState } from 'preact/hooks'
 import { t } from '../hooks/useLocale'
+import { href } from '../base'
 import {
   useLiveQuery,
   getAllSessions,
@@ -112,7 +113,7 @@ export function MarkAsSeen({ speciesId }: Props) {
             return (
               <a
                 key={s.id}
-                href={`/log/${s.sessionId}`}
+                href={href(`/log/${s.sessionId}`)}
                 class="block text-xs text-ocean-500 no-underline hover:text-ocean-700 py-0.5"
               >
                 📍 {session?.siteName ?? '?'} — {session?.date ?? '?'}

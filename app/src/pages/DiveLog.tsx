@@ -1,3 +1,4 @@
+import { href } from '../base'
 import { t } from '../hooks/useLocale'
 import { useLiveQuery, getAllSessions, getSeenCount } from '../db'
 import type { DiveSession } from '../db'
@@ -14,7 +15,7 @@ function SessionCard({ session }: { session: DiveSession }) {
 
   return (
     <a
-      href={`/log/${session.id}`}
+      href={href(`/log/${session.id}`)}
       class="block bg-white rounded-2xl p-4 shadow-sm border border-ocean-100 no-underline text-ocean-950 hover:shadow-md transition-shadow"
     >
       <div class="flex items-start justify-between">
@@ -96,7 +97,7 @@ export function DiveLog() {
 
       {/* FAB: New dive */}
       <a
-        href="/log/new"
+        href={href("/log/new")}
         class="fixed bottom-20 right-4 bg-ocean-700 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl no-underline hover:bg-ocean-600 transition-colors z-40"
         aria-label={t('log.new')}
       >

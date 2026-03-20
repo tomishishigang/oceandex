@@ -1,6 +1,7 @@
 import { useState } from 'preact/hooks'
 import { locale, t } from '../hooks/useLocale'
 import { categoryMap } from '../data/categories'
+import { href } from '../base'
 import type { Species } from '../data/types'
 
 interface Props {
@@ -22,7 +23,7 @@ export function SpeciesCard({ species: sp, isSeen }: Props) {
 
   return (
     <a
-      href={`/species/${sp.id}`}
+      href={href(`/species/${sp.id}`)}
       class="bg-white rounded-xl overflow-hidden shadow-sm border border-ocean-100 no-underline text-ocean-950 hover:shadow-md transition-shadow flex flex-col"
     >
       {/* Photo */}

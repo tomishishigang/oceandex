@@ -1,6 +1,7 @@
 import { useState } from 'preact/hooks'
 import { useLocation } from 'preact-iso'
 import { t } from '../hooks/useLocale'
+import { href } from '../base'
 import { createSession } from '../db'
 import { diveSites } from '../data/diveSites'
 
@@ -24,7 +25,7 @@ export function NewDiveSession() {
       maxDepthM: depth ? Number(depth) : null,
       notes: notes.trim() || null,
     })
-    route(`/log/${session.id}`)
+    route(href(`/log/${session.id}`))
   }
 
   return (
@@ -112,7 +113,7 @@ export function NewDiveSession() {
         {/* Actions */}
         <div class="flex gap-3 pt-2">
           <a
-            href="/log"
+            href={href("/log")}
             class="flex-1 text-center py-2.5 rounded-xl border border-ocean-200 text-sm text-ocean-600 no-underline hover:bg-ocean-50 transition-colors"
           >
             {t('newdive.cancel')}

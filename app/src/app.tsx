@@ -10,6 +10,7 @@ import { DiveLog } from './pages/DiveLog'
 import { NewDiveSession } from './pages/NewDiveSession'
 import { DiveSessionDetail } from './pages/DiveSessionDetail'
 import { NotFound } from './pages/NotFound'
+import { BASE } from './base'
 
 export function App() {
   return (
@@ -20,12 +21,12 @@ export function App() {
           <OfflineBanner />
           <main class="flex-1 max-w-2xl mx-auto w-full">
             <Router>
-              <Route path="/" component={SpeciesList} />
-              <Route path="/species/:id" component={SpeciesDetail} />
-              <Route path="/log" component={DiveLog} />
-              <Route path="/log/new" component={NewDiveSession} />
-              <Route path="/log/:id" component={DiveSessionDetail} />
-              <Route path="/sites" component={DiveSites} />
+              <Route path={`${BASE}/`} component={SpeciesList} />
+              <Route path={`${BASE}/species/:id`} component={SpeciesDetail} />
+              <Route path={`${BASE}/log`} component={DiveLog} />
+              <Route path={`${BASE}/log/new`} component={NewDiveSession} />
+              <Route path={`${BASE}/log/:id`} component={DiveSessionDetail} />
+              <Route path={`${BASE}/sites`} component={DiveSites} />
               <Route default component={NotFound} />
             </Router>
           </main>
