@@ -1,0 +1,14 @@
+node_modules
+dist
+*.local
+.DS_Store
+__pycache__
+
+# Auto-generated data files (regenerate with: cd app && npm run generate-data)
+app/src/data/species.ts
+app/src/data/diveSites.ts
+app/src/data/metadata.ts
+
+# Pipeline intermediate data (large files)
+pipeline/data/species_enriched.json
+pipeline/data/species_with_images.json

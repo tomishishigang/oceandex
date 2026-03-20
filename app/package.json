@@ -1,0 +1,29 @@
+{
+  "name": "oceandex",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate-data": "tsx scripts/generate-data.ts",
+    "dev": "vite",
+    "build": "npm run generate-data && tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@preact/signals": "^2.8.2",
+    "dexie": "^4.3.0",
+    "fuse.js": "^7.1.0",
+    "preact": "^10.28.4",
+    "preact-iso": "^2.11.1"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.4",
+    "@tailwindcss/vite": "^4.2.1",
+    "@types/node": "^24.12.0",
+    "tailwindcss": "^4.2.1",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-pwa": "^1.2.0"
+  }
+}

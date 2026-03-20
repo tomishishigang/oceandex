@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ocean color palette */
+  --color-ocean-50: #f0fdfa;
+  --color-ocean-100: #ccfbf1;
+  --color-ocean-200: #99f6e4;
+  --color-ocean-300: #5eead4;
+  --color-ocean-400: #2dd4bf;
+  --color-ocean-500: #14b8a6;
+  --color-ocean-600: #0d9488;
+  --color-ocean-700: #0f766e;
+  --color-ocean-800: #115e59;
+  --color-ocean-900: #134e4a;
+  --color-ocean-950: #042f2e;
+
+  /* Deep blue accents */
+  --color-deep-50: #eff6ff;
+  --color-deep-100: #dbeafe;
+  --color-deep-200: #bfdbfe;
+  --color-deep-300: #93c5fd;
+  --color-deep-400: #60a5fa;
+  --color-deep-500: #3b82f6;
+  --color-deep-600: #2563eb;
+  --color-deep-700: #1d4ed8;
+  --color-deep-800: #1e40af;
+  --color-deep-900: #1e3a8a;
+
+  /* Sandy/warm accents */
+  --color-sand-50: #fefce8;
+  --color-sand-100: #fef9c3;
+  --color-sand-200: #fef08a;
+  --color-sand-300: #fde047;
+  --color-sand-400: #facc15;
+  --color-sand-500: #eab308;
+
+  /* Category colors */
+  --color-cat-fish: #3b82f6;
+  --color-cat-mollusks: #8b5cf6;
+  --color-cat-crustaceans: #ef4444;
+  --color-cat-echinoderms: #f97316;
+  --color-cat-algae: #22c55e;
+  --color-cat-cnidarians: #ec4899;
+  --color-cat-worms: #a16207;
+  --color-cat-sponges: #eab308;
+
+  /* Sightability tier colors */
+  --color-tier-common: #22c55e;
+  --color-tier-uncommon: #3b82f6;
+  --color-tier-rare: #f97316;
+  --color-tier-unlikely: #6b7280;
+}
+
+html {
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-ocean-50);
+  color: var(--color-ocean-950);
+  min-height: 100dvh;
+}
+
+#app {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Hide scrollbar on horizontal filter chips */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure main content doesn't hide behind sticky bottom nav */
+main {
+  padding-bottom: 3.5rem;
+}
+
+/* Smooth page transitions */
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent layout shift on images */
+img {
+  content-visibility: auto;
+}
