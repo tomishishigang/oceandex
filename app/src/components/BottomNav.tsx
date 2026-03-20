@@ -13,7 +13,7 @@ export function BottomNav() {
   ]
 
   return (
-    <nav class="bg-white border-t border-ocean-200 px-4 py-2 flex justify-around sticky bottom-0 z-50">
+    <nav class="bg-white border-t border-ocean-200 px-4 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] flex justify-around sticky bottom-0 z-50">
       {tabs.map((tab) => (
         <a
           key={tab.route}

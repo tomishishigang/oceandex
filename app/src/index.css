@@ -64,7 +64,9 @@ body {
 }
 
 #app {
-  padding-bottom: env(safe-area-inset-bottom);
+  /* Safe areas handled by Header (top) and BottomNav (bottom) */
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 /* Hide scrollbar on horizontal filter chips */
