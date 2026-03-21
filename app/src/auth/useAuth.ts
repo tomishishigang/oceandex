@@ -1,7 +1,6 @@
 import { signal } from '@preact/signals'
 import { getSupabase, hasSupabaseConfig } from './supabase'
 import type { User, Session } from '@supabase/supabase-js'
-import { BASE } from '../base'
 import { onFirstLogin, fullSync } from '../sync/syncEngine'
 
 export interface AuthState {
@@ -34,8 +33,6 @@ export function initAuth() {
   // Get initial session
   supabase.auth.getSession().then(({ data: { session } }) => {
     console.log('[Auth] Initial session:', session ? session.user.email : 'none')
-    console.log('[Auth] URL hash:', window.location.hash ? 'present' : 'empty')
-    console.log('[Auth] URL search:', window.location.search ? 'present' : 'empty')
     authState.value = {
       user: session?.user ?? null,
       session,
@@ -63,23 +60,23 @@ export function initAuth() {
   })
 }
 
-/** Sign in with Google */
-export async function signInWithGoogle() {
+/** Sign in with Google ID token (no redirect needed) */
+export async function signInWithGoogleToken(idToken: string, nonce?: string) {
   const supabase = getSupabase()
-  // Redirect to the site root — Supabase SDK will auto-detect tokens on page load
-  const redirectTo = `${window.location.origin}${BASE}/`
 
-  console.log('[Auth] Redirect URL:', redirectTo)
-
-  const { error } = await supabase.auth.signInWithOAuth({
+  const { data, error } = await supabase.auth.signInWithIdToken({
     provider: 'google',
-    options: { redirectTo },
+    token: idToken,
+    nonce,
   })
 
   if (error) {
-    console.error('Google sign-in error:', error)
+    console.error('[Auth] signInWithIdToken error:', error)
     throw error
   }
+
+  console.log('[Auth] Signed in:', data.user?.email)
+  return data
 }
 
 /** Sign out */

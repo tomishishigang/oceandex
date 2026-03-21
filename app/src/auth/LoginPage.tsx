@@ -1,22 +1,64 @@
-import { useState } from 'preact/hooks'
+import { useEffect, useRef, useState } from 'preact/hooks'
+import { useLocation } from 'preact-iso'
 import { t } from '../hooks/useLocale'
 import { href } from '../base'
-import { signInWithGoogle } from './useAuth'
+import { signInWithGoogleToken } from './useAuth'
+
+const GOOGLE_CLIENT_ID = '109939962105-vjsetdd4l5cm72gcqgm6ash8mk6je73f.apps.googleusercontent.com'
 
 export function LoginPage() {
+  const { route } = useLocation()
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const buttonRef = useRef<HTMLDivElement>(null)
 
-  async function handleGoogleLogin() {
+  useEffect(() => {
+    // Load Google Identity Services script
+    const script = document.createElement('script')
+    script.src = 'https://accounts.google.com/gsi/client'
+    script.async = true
+    script.onload = () => {
+      if (!window.google || !buttonRef.current) return
+
+      window.google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID,
+        callback: handleGoogleResponse,
+        auto_select: false,
+      })
+
+      window.google.accounts.id.renderButton(buttonRef.current, {
+        theme: 'outline',
+        size: 'large',
+        width: 320,
+        text: 'signin_with',
+        shape: 'pill',
+        locale: 'es',
+      })
+    }
+    document.head.appendChild(script)
+
+    return () => {
+      script.remove()
+    }
+  }, [])
+
+  async function handleGoogleResponse(response: { credential: string }) {
     setLoading(true)
     setError(null)
     try {
-      await signInWithGoogle()
+      await signInWithGoogleToken(response.credential)
+      route(href('/'))
     } catch (e: any) {
+      console.error('[Login] Error:', e)
       setError(e.message ?? 'Error al iniciar sesión')
       setLoading(false)
     }
   }
+
+  // Make callback available globally for Google's script
+  useEffect(() => {
+    (window as any).__handleGoogleResponse = handleGoogleResponse
+  }, [])
 
   return (
     <div class="px-4 py-8">
@@ -25,25 +67,16 @@ export function LoginPage() {
         <h2 class="text-2xl font-bold text-ocean-800 mb-2">{t('auth.login_title')}</h2>
         <p class="text-sm text-ocean-500 mb-8">{t('auth.login_subtitle')}</p>
 
-        <div class="space-y-3">
-          <button
-            onClick={handleGoogleLogin}
-            disabled={loading}
-            class={`w-full flex items-center justify-center gap-3 py-3 px-4 rounded-2xl text-sm font-medium transition-colors border ${
-              loading
-                ? 'bg-ocean-100 text-ocean-400 cursor-wait'
-                : 'bg-white text-ocean-800 border-ocean-200 hover:bg-ocean-50 shadow-sm'
-            }`}
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-            </svg>
-            {loading ? t('auth.logging_in') : t('auth.google')}
-          </button>
-        </div>
+        {loading ? (
+          <div class="py-4">
+            <div class="text-2xl animate-pulse">🌊</div>
+            <p class="text-sm text-ocean-400 mt-2">{t('auth.logging_in')}</p>
+          </div>
+        ) : (
+          <div class="flex justify-center">
+            <div ref={buttonRef} />
+          </div>
+        )}
 
         {error && (
           <p class="text-red-500 text-xs mt-4">{error}</p>
@@ -62,4 +95,19 @@ export function LoginPage() {
       </div>
     </div>
   )
+}
+
+// Type declaration for Google Identity Services
+declare global {
+  interface Window {
+    google?: {
+      accounts: {
+        id: {
+          initialize: (config: any) => void
+          renderButton: (el: HTMLElement, config: any) => void
+          prompt: () => void
+        }
+      }
+    }
+  }
 }
