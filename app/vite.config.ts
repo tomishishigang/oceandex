@@ -7,7 +7,7 @@ export default defineConfig({
   base: process.env.GITHUB_ACTIONS ? '/oceandex/' : '/',
   build: {
     // Species data is bundled intentionally — suppress warning
-    chunkSizeWarningLimit: 700,
+    chunkSizeWarningLimit: 900,
   },
   plugins: [
     preact(),

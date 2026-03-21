@@ -1,9 +1,12 @@
 import { t, toggleLocale } from '../hooks/useLocale'
 import { useEarnedCount } from '../hooks/useBadges'
 import { href } from '../base'
+import { authState, getUserAvatar } from '../auth/useAuth'
 
 export function Header() {
   const earnedCount = useEarnedCount()
+  const { user } = authState.value
+  const avatar = getUserAvatar()
 
   return (
     <header class="bg-ocean-700 text-white px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] flex items-center justify-between shadow-md sticky top-0 z-50">
@@ -22,6 +25,21 @@ export function Header() {
             <span class="absolute -top-1 -right-1 bg-sand-400 text-ocean-950 text-[8px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
               {earnedCount}
             </span>
+          )}
+        </a>
+        <a
+          href={href(user ? '/profile' : '/login')}
+          class="no-underline hover:scale-110 transition-transform"
+          aria-label={user ? t('auth.profile') : t('auth.login')}
+        >
+          {user && avatar ? (
+            <img src={avatar} alt="" class="w-7 h-7 rounded-full border-2 border-ocean-500" referrerPolicy="no-referrer" />
+          ) : user ? (
+            <div class="w-7 h-7 rounded-full bg-ocean-500 flex items-center justify-center text-xs font-bold">
+              {(user.email?.[0] ?? '?').toUpperCase()}
+            </div>
+          ) : (
+            <span class="text-lg">👤</span>
           )}
         </a>
         <button

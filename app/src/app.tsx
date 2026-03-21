@@ -13,6 +13,9 @@ import { NewDiveSession } from './pages/NewDiveSession'
 import { DiveSessionDetail } from './pages/DiveSessionDetail'
 import { Compare } from './pages/Compare'
 import { Badges } from './pages/Badges'
+import { LoginPage } from './auth/LoginPage'
+import { AuthCallback } from './auth/AuthCallback'
+import { ProfilePage } from './auth/ProfilePage'
 import { NotFound } from './pages/NotFound'
 import { BASE } from './base'
 
@@ -33,6 +36,9 @@ export function App() {
               <Route path={`${BASE}/log/:id`} component={DiveSessionDetail} />
               <Route path={`${BASE}/compare`} component={Compare} />
               <Route path={`${BASE}/badges`} component={Badges} />
+              <Route path={`${BASE}/login`} component={LoginPage} />
+              <Route path={`${BASE}/auth/callback`} component={AuthCallback} />
+              <Route path={`${BASE}/profile`} component={ProfilePage} />
               <Route path={`${BASE}/sites`} component={DiveSites} />
               <Route path={`${BASE}/sites/:name`} component={DiveSiteDetail} />
               <Route default component={NotFound} />

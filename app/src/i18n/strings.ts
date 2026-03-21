@@ -199,6 +199,22 @@ const strings: Record<string, Record<Locale, string>> = {
   'photo.close': { es: 'Cerrar', en: 'Close' },
   'photo.your_photos': { es: 'Tus fotos', en: 'Your photos' },
 
+  // V4: Auth & Sync
+  'auth.login_title': { es: 'Iniciar sesión', en: 'Sign in' },
+  'auth.login_subtitle': { es: 'Sincroniza tu bitácora entre dispositivos', en: 'Sync your dive log across devices' },
+  'auth.google': { es: 'Continuar con Google', en: 'Continue with Google' },
+  'auth.logging_in': { es: 'Iniciando sesión...', en: 'Signing in...' },
+  'auth.skip': { es: 'Continuar sin cuenta', en: 'Continue without account' },
+  'auth.privacy_note': { es: 'Solo sincronizamos tu bitácora de buceo. No compartimos tus datos.', en: 'We only sync your dive log. We never share your data.' },
+  'auth.profile': { es: 'Mi perfil', en: 'My profile' },
+  'auth.logout': { es: 'Cerrar sesión', en: 'Sign out' },
+  'auth.login': { es: 'Iniciar sesión', en: 'Sign in' },
+  'sync.title': { es: 'Sincronización', en: 'Sync' },
+  'sync.connected': { es: 'Conectado — tus datos se sincronizan automáticamente', en: 'Connected — your data syncs automatically' },
+  'sync.syncing': { es: 'Sincronizando...', en: 'Syncing...' },
+  'sync.offline': { es: 'Sin conexión — se sincronizará al reconectar', en: 'Offline — will sync when reconnected' },
+  'sync.error': { es: 'Error de sincronización', en: 'Sync error' },
+
   // Language toggle
   'lang.switch': { es: 'EN', en: 'ES' },
 }
