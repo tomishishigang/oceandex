@@ -48,7 +48,7 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'species-photos',
-              expiration: { maxEntries: 500, maxAgeSeconds: 30 * 24 * 3600 },
+              expiration: { maxEntries: 100, maxAgeSeconds: 7 * 24 * 3600 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },
@@ -58,7 +58,7 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'species-photos-s3',
-              expiration: { maxEntries: 500, maxAgeSeconds: 30 * 24 * 3600 },
+              expiration: { maxEntries: 100, maxAgeSeconds: 7 * 24 * 3600 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },
@@ -67,7 +67,7 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'map-tiles',
-              expiration: { maxEntries: 500, maxAgeSeconds: 30 * 24 * 3600 },
+              expiration: { maxEntries: 200, maxAgeSeconds: 7 * 24 * 3600 },
               cacheableResponse: { statuses: [0, 200] },
             },
           },
