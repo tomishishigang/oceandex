@@ -1,175 +1,179 @@
 sightability_score,sightability_tier,scientific_name,common_name_en,common_name_es,category,phylum,class,order,family,has_photo,inat_observations,observation_count,wikipedia_url
 85,common,Schroederichthys chilensis,Redspotted Catshark,Pintarroja,fish_and_vertebrates,Chordata,Elasmobranchii,Carcharhiniformes,Scyliorhinidae,yes,190,8,http://en.wikipedia.org/wiki/Redspotted_catshark
-80,common,Macrocystis pyrifera,Giant Kelp,Kelp gigante,algae,Ochrophyta,Phaeophyceae,Laminariales,Laminariaceae,yes,15844,362,http://en.wikipedia.org/wiki/Macrocystis_pyrifera
-80,common,Perumytilus purpuratus,Purple Mussel,chorito maico,mollusks,Mollusca,Bivalvia,Mytilida,Mytilidae,yes,946,82,https://en.wikipedia.org/wiki/Perumytilus
+80,common,Macrocystis pyrifera,Giant Kelp,Kelp gigante,algae,Ochrophyta,Phaeophyceae,Laminariales,Laminariaceae,yes,15883,362,http://en.wikipedia.org/wiki/Macrocystis_pyrifera
+80,common,Perumytilus purpuratus,Purple Mussel,chorito maico,mollusks,Mollusca,Bivalvia,Mytilida,Mytilidae,yes,947,82,https://en.wikipedia.org/wiki/Perumytilus
 80,common,Phymactis clematis,,Poto de mar,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,960,68,
-80,common,Chiton granosus,,Quitón con granos,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,679,62,
-80,common,Cephaloscyllium ventriosum,Swellshark,pejegato globo,fish_and_vertebrates,Chordata,Elasmobranchii,Carcharhiniformes,Scyliorhinidae,yes,613,1,http://en.wikipedia.org/wiki/Swellshark
+80,common,Chiton granosus,,Quitón con granos,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,680,62,
+80,common,Cephaloscyllium ventriosum,swell shark,pejegato globo,fish_and_vertebrates,Chordata,Elasmobranchii,Carcharhiniformes,Scyliorhinidae,yes,615,1,http://en.wikipedia.org/wiki/Swellshark
 80,common,Stichaster striatus,Common Light-striated Sea Star,Estrella de mar de cinco brazos,echinoderms,Echinodermata,Asteroidea,Forcipulatida,Stichasteridae,yes,605,7,http://en.wikipedia.org/wiki/Stichaster_striatus
-80,common,Mazzaella laminarioides,spoon luga,luga cuchara,algae,Rhodophyta,Florideophyceae,Gigartinales,Gigartinaceae,yes,495,62,
+80,common,Mazzaella laminarioides,spoon luga,luga cuchara,algae,Rhodophyta,Florideophyceae,Gigartinales,Gigartinaceae,yes,498,62,
 80,common,Siphonaria lessonii,Lesson's False Limpet,Lapa pulmonada,mollusks,Mollusca,Gastropoda,Siphonariida,Siphonariidae,yes,364,71,https://en.wikipedia.org/wiki/Siphonaria_lessonii
-80,common,Odontaster penicillatus,Tooth Star,Estrella adornada,echinoderms,Echinodermata,Asteroidea,Valvatida,Odontasteridae,yes,175,6,
+80,common,Odontaster penicillatus,Tooth Star,Estrella adornada,echinoderms,Echinodermata,Asteroidea,Valvatida,Odontasteridae,yes,176,6,
 80,common,Robsonella fontaniana,Fontaine's Octopus,Pulpo de Fontaine,mollusks,Mollusca,Cephalopoda,Octopoda,Octopodidae,yes,158,3,
-75,common,Corallina officinalis,coral meed,,algae,Rhodophyta,Florideophyceae,Corallinales,Corallinaceae,yes,8536,38,http://en.wikipedia.org/wiki/Corallina_officinalis
-75,common,Heliaster helianthus,South American Multiradiate Sun Star,Sol de mar,echinoderms,Echinodermata,Asteroidea,Forcipulatida,Heliasteridae,yes,970,4,http://en.wikipedia.org/wiki/Heliaster_helianthus
-75,common,Echinolittorina peruviana,Peruvian periwinkle,Caracol pijama,mollusks,Mollusca,Gastropoda,Littorinimorpha,Littorinidae,yes,691,38,http://en.wikipedia.org/wiki/Echinolittorina_peruviana
+75,common,Corallina officinalis,coral meed,,algae,Rhodophyta,Florideophyceae,Corallinales,Corallinaceae,yes,8557,38,http://en.wikipedia.org/wiki/Corallina_officinalis
+75,common,Heliaster helianthus,South American Multiradiate Sun Star,Sol de mar,echinoderms,Echinodermata,Asteroidea,Forcipulatida,Heliasteridae,yes,972,4,http://en.wikipedia.org/wiki/Heliaster_helianthus
+75,common,Echinolittorina peruviana,Peruvian periwinkle,Caracol pijama,mollusks,Mollusca,Gastropoda,Littorinimorpha,Littorinidae,yes,694,38,http://en.wikipedia.org/wiki/Echinolittorina_peruviana
 75,common,Arbacia nigra,Black Sea Urchin,Erizo negro,echinoderms,Echinodermata,Echinoidea,Arbacioida,Arbaciidae,yes,563,3,https://en.wikipedia.org/wiki/Tetrapygus
 75,common,Arbacia dufresnii,Naked Green Sea Urchin,Erizo desnudo verde,echinoderms,Echinodermata,Echinoidea,Arbacioida,Arbaciidae,yes,517,3,http://en.wikipedia.org/wiki/Arbacia_dufresnii
 75,common,Jehlius cirratus,,Picacho,crustaceans,Arthropoda,Thecostraca,Balanomorpha,Chthamalidae,yes,469,21,https://en.wikipedia.org/wiki/Jehlius_cirratus
 75,common,Anasterias antarctica,Cinderella Sea Star,,echinoderms,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,yes,473,1,https://en.wikipedia.org/wiki/Anasterias_antarctica
 75,common,Anthothoe chilensis,striped anemone,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Sagartiidae,yes,448,20,https://en.wikipedia.org/wiki/Anthothoe_chilensis
-75,common,Hippasteria phrygiana,Trojan Star,,echinoderms,Echinodermata,Asteroidea,Valvatida,Goniasteridae,yes,436,2,http://en.wikipedia.org/wiki/Hippasteria_phrygiana
+75,common,Hippasteria phrygiana,Arctic cushion star,,echinoderms,Echinodermata,Asteroidea,Valvatida,Goniasteridae,yes,436,2,http://en.wikipedia.org/wiki/Hippasteria_phrygiana
 75,common,Cosmasterias lurida,Common Fjord Sea Star,Estrella común de los fiordos,echinoderms,Echinodermata,Asteroidea,Forcipulatida,Stichasteridae,yes,427,2,
 75,common,Scurria zebrina,,Gorrito cebra,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,155,37,http://en.wikipedia.org/wiki/Scurria_zebrina
-75,common,Fissurella crassa,Thick keyhole limpet,Lapa ocho,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,143,38,http://en.wikipedia.org/wiki/Fissurella_crassa
+75,common,Fissurella crassa,Thick keyhole limpet,Lapa ocho,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,144,38,http://en.wikipedia.org/wiki/Fissurella_crassa
+75,common,Doris fontainii,Large Warted Doris,Babosa marina verrugosa,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,157,0,https://en.wikipedia.org/wiki/Doris_fontainii
 75,common,Sympterygia lima,Filetail Fanskate,Raya Costera Chilena,fish_and_vertebrates,Chordata,Elasmobranchii,Rajiformes,Arhynchobatidae,yes,115,1,http://en.wikipedia.org/wiki/Filetail_fanskate
-70,common,Grapsus grapsus,Sally Lightfoot Crab,Cangrejos corredores,crustaceans,Arthropoda,Malacostraca,Decapoda,Grapsidae,yes,33935,1,http://en.wikipedia.org/wiki/Grapsus
-70,common,Ulva lactuca,sea lettuce,Lechuga marina,algae,Chlorophyta,Ulvophyceae,Ulvales,Ulvaceae,yes,16123,12,http://en.wikipedia.org/wiki/Ulva_lactuca
-70,common,Emerita analoga,Pacific Sand Crab,Cangrejo topo,crustaceans,Arthropoda,Malacostraca,Decapoda,Hippidae,yes,9647,1,http://en.wikipedia.org/wiki/Emerita_analoga
-70,common,Leptograpsus variegatus,Purple Rock Crab,jaiba corredora,crustaceans,Arthropoda,Malacostraca,Decapoda,Grapsidae,yes,5997,1,http://en.wikipedia.org/wiki/Leptograpsus
-70,common,Coenobita rugosus,Tawny Hermit Crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Coenobitidae,yes,5522,1,http://en.wikipedia.org/wiki/Coenobita_rugosus
-70,common,Ocypode gaudichaudii,Painted Ghost Crab,cangrejo playero,crustaceans,Arthropoda,Malacostraca,Decapoda,Ocypodidae,yes,2853,1,http://en.wikipedia.org/wiki/Ocypode_gaudichaudii
-70,common,Ocypode occidentalis,Gulf Ghost Crab,Cangrejo fantasma del Pacífico,crustaceans,Arthropoda,Malacostraca,Decapoda,Ocypodidae,yes,2063,3,http://en.wikipedia.org/wiki/Gulf_ghost_crab
-70,common,Hemigrapsus crenulatus,Hairy-handed Crab,Huillancha,crustaceans,Arthropoda,Malacostraca,Decapoda,Varunidae,yes,1374,1,http://en.wikipedia.org/wiki/Hemigrapsus_crenulatus
-70,common,Planes minutus,Gulfweed Crab,Cangrejo saltador,crustaceans,Arthropoda,Malacostraca,Decapoda,Grapsidae,yes,1223,1,http://en.wikipedia.org/wiki/Planes_minutus
+75,common,Diaulula punctuolata,Dotted Bristle Sea Slug,Babosa cerda manchada,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,105,0,http://en.wikipedia.org/wiki/Diaulula_punctuolata
+70,common,Grapsus grapsus,cliff crab,Cangrejos corredores,crustaceans,Arthropoda,Malacostraca,Decapoda,Grapsidae,yes,34136,1,http://en.wikipedia.org/wiki/Grapsus
+70,common,Ulva lactuca,sea lettuce,Lechuga marina,algae,Chlorophyta,Ulvophyceae,Ulvales,Ulvaceae,yes,16155,12,http://en.wikipedia.org/wiki/Ulva_lactuca
+70,common,Emerita analoga,Pacific sand crab,Cangrejo topo,crustaceans,Arthropoda,Malacostraca,Decapoda,Hippidae,yes,9662,1,http://en.wikipedia.org/wiki/Emerita_analoga
+70,common,Leptograpsus variegatus,Purple Rock Crab,jaiba corredora,crustaceans,Arthropoda,Malacostraca,Decapoda,Grapsidae,yes,6039,1,http://en.wikipedia.org/wiki/Leptograpsus
+70,common,Coenobita rugosus,ruggie hermit crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Coenobitidae,yes,5593,1,http://en.wikipedia.org/wiki/Coenobita_rugosus
+70,common,Ocypode gaudichaudii,cart driver crab,cangrejo playero,crustaceans,Arthropoda,Malacostraca,Decapoda,Ocypodidae,yes,2866,1,http://en.wikipedia.org/wiki/Ocypode_gaudichaudii
+70,common,Ocypode occidentalis,Gulf Ghost Crab,Cangrejo fantasma del Pacífico,crustaceans,Arthropoda,Malacostraca,Decapoda,Ocypodidae,yes,2068,3,http://en.wikipedia.org/wiki/Gulf_ghost_crab
+70,common,Hemigrapsus crenulatus,Hairy-handed Crab,Huillancha,crustaceans,Arthropoda,Malacostraca,Decapoda,Varunidae,yes,1376,1,http://en.wikipedia.org/wiki/Hemigrapsus_crenulatus
+70,common,Planes minutus,Columbus crab,Cangrejo saltador,crustaceans,Arthropoda,Malacostraca,Decapoda,Grapsidae,yes,1228,1,http://en.wikipedia.org/wiki/Planes_minutus
 70,common,Phymactis papillosa,,Poto de mar,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,960,14,
 70,common,Anthopleura hermaphroditica,Small Brown Sea Anemone,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,903,8,https://en.wikipedia.org/wiki/Anthopleura_hermaphroditica
-70,common,Ovalipes trimaculatus,Rowing Crab,jaiba remadora,crustaceans,Arthropoda,Malacostraca,Decapoda,Ovalipidae,yes,869,1,https://en.wikipedia.org/wiki/Ovalipes_trimaculatus
+70,common,Ovalipes trimaculatus,three-spot swimming crab,jaiba remadora,crustaceans,Arthropoda,Malacostraca,Decapoda,Ovalipidae,yes,872,1,https://en.wikipedia.org/wiki/Ovalipes_trimaculatus
 70,common,Acanthina monodon,one-toothed thais,Caracol con diente,mollusks,Mollusca,Gastropoda,Neogastropoda,Muricidae,yes,491,6,http://en.wikipedia.org/wiki/Acanthina_monodon
-70,common,Homalaspis plana,Purple crab,Jaiba mora,crustaceans,Arthropoda,Malacostraca,Decapoda,Platyxanthidae,yes,483,2,https://en.wikipedia.org/wiki/Homalaspis
+70,common,Homalaspis plana,Purple crab,Jaiba mora,crustaceans,Arthropoda,Malacostraca,Decapoda,Platyxanthidae,yes,485,2,https://en.wikipedia.org/wiki/Homalaspis
 70,common,Tegula atra,Smooth Black Tegula,Tegula negra,mollusks,Mollusca,Gastropoda,Trochida,Tegulidae,yes,463,5,http://en.wikipedia.org/wiki/Tegula_atra
-70,common,Concholepas concholepas,barnacle rock shell,Loco,mollusks,Mollusca,Gastropoda,Neogastropoda,Muricidae,yes,423,15,http://en.wikipedia.org/wiki/Concholepas
+70,common,Concholepas concholepas,barnacle rock shell,Loco,mollusks,Mollusca,Gastropoda,Neogastropoda,Muricidae,yes,424,15,http://en.wikipedia.org/wiki/Concholepas
 70,common,Taliepus dentatus,Chilean Kelp Crab,Panchote,crustaceans,Arthropoda,Malacostraca,Decapoda,Epialtidae,yes,397,4,
 70,common,Austromegabalanus psittacus,giant barnacle,Picoroco,crustaceans,Arthropoda,Thecostraca,Balanomorpha,Balanidae,yes,341,14,http://en.wikipedia.org/wiki/Austromegabalanus_psittacus
-70,common,Cyrtograpsus angulatus,,Cangrejo blanco,crustaceans,Arthropoda,Malacostraca,Decapoda,Varunidae,yes,343,1,
-70,common,Romaleon setosum,Rock-crabs,Cangrejo peludo,crustaceans,Arthropoda,Malacostraca,Decapoda,Cancridae,yes,339,2,
+70,common,Cyrtograpsus angulatus,,Cangrejo blanco,crustaceans,Arthropoda,Malacostraca,Decapoda,Varunidae,yes,345,1,
+70,common,Romaleon setosum,Rock-crabs,Cangrejo peludo,crustaceans,Arthropoda,Malacostraca,Decapoda,Cancridae,yes,340,2,
 70,common,Antholoba achates,Lobed Anemone,Anémona lobulada,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Antholobidae,yes,281,16,
-70,common,Chiton magnificus,Pretty Sea Cradle,Chitón guapo,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,284,5,http://en.wikipedia.org/wiki/Chiton_magnificus
-70,common,Petrolisthes violaceus,,Tijereta violácea,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,284,4,https://en.wikipedia.org/wiki/Petrolisthes_violaceus
-70,common,Peltarion spinosulus,Tractor Crab,Cangrejo Peludo,crustaceans,Arthropoda,Malacostraca,Decapoda,Trichopeltariidae,yes,263,2,https://en.wikipedia.org/wiki/Peltarion_spinulosum
-70,common,Oulactis concinnata,,Anémona de arena,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,230,14,
+70,common,Chiton magnificus,Pretty Sea Cradle,Chitón guapo,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,285,5,http://en.wikipedia.org/wiki/Chiton_magnificus
+70,common,Petrolisthes violaceus,,Tijereta violácea,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,285,4,https://en.wikipedia.org/wiki/Petrolisthes_violaceus
+70,common,Peltarion spinosulus,Tractor Crab,Cangrejo Peludo,crustaceans,Arthropoda,Malacostraca,Decapoda,Trichopeltariidae,yes,265,2,https://en.wikipedia.org/wiki/Peltarion_spinulosum
+70,common,Oulactis concinnata,,Anémona de arena,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,231,14,
 70,common,Thyrsites atun,snoek,Sierra,fish_and_vertebrates,Chordata,Teleostei,Scombriformes,Gempylidae,yes,218,6,http://en.wikipedia.org/wiki/Thyrsites
-70,common,Cyclograpsus cinereus,Chilean shore crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Varunidae,yes,217,1,
-70,common,Pagurus comptus,Patagonian Hermit Crab,Ermitaño común,crustaceans,Arthropoda,Malacostraca,Decapoda,Paguridae,yes,198,1,
+70,common,Cyclograpsus cinereus,Chilean shore crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Varunidae,yes,218,1,
+70,common,Pagurus comptus,Patagonian Hermit Crab,Ermitaño común,crustaceans,Arthropoda,Malacostraca,Decapoda,Paguridae,yes,199,1,
 70,common,Tonicia chilensis,Chilean chiton,Tonicia variable,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,179,9,
-70,common,Cancer plebejus,Chilean crab,Jaiba Reina,crustaceans,Arthropoda,Malacostraca,Decapoda,Cancridae,yes,168,1,https://en.wikipedia.org/wiki/Cancer_plebejus
+70,common,Cancer plebejus,Chilean crab,Jaiba Reina,crustaceans,Arthropoda,Malacostraca,Decapoda,Cancridae,yes,169,1,https://en.wikipedia.org/wiki/Cancer_plebejus
 70,common,Lessonia trabeculata,,,algae,Ochrophyta,Phaeophyceae,Laminariales,Lessoniaceae,yes,105,63,https://en.wikipedia.org/wiki/Lessonia_trabeculata
-70,common,Ceramium virgatum,red seaweed,,algae,Rhodophyta,Florideophyceae,Ceramiales,Ceramiaceae,yes,150,7,http://en.wikipedia.org/wiki/Ceramium_virgatum
-70,common,Rhynchocinetes typus,Rabbitnose shrimp,Camarón de playa,crustaceans,Arthropoda,Malacostraca,Decapoda,Rhynchocinetidae,yes,145,1,
-70,common,Sicyases sanguineus,Intertidal Clingfish,pejesapo,fish_and_vertebrates,Chordata,Teleostei,Gobiesociformes,Gobiesocidae,yes,128,17,http://en.wikipedia.org/wiki/Sicyases_sanguineus
-70,common,Scurria scurra,,Gorrito de mar,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,125,13,http://en.wikipedia.org/wiki/Scurria_scurra
+70,common,Ceramium virgatum,red seaweed,,algae,Rhodophyta,Florideophyceae,Ceramiales,Ceramiaceae,yes,151,7,http://en.wikipedia.org/wiki/Ceramium_virgatum
+70,common,Rhynchocinetes typus,Rabbitnose shrimp,Camarón de playa,crustaceans,Arthropoda,Malacostraca,Decapoda,Rhynchocinetidae,yes,146,1,
+70,common,Sicyases sanguineus,Intertidal Clingfish,pejesapo,fish_and_vertebrates,Chordata,Teleostei,Gobiesociformes,Gobiesocidae,yes,129,17,http://en.wikipedia.org/wiki/Sicyases_sanguineus
+70,common,Scurria scurra,,Gorrito de mar,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,126,13,http://en.wikipedia.org/wiki/Scurria_scurra
 70,common,Sebastes oculatus,Patagonian Redfish,Escrófalo,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Sebastidae,yes,134,2,
-70,common,Paraxanthus barbiger,,Jaiba musculosa,crustaceans,Arthropoda,Malacostraca,Decapoda,Xanthidae,yes,125,1,http://en.wikipedia.org/wiki/Paraxanthus
+70,common,Paraxanthus barbiger,,Jaiba musculosa,crustaceans,Arthropoda,Malacostraca,Decapoda,Xanthidae,yes,127,1,http://en.wikipedia.org/wiki/Paraxanthus
 70,common,Campylonotus vagans,Painted Shrimp,Camarón pintado,crustaceans,Arthropoda,Malacostraca,Decapoda,Campylonotidae,yes,124,1,
 70,common,Halicarcinus planatus,Flattened Crab,Cangrejito aplanado,crustaceans,Arthropoda,Malacostraca,Decapoda,Hymenosomatidae,yes,107,1,
 70,common,Ceramaster patagonicus,Cookie Star,,echinoderms,Echinodermata,Asteroidea,Valvatida,Goniasteridae,yes,94,3,http://en.wikipedia.org/wiki/Ceramaster_patagonicus
 70,common,Platymera gaudichaudii,armed box crab,Calappidae,crustaceans,Arthropoda,Malacostraca,Decapoda,Calappidae,yes,73,5,
+70,common,Tyrinna delicata,Delicate Sea Slug,Babosa delicada,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,71,0,http://en.wikipedia.org/wiki/Tyrinna_delicata
 70,common,Pinguipes chilensis,Chilean Sandperch,Rollizo,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Pinguipedidae,yes,60,5,https://en.wikipedia.org/wiki/Pinguipes_chilensis
 70,common,Poraniopsis echinaster,Reticulated Spiny Star,Estrella reticulada espinosa,echinoderms,Echinodermata,Asteroidea,Valvatida,Poraniidae,yes,48,7,
-65,common,Phalacrocorax brasilianus,Neotropic Cormorant,Corúa Neotropical,fish_and_vertebrates,Chordata,Aves,Pelecaniformes,Phalacrocoracidae,yes,62433,4,https://en.wikipedia.org/wiki/Neotropic_cormorant
-65,common,Larus dominicanus,Dominican gull,Gaviota Meridional,fish_and_vertebrates,Chordata,Aves,Charadriiformes,Laridae,yes,34448,4,http://en.wikipedia.org/wiki/Kelp_gull
-65,common,Mytilus edulis,Blue Mussel Complex,mejillón,mollusks,Mollusca,Bivalvia,Mytilida,Mytilidae,yes,30173,1,https://en.wikipedia.org/wiki/Blue_mussel
-65,common,Crepidula fornicata,Common Atlantic Slippersnail,,mollusks,Mollusca,Gastropoda,Littorinimorpha,Calyptraeidae,yes,13991,1,http://en.wikipedia.org/wiki/Common_slipper_shell
-65,common,Larus pipixcan,Franklin's Gull,Gaviota de Franklin,fish_and_vertebrates,Chordata,Aves,Charadriiformes,Laridae,yes,13601,1,http://en.wikipedia.org/wiki/Franklin's_gull
-65,common,Spheniscus magellanicus,Magellanic Penguin,Pingüino de Magallanes,fish_and_vertebrates,Chordata,Aves,Sphenisciformes,Spheniscidae,yes,8272,3,https://en.wikipedia.org/wiki/Magellanic_penguin
-65,common,Mugil cephalus,Sea Mullet,Lisa rayada,fish_and_vertebrates,Chordata,Teleostei,Mugiliformes,Mugilidae,yes,8167,2,http://en.wikipedia.org/wiki/Flathead_grey_mullet
-65,common,Puffinus griseus,Sooty Shearwater,Pardela gris,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,6255,3,http://en.wikipedia.org/wiki/Sooty_shearwater
-65,common,Thalassarche melanophris,Black-browed Albatross,Albatros ceja negra,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Diomedeidae,yes,4830,3,http://en.wikipedia.org/wiki/Black-browed_albatross
-65,common,Macronectes giganteus,Southern Giant Petrel,Petrel gigante,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,4111,1,https://en.wikipedia.org/wiki/Southern_giant_petrel
-65,common,Pelecanus thagus,Peruvian Pelican,Pelícano peruano,fish_and_vertebrates,Chordata,Aves,Pelecaniformes,Pelecanidae,yes,3983,1,https://en.wikipedia.org/wiki/Peruvian_pelican
-65,common,Physeter macrocephalus,chocolate whale,ballena esperma,fish_and_vertebrates,Chordata,Mammalia,Cetartiodactyla,Physeteridae,yes,3568,4,http://en.wikipedia.org/wiki/Sperm_whale
-65,common,Oceanites oceanicus,Wilson's Storm-Petrel,Paíño de Wilson,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Hydrobatidae,yes,3418,1,https://en.wikipedia.org/wiki/Wilson's_storm_petrel
-65,common,Grampus griseus,Risso's Dolphin,Delfín de Risso,fish_and_vertebrates,Chordata,Mammalia,Cetartiodactyla,Delphinidae,yes,2953,2,http://en.wikipedia.org/wiki/Risso's_dolphin
-65,common,Diomedea exulans,Wandering albatross species complex,Albatros viajero,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Diomedeidae,yes,2694,1,https://en.wikipedia.org/wiki/Snowy_albatross
-65,common,Daption capense,Pintado Petrel,Petrel damero,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,2476,2,https://en.wikipedia.org/wiki/Cape_petrel
-65,common,Eubalaena australis,Southern Right Whale,Ballena Franca Austral,fish_and_vertebrates,Chordata,Mammalia,Cetartiodactyla,Balaenidae,yes,2309,1,http://en.wikipedia.org/wiki/Southern_right_whale
-65,common,Procellaria aequinoctialis,White-chinned Petrel,Petrel barba blanca,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,2203,2,http://en.wikipedia.org/wiki/White-chinned_petrel
-65,common,Acmaea mitra,Whitecap Limpet,Lapa Blanca,mollusks,Mollusca,Gastropoda,,Acmaeidae,yes,2059,2,http://en.wikipedia.org/wiki/Acmaea_mitra
-65,common,Phalacrocorax bougainvillii,Guanay Cormorant,Guanay,fish_and_vertebrates,Chordata,Aves,Pelecaniformes,Phalacrocoracidae,yes,1642,1,https://en.wikipedia.org/wiki/Guanay_cormorant
-65,common,Phalacrocorax gaimardi,Red-legged Cormorant,Lile,fish_and_vertebrates,Chordata,Aves,Pelecaniformes,Phalacrocoracidae,yes,1611,1,https://en.wikipedia.org/wiki/Red-legged_cormorant
-65,common,Durvillaea antarctica,New Zealand Bull Kelp,Cochayuyo,algae,Ochrophyta,Phaeophyceae,Fucales,Durvillaeaceae,yes,1561,1,http://en.wikipedia.org/wiki/Durvillaea_antarctica
-65,common,Scytosiphon lomentaria,Beanweed,,algae,Ochrophyta,Phaeophyceae,Ectocarpales,Scytosiphonaceae,yes,1397,3,http://en.wikipedia.org/wiki/Scytosiphon_lomentaria
-65,common,Galaxias maculatus,Common Galaxias,Puyen chico,fish_and_vertebrates,Chordata,Teleostei,Galaxiiformes,Galaxiidae,yes,1320,2,http://en.wikipedia.org/wiki/Common_galaxias
-65,common,Stercorarius chilensis,Chilean Skua,Salteador chileno,fish_and_vertebrates,Chordata,Aves,Charadriiformes,Stercorariidae,yes,1241,3,https://en.wikipedia.org/wiki/Chilean_skua
-65,common,Fulmarus glacialoides,Southern Fulmar,Petrel plateado,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,1170,3,https://en.wikipedia.org/wiki/Southern_fulmar
-65,common,Australostichopus mollis,Australasian Brown Sea Cucumber,,echinoderms,Echinodermata,Holothuroidea,Synallactida,Stichopodidae,yes,1107,2,http://en.wikipedia.org/wiki/Australostichopus
-65,common,Aulacomya atra,Cholga mussel,Cholga,mollusks,Mollusca,Bivalvia,Mytilida,Mytilidae,yes,771,1,http://en.wikipedia.org/wiki/Aulacomya_atra
-65,common,Chiton stokesii,Stokes's Chiton,,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,687,1,
-65,common,Merluccius merluccius,Hakes,Alambolo,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Merlucciidae,yes,625,1,http://en.wikipedia.org/wiki/Merluccius
+65,common,Phalacrocorax brasilianus,Bigua cormorant,Corúa Neotropical,fish_and_vertebrates,Chordata,Aves,Pelecaniformes,Phalacrocoracidae,yes,62562,4,https://en.wikipedia.org/wiki/Neotropic_cormorant
+65,common,Larus dominicanus,Dominican gull,Gaviota Meridional,fish_and_vertebrates,Chordata,Aves,Charadriiformes,Laridae,yes,34534,4,http://en.wikipedia.org/wiki/Kelp_gull
+65,common,Mytilus edulis,bay mussel,mejillón,mollusks,Mollusca,Bivalvia,Mytilida,Mytilidae,yes,30206,1,https://en.wikipedia.org/wiki/Blue_mussel
+65,common,Crepidula fornicata,American slipper limpet,,mollusks,Mollusca,Gastropoda,Littorinimorpha,Calyptraeidae,yes,14015,1,http://en.wikipedia.org/wiki/Common_slipper_shell
+65,common,Larus pipixcan,Franklin's gull,gaviota pipizcán,fish_and_vertebrates,Chordata,Aves,Charadriiformes,Laridae,yes,13614,1,http://en.wikipedia.org/wiki/Franklin's_gull
+65,common,Spheniscus magellanicus,Magellanic penguin,Pingüino de Magallanes,fish_and_vertebrates,Chordata,Aves,Sphenisciformes,Spheniscidae,yes,8278,3,https://en.wikipedia.org/wiki/Magellanic_penguin
+65,common,Mugil cephalus,flathead grey mullet,lisa rayada,fish_and_vertebrates,Chordata,Teleostei,Mugiliformes,Mugilidae,yes,8230,2,http://en.wikipedia.org/wiki/Flathead_grey_mullet
+65,common,Puffinus griseus,sooty shear water,pardela sombría,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,6258,3,http://en.wikipedia.org/wiki/Sooty_shearwater
+65,common,Thalassarche melanophris,black-browed albatross,Albatros ceja negra,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Diomedeidae,yes,4847,3,http://en.wikipedia.org/wiki/Black-browed_albatross
+65,common,Macronectes giganteus,southern giant petrel,Petrel gigante,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,4124,1,https://en.wikipedia.org/wiki/Southern_giant_petrel
+65,common,Pelecanus thagus,Peruvian pelican,Pelícano peruano,fish_and_vertebrates,Chordata,Aves,Pelecaniformes,Pelecanidae,yes,3985,1,https://en.wikipedia.org/wiki/Peruvian_pelican
+65,common,Physeter macrocephalus,chocolate whale,ballena esperma,fish_and_vertebrates,Chordata,Mammalia,Cetartiodactyla,Physeteridae,yes,3573,4,http://en.wikipedia.org/wiki/Sperm_whale
+65,common,Oceanites oceanicus,Wilson's petrel,paíño de Wilson,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Hydrobatidae,yes,3420,1,https://en.wikipedia.org/wiki/Wilson's_storm_petrel
+65,common,Grampus griseus,gray grampus,calderón gris,fish_and_vertebrates,Chordata,Mammalia,Cetartiodactyla,Delphinidae,yes,2956,2,http://en.wikipedia.org/wiki/Risso's_dolphin
+65,common,Diomedea exulans,wandering albatross,albatros errante,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Diomedeidae,yes,2707,1,https://en.wikipedia.org/wiki/Snowy_albatross
+65,common,Daption capense,Cape petrel,petrel damero,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,2486,2,https://en.wikipedia.org/wiki/Cape_petrel
+65,common,Eubalaena australis,southern right whale,ballena franca austral,fish_and_vertebrates,Chordata,Mammalia,Cetartiodactyla,Balaenidae,yes,2312,1,http://en.wikipedia.org/wiki/Southern_right_whale
+65,common,Procellaria aequinoctialis,Cape hen,Petrel barba blanca,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,2209,2,http://en.wikipedia.org/wiki/White-chinned_petrel
+65,common,Acmaea mitra,Pacific white cap limpet,Lapa Blanca,mollusks,Mollusca,Gastropoda,,Acmaeidae,yes,2062,2,http://en.wikipedia.org/wiki/Acmaea_mitra
+65,common,Phalacrocorax bougainvillii,Guanay cormorant,Guanay,fish_and_vertebrates,Chordata,Aves,Pelecaniformes,Phalacrocoracidae,yes,1646,1,https://en.wikipedia.org/wiki/Guanay_cormorant
+65,common,Phalacrocorax gaimardi,red-legged cormorant,Lile,fish_and_vertebrates,Chordata,Aves,Pelecaniformes,Phalacrocoracidae,yes,1616,1,https://en.wikipedia.org/wiki/Red-legged_cormorant
+65,common,Durvillaea antarctica,New Zealand Bull Kelp,Cochayuyo,algae,Ochrophyta,Phaeophyceae,Fucales,Durvillaeaceae,yes,1566,1,http://en.wikipedia.org/wiki/Durvillaea_antarctica
+65,common,Scytosiphon lomentaria,beanweed,,algae,Ochrophyta,Phaeophyceae,Ectocarpales,Scytosiphonaceae,yes,1402,3,http://en.wikipedia.org/wiki/Scytosiphon_lomentaria
+65,common,Galaxias maculatus,Common Galaxias,Puyen chico,fish_and_vertebrates,Chordata,Teleostei,Galaxiiformes,Galaxiidae,yes,1321,2,http://en.wikipedia.org/wiki/Common_galaxias
+65,common,Stercorarius chilensis,Chilean skua,Salteador chileno,fish_and_vertebrates,Chordata,Aves,Charadriiformes,Stercorariidae,yes,1244,3,https://en.wikipedia.org/wiki/Chilean_skua
+65,common,Fulmarus glacialoides,Antarctic fulmar,Petrel plateado,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Procellariidae,yes,1173,3,https://en.wikipedia.org/wiki/Southern_fulmar
+65,common,Australostichopus mollis,Australasian Brown Sea Cucumber,,echinoderms,Echinodermata,Holothuroidea,Synallactida,Stichopodidae,yes,1108,2,http://en.wikipedia.org/wiki/Australostichopus
+65,common,Aulacomya atra,Cholga mussel,Cholga,mollusks,Mollusca,Bivalvia,Mytilida,Mytilidae,yes,772,1,http://en.wikipedia.org/wiki/Aulacomya_atra
+65,common,Chiton stokesii,Stokes's Chiton,,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,689,1,
+65,common,Merluccius merluccius,European hake,carioca,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Merlucciidae,yes,625,1,http://en.wikipedia.org/wiki/Merluccius
 65,common,Discurria insessa,Seaweed Limpet,Lapa Egregia,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,616,1,http://en.wikipedia.org/wiki/Discurria_insessa
 65,common,Anemonia alicemartinae,Red Sea Anemone,Anémona Roja,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,595,4,https://en.wikipedia.org/wiki/Anemonia_alicemartinae
-65,common,Thalassarche chlororhynchos,Indian Yellow-nosed Albatross,Albatros clororrinco atlántico,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Diomedeidae,yes,596,2,http://en.wikipedia.org/wiki/Indian_yellow-nosed_albatross
-65,common,Scomber japonicus,Pacific Chub Mackerel,macarela estornino,fish_and_vertebrates,Chordata,Teleostei,Scombriformes,Scombridae,yes,582,1,http://en.wikipedia.org/wiki/Chub_mackerel
-65,common,Xiphias gladius,Broadbill Swordfish,pez espada,fish_and_vertebrates,Chordata,Teleostei,Carangiformes,Xiphiidae,yes,406,2,http://en.wikipedia.org/wiki/Swordfish
+65,common,Thalassarche chlororhynchos,Atlantic yellow-nosed albatross,Albatros clororrinco atlántico,fish_and_vertebrates,Chordata,Aves,Procellariiformes,Diomedeidae,yes,597,2,http://en.wikipedia.org/wiki/Indian_yellow-nosed_albatross
+65,common,Scomber japonicus,Atlantic chub mackerel,estornino,fish_and_vertebrates,Chordata,Teleostei,Scombriformes,Scombridae,yes,582,1,http://en.wikipedia.org/wiki/Chub_mackerel
+65,common,Xiphias gladius,swordfish,pez espada,fish_and_vertebrates,Chordata,Teleostei,Carangiformes,Xiphiidae,yes,409,2,http://en.wikipedia.org/wiki/Swordfish
 65,common,Cnesterodon decemmaculatus,Tenspotted Live-bearer,Madrecita,fish_and_vertebrates,Chordata,Teleostei,Cyprinodontiformes,Poeciliidae,yes,322,1,https://en.wikipedia.org/wiki/Cnesterodon_decemmaculatus
-65,common,Pyura chilensis,red sea squirt,Piure,fish_and_vertebrates,Chordata,Ascidiacea,Stolidobranchia,Pyuridae,yes,294,3,http://en.wikipedia.org/wiki/Pyura_chilensis
-65,common,Bunodosoma grande,Fire Tentacle Anemone,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,293,2,
-65,common,Diloma nigerrimum,Bluish Top Shell,,mollusks,Mollusca,Gastropoda,Trochida,Trochidae,yes,269,2,https://en.wikipedia.org/wiki/Diloma_nigerrimum
-65,common,Spheciospongia vesparium,Loggerhead Sponge,,sponges,Porifera,Demospongiae,Clionaida,Clionaidae,yes,260,3,http://en.wikipedia.org/wiki/Spheciospongia_vesparium
+65,common,Pyura chilensis,red sea squirt,Piure,fish_and_vertebrates,Chordata,Ascidiacea,Stolidobranchia,Pyuridae,yes,295,3,http://en.wikipedia.org/wiki/Pyura_chilensis
+65,common,Bunodosoma grande,Fire Tentacle Anemone,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,294,2,
+65,common,Diloma nigerrimum,Bluish Top Shell,,mollusks,Mollusca,Gastropoda,Trochida,Trochidae,yes,270,2,https://en.wikipedia.org/wiki/Diloma_nigerrimum
+65,common,Spheciospongia vesparium,Loggerhead Sponge,,sponges,Porifera,Demospongiae,Clionaida,Clionaidae,yes,261,3,http://en.wikipedia.org/wiki/Spheciospongia_vesparium
 65,common,Semimytilus patagonicus,Bisexual Mussel,,mollusks,Mollusca,Bivalvia,Mytilida,Mytilidae,yes,197,3,
-65,common,Sarda chiliensis,Eastern Pacific Bonito,Bonito del Pacífico oriental,fish_and_vertebrates,Chordata,Teleostei,Scombriformes,Scombridae,yes,189,2,http://en.wikipedia.org/wiki/Sarda_chiliensis
+65,common,Sarda chiliensis,Eastern Pacific bonito,bonito del Pacífico oriental,fish_and_vertebrates,Chordata,Teleostei,Scombriformes,Scombridae,yes,190,2,http://en.wikipedia.org/wiki/Sarda_chiliensis
 65,common,Corynactis carnea,,Anémona joya,cnidarians,Cnidaria,Hexacorallia,Corallimorpharia,Corallimorphidae,yes,190,1,
 65,common,Callorhinchus callorynchus,plownose chimaera,Pejegallo,fish_and_vertebrates,Chordata,Holocephali,Chimaeriformes,Callorhinchidae,yes,172,4,http://en.wikipedia.org/wiki/Callorhinchus_callorynchus
-65,common,Argopecten purpuratus,Purple Scallop,Concha de Abanico,mollusks,Mollusca,Bivalvia,Pectinida,Pectinidae,yes,168,1,http://en.wikipedia.org/wiki/Argopecten_purpuratus
+65,common,Argopecten purpuratus,Peruvian scallop,Concha de Abanico,mollusks,Mollusca,Bivalvia,Pectinida,Pectinidae,yes,168,1,http://en.wikipedia.org/wiki/Argopecten_purpuratus
 65,common,Lottia orbignyi,,Lapa señorita,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,154,1,http://en.wikipedia.org/wiki/Lottia_orbignyi
 65,common,Helcogrammoides cunninghami,Cunningham's Triplefin,Diablillo,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Tripterygiidae,yes,153,1,http://en.wikipedia.org/wiki/Cunningham's_triplefin
 65,common,Fissurella picta,,Fisurela oval,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,146,3,https://en.wikipedia.org/wiki/Fissurella_picta
 65,common,Mesodesma donacium,,macha,mollusks,Mollusca,Bivalvia,Venerida,Mesodesmatidae,yes,138,2,
 65,common,Ulva compressa,Thread Weed,,algae,Chlorophyta,Ulvophyceae,Ulvales,Ulvaceae,yes,137,1,http://en.wikipedia.org/wiki/Ulva_compressa
-65,common,Dosidicus gigas,Humboldt Squid,Calamar de Humboldt,mollusks,Mollusca,Cephalopoda,Oegopsida,Ommastrephidae,yes,133,1,http://en.wikipedia.org/wiki/Humboldt_squid
+65,common,Dosidicus gigas,Humboldt squid,Calamar de Humboldt,mollusks,Mollusca,Cephalopoda,Oegopsida,Ommastrephidae,yes,134,1,http://en.wikipedia.org/wiki/Humboldt_squid
 65,common,Fissurella oriens,Small Banded Keyhole Limpet,Lapa bandeada chica,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,127,1,https://en.wikipedia.org/wiki/Fissurella_oriens
 65,common,Semicassis centiquadrata,Panamic bonnet snail,Caracol de capota panameño,mollusks,Mollusca,Gastropoda,Littorinimorpha,Cassidae,yes,120,1,https://en.wikipedia.org/wiki/Semicassis_centiquadrata
 65,common,Fissurella maxima,Giant Keyhole Limpet,Lapa reina,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,97,7,https://en.wikipedia.org/wiki/Fissurella_maxima
 65,common,Doryteuthis gahi,Patagonian Squid,Calamarete del sur,mollusks,Mollusca,Cephalopoda,Myopsida,Loliginidae,yes,100,1,https://en.wikipedia.org/wiki/Doryteuthis_gahi
 65,common,Hepatus chiliensis,,Jaiba puñete,crustaceans,Arthropoda,Malacostraca,Decapoda,Aethridae,yes,98,1,
-65,common,Allopetrolisthes punctatus,,Changai,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,90,1,
+65,common,Allopetrolisthes punctatus,,Changai,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,91,1,
 65,common,Pseudocorystes sicarius,,Jaiba botón,crustaceans,Arthropoda,Malacostraca,Decapoda,Atelecyclidae,yes,89,1,
 65,common,Metacarcinus edwardsii,mola rock crab,Jaiba marmola,crustaceans,Arthropoda,Malacostraca,Decapoda,Cancridae,yes,73,2,http://en.wikipedia.org/wiki/Metacarcinus_edwardsii
-65,common,Pinnotherelia laevigata,,Cangrejito plomo,crustaceans,Arthropoda,Malacostraca,Decapoda,Varunidae,yes,73,1,
+65,common,Pinnotherelia laevigata,,Cangrejito plomo,crustaceans,Arthropoda,Malacostraca,Decapoda,Varunidae,yes,74,1,
 65,common,Pisoides edwardsii,Edwards spider crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Epialtidae,yes,72,1,
+65,common,Engraulis ringens,anchoveta,Anchoveta peruana,fish_and_vertebrates,Chordata,Teleostei,Clupeiformes,Engraulidae,yes,61,10,http://en.wikipedia.org/wiki/Peruvian_anchoveta
 65,common,Eleginops maclovinus,Patagonian Blenny,Róbalo,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Eleginopidae,yes,69,2,http://en.wikipedia.org/wiki/Eleginops_maclovinus
-65,common,Engraulis ringens,anchoveta,Anchoveta peruana,fish_and_vertebrates,Chordata,Teleostei,Clupeiformes,Engraulidae,yes,60,10,http://en.wikipedia.org/wiki/Peruvian_anchoveta
 65,common,Pilumnoides perlatus,Garnet Crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Pilumnoididae,yes,66,1,
 65,common,Allopetrolisthes spinifrons,Chilean Anemone Porcelain Crab,cangrejito de anemona,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,64,1,http://en.wikipedia.org/wiki/Allopetrolisthes_spinifrons
 65,common,Hypsoblennius sordidus,Bull Blenny,,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Blenniidae,yes,50,11,http://en.wikipedia.org/wiki/Hypsoblennius_sordidus
 65,common,Prolatilus jugularis,Pacific Sandperch,Blanquillo,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Pinguipedidae,yes,37,16,https://en.wikipedia.org/wiki/Prolatilus
+65,common,Geitodoris patagonica,Patagonian Geitodoris,Geitodoris patagónica,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,49,0,https://en.wikipedia.org/wiki/Geitodoris_patagonica
 65,common,Grimothea monodon,Red squat lobster,Langosta chaparra,crustaceans,Arthropoda,Malacostraca,Decapoda,Munididae,yes,39,5,https://en.wikipedia.org/wiki/Grimothea_monodon
-65,common,Doris fontainii,Fontaine's Doris,Doris de Fontaine,mollusks,Mollusca,Gastropoda,Nudibranchia,Dorididae,yes,35,0,https://en.wikipedia.org/wiki/Doris_fontainii
+65,common,Myrella challengeriana,Faded Tritonia,Tritonia pálida,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,39,0,
 65,common,Solaster regularis,Antarctic Sun Star,Estrella de sol,echinoderms,Echinodermata,Asteroidea,Valvatida,Solasteridae,yes,27,2,
-65,common,Anisodoris punctuolata,Dotted Sea Slug,Babosa de mar punteada,mollusks,Mollusca,Gastropoda,Nudibranchia,Discodorididae,yes,25,0,
-65,common,Phidiana lottini,Lottin's Aeolid,Nudibranquio Espalda de Fuego,mollusks,Mollusca,Gastropoda,Nudibranchia,Facelinidae,yes,22,0,
+65,common,Gargamella immaculata,Unicoloured Sea Lemon,Babosa limón unicolor,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,21,0,https://en.wikipedia.org/wiki/Gargamella_immaculata
+65,common,Thecacera darwini,Dalmatian sea slug,Babosa dálmata,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,20,0,http://en.wikipedia.org/wiki/Thecacera_darwini
 60,common,Phymanthea pluvia,,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,352,18,
-60,common,Chiton cumingsii,,,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,337,5,
+60,common,Chiton cumingsii,,,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,339,5,
 60,common,Mesotomura echinata,,,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,260,16,
-60,common,Petrolisthes granulosus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,248,1,
+60,common,Petrolisthes granulosus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,249,1,
 60,common,Eurypodius longirostris,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Eurypodiidae,yes,215,2,
 60,common,Balanus laevis,,,crustaceans,Arthropoda,Thecostraca,Balanomorpha,Balanidae,yes,205,5,
 60,common,Trochita trochiformis,,,mollusks,Mollusca,Gastropoda,Littorinimorpha,Calyptraeidae,yes,136,5,https://en.wikipedia.org/wiki/Trochita_trochiformis
 60,common,Scurria araucana,,,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,47,89,
-60,common,Scurria viridula,,,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,106,15,https://en.wikipedia.org/wiki/Scurria_viridula
+60,common,Scurria viridula,,,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,107,15,https://en.wikipedia.org/wiki/Scurria_viridula
 60,common,Notochthamalus scabrosus,,,crustaceans,Arthropoda,Thecostraca,Balanomorpha,Chthamalidae,yes,82,25,http://en.wikipedia.org/wiki/Notochthamalus
 60,common,Pyropia columbina,,,algae,Rhodophyta,Bangiophyceae,Bangiales,Bangiaceae,yes,23,82,https://en.wikipedia.org/wiki/Pyropia_columbina
+60,common,Austrolittorina araucana,,,mollusks,Mollusca,Gastropoda,Littorinimorpha,Littorinidae,yes,79,21,https://en.wikipedia.org/wiki/Austrolittorina_araucana
 60,common,Scurria ceciliana,,,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,42,57,https://en.wikipedia.org/wiki/Scurria_ceciliana
-60,common,Austrolittorina araucana,,,mollusks,Mollusca,Gastropoda,Littorinimorpha,Littorinidae,yes,78,21,https://en.wikipedia.org/wiki/Austrolittorina_araucana
 60,common,Scurria variabilis,,,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,32,66,https://en.wikipedia.org/wiki/Scurria_variabilis
 60,common,Chirodactylus variegatus,Peruvian morwong,Bilagay,fish_and_vertebrates,Chordata,Teleostei,Centrarchiformes,Cheilodactylidae,yes,92,1,https://en.wikipedia.org/wiki/Chirodactylus_variegatus
 60,common,Thaisella chocolata,,Locate,mollusks,Mollusca,Gastropoda,Neogastropoda,Muricidae,yes,90,2,https://en.wikipedia.org/wiki/Thaisella_chocolata
 60,common,Felicioliva peruviana,,Gorilas,mollusks,Mollusca,Gastropoda,Neogastropoda,Olividae,yes,83,4,https://en.wikipedia.org/wiki/Felicioliva_peruviana
 60,common,Aphos porosus,Banded Toadfish,Bagre de mar,fish_and_vertebrates,Chordata,Teleostei,Batrachoidiformes,Batrachoididae,yes,79,4,http://en.wikipedia.org/wiki/Aphos_porosus
-60,common,Antimora rostrata,Violet Cod,Mollera azul,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Moridae,yes,76,2,http://en.wikipedia.org/wiki/Blue_antimora
+60,common,Antimora rostrata,blackcod,Mollera azul,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Moridae,yes,76,2,http://en.wikipedia.org/wiki/Blue_antimora
+60,common,Scartichthys gigas,Giant Blenny,Borracho Gigante,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Blenniidae,yes,65,4,http://en.wikipedia.org/wiki/Scartichthys_gigas
 60,common,Merluccius gayi,chilean whiting,maltona,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Merlucciidae,yes,65,4,http://en.wikipedia.org/wiki/Merluccius_gayi
-60,common,Scartichthys gigas,Giant Blenny,Borracho Gigante,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Blenniidae,yes,63,4,http://en.wikipedia.org/wiki/Scartichthys_gigas
-60,common,Chicoreus capucinus,Mangrove Murex,,mollusks,Mollusca,Gastropoda,Neogastropoda,Muricidae,yes,60,1,http://en.wikipedia.org/wiki/Chicoreus_capucinus
-60,common,Girella laevifrons,Chilean nibbler,Baúnco,fish_and_vertebrates,Chordata,Teleostei,Centrarchiformes,Kyphosidae,yes,58,2,
-60,common,Luidia magellanica,,,echinoderms,Echinodermata,Asteroidea,Paxillosida,Luidiidae,yes,53,4,http://en.wikipedia.org/wiki/Luidia_magellanica
+60,common,Girella laevifrons,Chilean nibbler,Baúnco,fish_and_vertebrates,Chordata,Teleostei,Centrarchiformes,Kyphosidae,yes,59,2,
+60,common,Chicoreus capucinus,mangrove murex,,mollusks,Mollusca,Gastropoda,Neogastropoda,Muricidae,yes,60,1,http://en.wikipedia.org/wiki/Chicoreus_capucinus
+60,common,Luidia magellanica,,,echinoderms,Echinodermata,Asteroidea,Paxillosida,Luidiidae,yes,54,4,http://en.wikipedia.org/wiki/Luidia_magellanica
 60,common,Scartichthys crapulatus,Giant Green Blenny,,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Blenniidae,yes,54,3,http://en.wikipedia.org/wiki/Scartichthys_viridis
 60,common,Scartichthys viridis,Giant Green Blenny,Borrachito,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Blenniidae,yes,54,3,http://en.wikipedia.org/wiki/Scartichthys_viridis
 60,common,Trachurus murphyi,Chilean jack mackerel,Jurel,fish_and_vertebrates,Chordata,Teleostei,Carangiformes,Carangidae,yes,46,8,http://en.wikipedia.org/wiki/Chilean_jack_mackerel
 60,common,Leptonotus blainvilleanus,Deep-bodied Pipefish,Caballito de mar,fish_and_vertebrates,Chordata,Teleostei,Syngnathiformes,Syngnathidae,yes,51,2,https://en.wikipedia.org/wiki/Deep-bodied_pipefish
 60,common,Aplodactylus punctatus,Zamba Marblefish,Jerguilla,fish_and_vertebrates,Chordata,Teleostei,Centrarchiformes,Aplodactylidae,yes,50,2,https://en.wikipedia.org/wiki/Aplodactylus_punctatus
+60,common,Odontesthes regia,Chilean Silverside,Pejerrey de mar,fish_and_vertebrates,Chordata,Teleostei,Atheriniformes,Atherinopsidae,yes,36,9,http://en.wikipedia.org/wiki/Odontesthes_regia
 60,common,Agonopsis chiloensis,Snailfish,Acorazadito,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Agonidae,yes,42,3,https://en.wikipedia.org/wiki/Agonopsis_chiloensis
 60,common,Isacia conceptionis,Cabinza Grunt,Cabinza,fish_and_vertebrates,Chordata,Teleostei,Eupercaria incertae sedis,Haemulidae,yes,35,9,http://en.wikipedia.org/wiki/Isacia_conceptionis
-60,common,Odontesthes regia,Chilean Silverside,Pejerrey de mar,fish_and_vertebrates,Chordata,Teleostei,Atheriniformes,Atherinopsidae,yes,35,9,http://en.wikipedia.org/wiki/Odontesthes_regia
 60,common,Genypterus chilensis,Red Cusk-eel,Congrio colorado,fish_and_vertebrates,Chordata,Teleostei,Ophidiiformes,Ophidiidae,yes,32,11,
 60,common,Congiopodus peruvianus,Horsefish,Cacique,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Congiopodidae,yes,40,2,
 60,common,Bovichtus chilensis,Chilean Thornfish,Torito,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Bovichtidae,yes,39,2,
@@ -178,34 +182,29 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 60,common,Leptuca stenodactylus,Narrow-fingered Fiddler Crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Ocypodidae,yes,29,2,
 60,common,Nauticaris magellanica,Magellan Shrimp,Camaroncito,crustaceans,Arthropoda,Malacostraca,Decapoda,Hippolytidae,yes,26,1,
 60,common,Blepharipoda spinosa,,Cangrejo excavador espinoso,crustaceans,Arthropoda,Malacostraca,Decapoda,Blepharipodidae,yes,21,1,
-60,common,Aeolidia papillosa,Common Grey Sea Slug,Babosa gris,mollusks,Mollusca,Gastropoda,Nudibranchia,Aeolidiidae,yes,19,0,https://en.wikipedia.org/wiki/Aeolidia_papillosa
-60,common,Diaulula variolata,,Babosa áspera,mollusks,Mollusca,Gastropoda,Nudibranchia,Discodorididae,yes,18,0,
 60,common,Psammobatis scobina,Raspthorn Sandskate,Raya Pequén,fish_and_vertebrates,Chordata,Elasmobranchii,Rajiformes,Arhynchobatidae,yes,14,1,
-60,common,Thecacera darwini,Darwin's Thecacera,Nudibranquio de Darwin,mollusks,Mollusca,Gastropoda,Nudibranchia,Polyceridae,yes,15,0,https://en.wikipedia.org/wiki/Thecacera_darwini
-60,common,Rostanga pulchra,Red Sponge Nudibranch,Nudibranquio rojo,mollusks,Mollusca,Gastropoda,Nudibranchia,Discodorididae,yes,14,0,https://en.wikipedia.org/wiki/Rostanga_pulchra
+60,common,Spurilla braziliana,Brazilian Aeolid,Eólido brasileño,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,13,0,http://en.wikipedia.org/wiki/Spurilla_braziliana
 60,common,Bythaelurus canescens,Dusky Catshark,Pejegato Café,fish_and_vertebrates,Chordata,Elasmobranchii,Carcharhiniformes,Scyliorhinidae,yes,8,4,http://en.wikipedia.org/wiki/Dusky_catshark
-60,common,Tyrinna delicata,Delicate Sea Slug,Babosa delicada,mollusks,Mollusca,Gastropoda,Nudibranchia,Tyrinidae,yes,12,0,
-60,common,Okenia luna,Half Moon Nudibranch,Nudibranquio luna,mollusks,Mollusca,Gastropoda,Nudibranchia,Goniodorididae,yes,11,0,
-55,uncommon,Plocamium cartilagineum,,,algae,Rhodophyta,Florideophyceae,Plocamiales,Plocamiaceae,yes,2154,1,
+55,uncommon,Plocamium cartilagineum,,,algae,Rhodophyta,Florideophyceae,Plocamiales,Plocamiaceae,yes,2155,1,
 55,uncommon,Crassilabrum crassilabrum,,,mollusks,Mollusca,Gastropoda,Neogastropoda,Muricidae,yes,457,3,https://en.wikipedia.org/wiki/Obscurella
-55,uncommon,Nacella magellanica,,,mollusks,Mollusca,Gastropoda,,Nacellidae,yes,405,1,http://en.wikipedia.org/wiki/Nacella_magellanica
-55,uncommon,Crepipatella dilatata,,,mollusks,Mollusca,Gastropoda,Littorinimorpha,Calyptraeidae,yes,390,2,http://en.wikipedia.org/wiki/Crepipatella_dilatata
-55,uncommon,Adenocystis utricularis,,,algae,Ochrophyta,Phaeophyceae,Ectocarpales,Adenocystaceae,yes,249,2,
+55,uncommon,Nacella magellanica,,,mollusks,Mollusca,Gastropoda,,Nacellidae,yes,406,1,http://en.wikipedia.org/wiki/Nacella_magellanica
+55,uncommon,Crepipatella dilatata,,,mollusks,Mollusca,Gastropoda,Littorinimorpha,Calyptraeidae,yes,391,2,http://en.wikipedia.org/wiki/Crepipatella_dilatata
+55,uncommon,Adenocystis utricularis,,,algae,Ochrophyta,Phaeophyceae,Ectocarpales,Adenocystaceae,yes,250,2,
 55,uncommon,Dictyota kunthii,,,algae,Ochrophyta,Phaeophyceae,Dictyotales,Dictyotaceae,yes,239,3,
 55,uncommon,Chaetopleura peruviana,,,mollusks,Mollusca,Polyplacophora,Chitonida,Chaetopleuridae,yes,186,1,
 55,uncommon,Hildenbrandia lecannellieri,,,algae,Rhodophyta,Florideophyceae,Hildenbrandiales,Hildenbrandiaceae,yes,15,149,
-55,uncommon,Prisogaster niger,,,mollusks,Mollusca,Gastropoda,Trochida,Turbinidae,yes,157,2,https://en.wikipedia.org/wiki/Prisogaster_niger
+55,uncommon,Prisogaster niger,,,mollusks,Mollusca,Gastropoda,Trochida,Turbinidae,yes,156,2,https://en.wikipedia.org/wiki/Prisogaster_niger
 55,uncommon,Incatella cingulata,,,mollusks,Mollusca,Gastropoda,Caenogastropoda incertae sedis,Turritellidae,yes,146,4,https://en.wikipedia.org/wiki/Incatella_cingulata
 55,uncommon,Petalonia fascia,,,algae,Ochrophyta,Phaeophyceae,Ectocarpales,Scytosiphonaceae,yes,109,2,
 55,uncommon,Fissurella costata,,,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,92,15,http://en.wikipedia.org/wiki/Fissurella_costata
 55,uncommon,Fissurella latimarginata,,,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,102,4,http://en.wikipedia.org/wiki/Fissurella_latimarginata
 55,uncommon,Fissurella nigra,,,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,103,1,http://en.wikipedia.org/wiki/Fissurella_nigra
-55,uncommon,Petrolisthes laevigatus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,97,1,https://en.wikipedia.org/wiki/Petrolisthes_laevigatus
+55,uncommon,Petrolisthes laevigatus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,98,1,https://en.wikipedia.org/wiki/Petrolisthes_laevigatus
 55,uncommon,Bellia picta,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Belliidae,yes,97,1,http://en.wikipedia.org/wiki/Bellia
 55,uncommon,Centroceras clavulatum,,,algae,Rhodophyta,Florideophyceae,Ceramiales,Ceramiaceae,yes,79,9,
 55,uncommon,Gaudichaudia gaudichaudii,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Xanthidae,yes,82,1,
+55,uncommon,Allopetrolisthes angulosus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,76,1,
 55,uncommon,Leucippa pentagona,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Epialtidae,yes,76,1,
-55,uncommon,Allopetrolisthes angulosus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,75,1,
 55,uncommon,Parantheopsis cruentata,,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,59,14,
 55,uncommon,Brachidontes granulatus,,,mollusks,Mollusca,Bivalvia,Mytilida,Mytilidae,yes,62,6,
 55,uncommon,Fissurella limbata,,,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,55,11,https://en.wikipedia.org/wiki/Fissurella_limbata
@@ -214,11 +213,11 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 55,uncommon,Notobalanus flosculus,,,crustaceans,Arthropoda,Thecostraca,Balanomorpha,Balanidae,yes,23,24,https://en.wikipedia.org/wiki/Notobalanus_flosculus
 55,uncommon,Psolus squamatus,scaled sea cucumber,,echinoderms,Echinodermata,Holothuroidea,Dendrochirotida,Psolidae,yes,41,1,
 55,uncommon,Graus nigra,Vieja negra,Vieja Negra,fish_and_vertebrates,Chordata,Teleostei,Centrarchiformes,Kyphosidae,yes,39,2,http://en.wikipedia.org/wiki/Graus_nigra
-55,uncommon,Borostomias antarcticus,Antarctic Snaggletooth,,fish_and_vertebrates,Chordata,Teleostei,Stomiiformes,Stomiidae,yes,39,1,https://en.wikipedia.org/wiki/Large-eye_snaggletooth
+55,uncommon,Borostomias antarcticus,straightline dragonfish,,fish_and_vertebrates,Chordata,Teleostei,Stomiiformes,Stomiidae,yes,39,1,https://en.wikipedia.org/wiki/Large-eye_snaggletooth
 55,uncommon,Caenocentrotus gibbosus,,,echinoderms,Echinodermata,Echinoidea,Camarodonta,Echinometridae,yes,35,3,http://en.wikipedia.org/wiki/Caenocentrotus_gibbosus
 55,uncommon,Chromis crusma,Valparaiso Chromis,Chavela,fish_and_vertebrates,Chordata,Teleostei,Ovalentaria incertae sedis,Pomacentridae,yes,36,2,https://en.wikipedia.org/wiki/Chromis_crusma
 55,uncommon,Gobiesox marmoratus,Austral Clingfish,chalaco,fish_and_vertebrates,Chordata,Teleostei,Gobiesociformes,Gobiesocidae,yes,33,4,
-55,uncommon,Trachipterus altivelis,King-of-the-salmon,rey de los salmones,fish_and_vertebrates,Chordata,Teleostei,Lampriformes,Trachipteridae,yes,32,2,http://en.wikipedia.org/wiki/King-of-the-salmon
+55,uncommon,Trachipterus altivelis,king-of-the-salmon,rey de los salmones,fish_and_vertebrates,Chordata,Teleostei,Lampriformes,Trachipteridae,yes,32,2,http://en.wikipedia.org/wiki/King-of-the-salmon
 55,uncommon,Deania calceus,Birdbeak Dogfish,,fish_and_vertebrates,Chordata,Elasmobranchii,Squaliformes,Centrophoridae,yes,26,4,https://en.wikipedia.org/wiki/Birdbeak_dogfish
 55,uncommon,Cilus gilberti,Corvina Drum,Corvina,fish_and_vertebrates,Chordata,Teleostei,Eupercaria incertae sedis,Sciaenidae,yes,26,3,http://en.wikipedia.org/wiki/Cilus_gilberti
 55,uncommon,Calliclinus geniguttatus,Beautiful Speckled Blenny,Doncella,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Labrisomidae,yes,15,13,https://en.wikipedia.org/wiki/Calliclinus_geniguttatus
@@ -227,27 +226,23 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 55,uncommon,Tetronarce tremens,Chilean Torpedo,Raya Torpedo Peruano,fish_and_vertebrates,Chordata,Elasmobranchii,Torpediniformes,Torpedinidae,yes,23,2,https://en.wikipedia.org/wiki/Chilean_torpedo
 55,uncommon,Myxodes viridis,Emerald Weedfish,Trambollo Verde,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Clinidae,yes,17,7,https://en.wikipedia.org/wiki/Myxodes_viridis
 55,uncommon,Gari solida,Solid Sanguin Clam,Culengue,mollusks,Mollusca,Bivalvia,Cardiida,Psammobiidae,yes,22,2,
+55,uncommon,Diaulula hispida,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,24,0,https://en.wikipedia.org/wiki/Diaulula_hispida
+55,uncommon,Coryphella falklandica,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,23,0,https://en.wikipedia.org/wiki/Coryphella_falklandica
 55,uncommon,Ophichthus remiger,Punctuated Snake Eel,Tieso Punteado,fish_and_vertebrates,Chordata,Teleostei,Anguilliformes,Ophichthidae,yes,12,8,http://en.wikipedia.org/wiki/Punctuated_snake-eel
 55,uncommon,Taliepus marginatus,Ridged Kelp Crab,Patuda,crustaceans,Arthropoda,Malacostraca,Decapoda,Epialtidae,yes,19,1,
+55,uncommon,Polycera marplatensis,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,20,0,https://en.wikipedia.org/wiki/Polycera_marplatensis
+55,uncommon,Euphylax dovii,,Cangrejo nadador,crustaceans,Arthropoda,Malacostraca,Decapoda,Portunidae,yes,18,1,
 55,uncommon,Acanthonyx petiverii,jackknife spider crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Epialtidae,yes,17,1,
-55,uncommon,Euphylax dovii,,Cangrejo nadador,crustaceans,Arthropoda,Malacostraca,Decapoda,Portunidae,yes,17,1,
 55,uncommon,Aculeola nigra,Hooktooth Dogfish,Quelvacho Tizón,fish_and_vertebrates,Chordata,Elasmobranchii,Squaliformes,Etmopteridae,yes,12,5,http://en.wikipedia.org/wiki/Hooktooth_dogfish
 55,uncommon,Pinnaxodes chilensis,,Jaiba del erizo,crustaceans,Arthropoda,Malacostraca,Decapoda,Pinnotheridae,yes,16,1,
 55,uncommon,Libidoclaea granaria,southern spider crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Epialtidae,yes,8,8,
 55,uncommon,Stereomastis sculpta,flatback blind lobster,Langosta espalda plana,crustaceans,Arthropoda,Malacostraca,Decapoda,Polychelidae,yes,9,5,http://en.wikipedia.org/wiki/Polycheles_sculptus
 55,uncommon,Propagurus gaudichaudii,Colorful Hermit Crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Paguridae,yes,13,1,
 55,uncommon,Glyptolithodes cristatipes,,Centolla roja de california.,crustaceans,Arthropoda,Malacostraca,Decapoda,Lithodidae,yes,6,7,https://en.wikipedia.org/wiki/Glyptolithodes
-55,uncommon,Cadlina sparsa,Dark-spot Cadlina,cadlina de manchas dispersas,mollusks,Mollusca,Gastropoda,Nudibranchia,Cadlinidae,yes,9,0,
-55,uncommon,Flabellina trilineata,Three-lined Aeolid,,mollusks,Mollusca,Gastropoda,Nudibranchia,Flabellinidae,yes,8,0,https://en.wikipedia.org/wiki/Flabellina_trilineata
-55,uncommon,Tritonia challengeriana,Challenger Tritonia,Tritonia pálida,mollusks,Mollusca,Gastropoda,Nudibranchia,Tritoniidae,yes,8,0,
-55,uncommon,Chromodoris clenchi,Clench's Chromodoris,,mollusks,Mollusca,Gastropoda,Nudibranchia,Chromodorididae,yes,7,0,
-55,uncommon,Limacia clavigera,Orange-clubbed Sea Slug,,mollusks,Mollusca,Gastropoda,Nudibranchia,Polyceridae,yes,6,0,https://en.wikipedia.org/wiki/Limacia_clavigera
-55,uncommon,Doto uva,Grape-cluster Nudibranch,,mollusks,Mollusca,Gastropoda,Nudibranchia,Dotidae,yes,5,0,
-55,uncommon,Janolus rebeccae,Rebecca's Janolus,,mollusks,Mollusca,Gastropoda,Nudibranchia,Proctonotidae,yes,5,0,
-50,uncommon,Enoplochiton niger,,,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,93,1,https://en.wikipedia.org/wiki/Enoplochiton_niger
+50,uncommon,Enoplochiton niger,,,mollusks,Mollusca,Polyplacophora,Chitonida,Chitonidae,yes,94,1,https://en.wikipedia.org/wiki/Enoplochiton_niger
 50,uncommon,Trematocarpus dichotomus,,,algae,Rhodophyta,Florideophyceae,Plocamiales,Sarcodiaceae,yes,82,1,
 50,uncommon,Gigartina skottsbergii,,,algae,Rhodophyta,Florideophyceae,Gigartinales,Gigartinaceae,yes,79,1,
-50,uncommon,Fissurella peruviana,,,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,62,1,https://en.wikipedia.org/wiki/Fissurella_peruviana
+50,uncommon,Fissurella peruviana,,,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,64,1,https://en.wikipedia.org/wiki/Fissurella_peruviana
 50,uncommon,Rhinocoryne humboldti,,,mollusks,Mollusca,Gastropoda,Caenogastropoda incertae sedis,Batillariidae,yes,55,1,
 50,uncommon,Rhodymenia skottsbergii,,,algae,Rhodophyta,Florideophyceae,Rhodymeniales,Rhodymeniaceae,yes,40,5,
 50,uncommon,Tetralobistes weddellii,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Diogenidae,yes,39,1,
@@ -260,18 +255,18 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 50,uncommon,Helcogrammoides chilensis,Chilean Triplefin,,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Tripterygiidae,yes,18,4,http://en.wikipedia.org/wiki/Helcogrammoides_chilensis
 50,uncommon,Petrolisthes desmarestii,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,20,1,
 50,uncommon,Genypterus maculatus,Black Cusk-eel,Congrio negro,fish_and_vertebrates,Chordata,Teleostei,Ophidiiformes,Ophidiidae,yes,15,4,
-50,uncommon,Asteronyx loveni,Giant Serpent Star,,echinoderms,Echinodermata,Ophiuroidea,Euryalida,Asteronychidae,yes,17,1,
+50,uncommon,Asteronyx loveni,Pipe-cleaner brittlestar,,echinoderms,Echinodermata,Ophiuroidea,Euryalida,Asteronychidae,yes,17,1,
 50,uncommon,Strangomera bentincki,Araucanian herring,,fish_and_vertebrates,Chordata,Teleostei,Clupeiformes,Clupeidae,yes,10,4,https://en.wikipedia.org/wiki/Araucanian_herring
 50,uncommon,Scomberesox scombroides,Southern Saury,,fish_and_vertebrates,Chordata,Teleostei,Beloniformes,Scomberesocidae,yes,12,2,https://en.wikipedia.org/wiki/Scomberesox_scombroides
 50,uncommon,Hippoglossina macrops,Bigeye Flounder,Lenguado,fish_and_vertebrates,Chordata,Teleostei,Pleuronectiformes,Paralichthyidae,yes,5,8,
 50,uncommon,Astrotoma agassizii,white brooding brittle star,,echinoderms,Echinodermata,Ophiuroidea,Euryalida,Gorgonocephalidae,yes,5,8,
 50,uncommon,Stromateus stellatus,Spotted butterfish,Pampanito,fish_and_vertebrates,Chordata,Teleostei,Scombriformes,Stromateidae,yes,11,2,
-50,uncommon,Scartichthys variolatus,Juan Fernández giant blenny,,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Blenniidae,yes,12,1,http://en.wikipedia.org/wiki/Scartichthys_variolatus
+50,uncommon,Aeolidia campbellii,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,13,0,
 50,uncommon,Pterygosquilla armata,Patagonian Mantis Shrimp,,crustaceans,Arthropoda,Malacostraca,Stomatopoda,Squillidae,yes,6,6,
 50,uncommon,Ophiogobius jenynsi,,Chanquete,fish_and_vertebrates,Chordata,Teleostei,Gobiiformes,Gobiidae,yes,10,2,https://en.wikipedia.org/wiki/Ophiogobius_jenynsi
+50,uncommon,Scartichthys variolatus,Juan Fernández giant blenny,,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Blenniidae,yes,11,1,http://en.wikipedia.org/wiki/Scartichthys_variolatus
 50,uncommon,Henricia studeri,,,echinoderms,Echinodermata,Asteroidea,Spinulosida,Echinasteridae,yes,6,5,
 50,uncommon,Eptatretus polytrema,Fourteen-gilled Hagfish,Anguila babosa,fish_and_vertebrates,Chordata,Myxini,Myxiniformes,Myxinidae,yes,10,1,http://en.wikipedia.org/wiki/Eptatretus_polytrema
-50,uncommon,Diaulula hispida,,,mollusks,Mollusca,Gastropoda,Nudibranchia,Discodorididae,yes,10,0,
 50,uncommon,Lepidopa chilensis,Chilean Mole Crab,Cangrejo topo chileno,crustaceans,Arthropoda,Malacostraca,Decapoda,Albuneidae,yes,8,1,
 50,uncommon,Diogenes edwardsii,Edwards's Hermit Crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Diogenidae,yes,6,1,
 50,uncommon,Pinnixa bahamondei,Commensal Parchment Worm Crab,Cangrejo comensal,crustaceans,Arthropoda,Malacostraca,Decapoda,Pinnotheridae,yes,5,1,
@@ -295,7 +290,7 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 45,uncommon,Auchenionchus variolosus,,,fish_and_vertebrates,Chordata,Teleostei,Blenniiformes,Labrisomidae,yes,11,6,http://en.wikipedia.org/wiki/Auchenionchus_variolosus
 45,uncommon,Rhizoclonium tortuosum,,,algae,Chlorophyta,Ulvophyceae,Cladophorales,Cladophoraceae,yes,11,5,
 45,uncommon,Pachycheles grossimanus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,14,2,
-45,uncommon,Petrolisthes tuberculosus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,14,1,
+45,uncommon,Petrolisthes tuberculosus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Porcellanidae,yes,15,1,
 45,uncommon,Cycloxanthops sexdecimdentatus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Xanthidae,yes,12,1,
 45,uncommon,Ethmidium maculatum,Pacific Menhaden,Machuelo,fish_and_vertebrates,Chordata,Teleostei,Clupeiformes,Clupeidae,yes,8,4,https://en.wikipedia.org/wiki/Ethmidium
 45,uncommon,Sebastes capensis,false jacobever,Vieja colorada,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Sebastidae,yes,4,7,https://en.wikipedia.org/wiki/Sebastes_capensis
@@ -305,14 +300,14 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 45,uncommon,Glyphocrangon alata,,Ccamarón acorazado,crustaceans,Arthropoda,Malacostraca,Decapoda,Glyphocrangonidae,yes,3,7,
 45,uncommon,Diplopteraster verrucosus,,,echinoderms,Echinodermata,Asteroidea,Velatida,Pterasteridae,yes,7,3,
 45,uncommon,Centroscyllium granulatum,Granular Dogfish,Tollo Fume,fish_and_vertebrates,Chordata,Elasmobranchii,Squaliformes,Etmopteridae,yes,8,2,http://en.wikipedia.org/wiki/Granular_dogfish
-45,uncommon,Rouleina attrita,Softskin Slickhead,,fish_and_vertebrates,Chordata,Teleostei,Alepocephaliformes,Alepocephalidae,yes,9,1,https://en.wikipedia.org/wiki/Rouleina_attrita
+45,uncommon,Rouleina attrita,softskin smooth-head,,fish_and_vertebrates,Chordata,Teleostei,Alepocephaliformes,Alepocephalidae,yes,9,1,https://en.wikipedia.org/wiki/Rouleina_attrita
 45,uncommon,Sciaena deliciosa,Lorna Drum,Cholo,fish_and_vertebrates,Chordata,Teleostei,Eupercaria incertae sedis,Sciaenidae,yes,9,1,
 45,uncommon,Paralichthys microps,Small-eyed Flounder,Lenguado de Ojo Chico,fish_and_vertebrates,Chordata,Teleostei,Pleuronectiformes,Paralichthyidae,yes,9,1,
 45,uncommon,Semirossia patagonica,Little Patagonian Bobtail,Globito de Patagonia,mollusks,Mollusca,Cephalopoda,Sepiolida,Sepiolidae,yes,6,1,http://en.wikipedia.org/wiki/Semirossia_patagonica
 45,uncommon,Gurgesiella furvescens,Dusky Finless Skate,,fish_and_vertebrates,Chordata,Elasmobranchii,Rajiformes,Gurgesiellidae,yes,2,4,http://en.wikipedia.org/wiki/Dusky_finless_skate
-45,uncommon,Corambe lucea,,,mollusks,Mollusca,Gastropoda,Nudibranchia,Corambidae,yes,6,0,
-45,uncommon,Bornella anguilla,Anguilla Bornella,,mollusks,Mollusca,Gastropoda,Nudibranchia,Bornellidae,yes,4,0,https://en.wikipedia.org/wiki/Bornella_anguilla
-45,uncommon,Felimare agassizii,Agassiz's Chromodorid,Nudibranquio de Agassiz,mollusks,Mollusca,Gastropoda,Nudibranchia,Chromodorididae,yes,3,0,
+45,uncommon,Myrella vorax,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,6,0,
+45,uncommon,Berghia rissodominguezi,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,5,0,https://en.wikipedia.org/wiki/Berghia_rissodominguezi
+45,uncommon,Cadlina sparsa,Dark-spot Cadlina,cadlina de manchas dispersas,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,3,0,http://en.wikipedia.org/wiki/Cadlina_sparsa
 40,uncommon,Alia unifasciata,,,mollusks,Mollusca,Gastropoda,Neogastropoda,Columbellidae,yes,19,3,
 40,uncommon,Bunodactis hermafroditica,,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,7,12,
 40,uncommon,Neorubra decipiens,,,algae,Rhodophyta,Florideophyceae,Halymeniales,Grateloupiaceae,yes,8,8,
@@ -325,7 +320,7 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 40,uncommon,Chaceon affinis,deep-sea red crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Geryonidae,yes,3,2,https://en.wikipedia.org/wiki/Chaceon_affinis
 40,uncommon,Betaeus emarginatus,Hooded Snapping Shrimp,,crustaceans,Arthropoda,Malacostraca,Decapoda,Alpheidae,yes,4,1,
 40,uncommon,Alpheus inca,,Camarón pistola inca,crustaceans,Arthropoda,Malacostraca,Decapoda,Alpheidae,yes,3,1,
-40,uncommon,Pachycara gymninium,Nakedneck Eelpout,,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Zoarcidae,yes,1,1,
+40,uncommon,Pachycara gymninium,nakednape eelpout,,fish_and_vertebrates,Chordata,Teleostei,Perciformes,Zoarcidae,yes,1,1,
 35,rare,Paranthus niveus,,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actinostolidae,yes,8,4,
 35,rare,Aglaophamus macroura,purple worm,,worms,Annelida,Polychaeta,Phyllodocida,Nephtyidae,yes,8,3,
 35,rare,Montemaria horridula,,,algae,Rhodophyta,Florideophyceae,Gigartinales,Caulacanthaceae,yes,9,2,
@@ -340,16 +335,21 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 35,rare,Coryphaenoides delsolari,Trident grenadier,,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Macrouridae,yes,1,4,
 35,rare,Notocheirus hubbsi,Surf Silverside,Pejerrey Surfista,fish_and_vertebrates,Chordata,Teleostei,Atheriniformes,Notocheiridae,yes,1,4,http://en.wikipedia.org/wiki/Notocheirus_hubbsi
 35,rare,Lucigadus nigromaculatus,Blackspot Whiptail,,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Macrouridae,yes,3,2,https://en.wikipedia.org/wiki/Blackspotted_grenadier
-35,rare,Pseudostichopus mollis,sandy sea cucumber,,echinoderms,Echinodermata,Holothuroidea,Persiculida,Pseudostichopodidae,yes,4,1,
+35,rare,Pseudostichopus mollis,soft sea cucumber,,echinoderms,Echinodermata,Holothuroidea,Persiculida,Pseudostichopodidae,yes,4,1,
+35,rare,Holoplocamus papposus,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,4,0,
+35,rare,Marionia cucullata,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,4,0,https://en.wikipedia.org/wiki/Marionia_cucullata
 35,rare,Nezumia convergens,Peruvian grenadier,,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Macrouridae,yes,1,2,
 35,rare,Nezumia pulchella,thumb grenadier,,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Macrouridae,yes,1,2,
 35,rare,Guttigadus globiceps,Fathead Cod,,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Moridae,yes,1,2,https://en.wikipedia.org/wiki/Guttigadus_globiceps
-35,rare,Bathypterois atricolor,Attenuated Spiderfish,,fish_and_vertebrates,Chordata,Teleostei,Aulopiformes,Ipnopidae,yes,2,1,
-35,rare,Notophycis marginata,Forkbeard Cod,,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Moridae,yes,2,1,https://en.wikipedia.org/wiki/Dwarf_codling
+35,rare,Bathypterois atricolor,attenuated spider fish,,fish_and_vertebrates,Chordata,Teleostei,Aulopiformes,Ipnopidae,yes,2,1,
+35,rare,Notophycis marginata,dwarf codling,,fish_and_vertebrates,Chordata,Teleostei,Gadiformes,Moridae,yes,2,1,https://en.wikipedia.org/wiki/Dwarf_codling
 35,rare,Hydrolagus macrophthalmus,Big-eye Chimaera,,fish_and_vertebrates,Chordata,Holocephali,Chimaeriformes,Chimaeridae,yes,2,1,http://en.wikipedia.org/wiki/Bigeye_chimaera
 35,rare,Ophiomusa lymani,Lyman's Deep-sea Brittle Star,,echinoderms,Echinodermata,Ophiuroidea,Ophiurida,Ophiomusaidae,yes,2,1,
+35,rare,Tritonia odhneri,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,3,0,http://en.wikipedia.org/wiki/Tritonia_odhneri
 35,rare,Schedophilus huttoni,New Zealand Ruffe,,fish_and_vertebrates,Chordata,Teleostei,Scombriformes,Centrolophidae,yes,1,1,https://en.wikipedia.org/wiki/New_Zealand_ruffe
 35,rare,Hippasteria lepidonotus,,,echinoderms,Echinodermata,Asteroidea,Valvatida,Goniasteridae,yes,1,1,
+35,rare,Janolus rebeccae,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,1,0,
+35,rare,Trapania rocheae,,,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,1,0,
 30,rare,Parantheopsis ocellata,,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Actiniidae,yes,3,14,
 30,rare,Scurria plana,,,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,2,10,https://en.wikipedia.org/wiki/Scurria_plana
 30,rare,Aeneator fontainei,,,mollusks,Mollusca,Gastropoda,Neogastropoda,Tudiclidae,yes,2,10,
@@ -381,7 +381,7 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 25,rare,Retrotapes lenticularis,,,mollusks,Mollusca,Bivalvia,Venerida,Veneridae,yes,3,1,
 25,rare,Centroscyllium nigrum,Combtooth Dogfish,tollo negro,fish_and_vertebrates,Chordata,Elasmobranchii,Squaliformes,Etmopteridae,yes,0,3,http://en.wikipedia.org/wiki/Combtooth_dogfish
 25,rare,Hormathia pectinata,,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Hormathiidae,yes,1,2,
-25,rare,Madrepora oculata,zigzag coral,,cnidarians,Cnidaria,Hexacorallia,Scleractinia,Madreporidae,yes,0,2,http://en.wikipedia.org/wiki/Madrepora_oculata
+25,rare,Madrepora oculata,ocular coral,,cnidarians,Cnidaria,Hexacorallia,Scleractinia,Madreporidae,yes,0,2,http://en.wikipedia.org/wiki/Madrepora_oculata
 25,rare,Cyclocardia compressa,,,mollusks,Mollusca,Bivalvia,Carditida,Carditidae,yes,1,1,
 25,rare,Nucula pisum,,,mollusks,Mollusca,Bivalvia,Nuculida,Nuculidae,yes,1,1,
 25,rare,Ulvella lens,,,algae,Chlorophyta,Ulvophyceae,Ulvales,Ulvellaceae,no,1,44,
@@ -400,7 +400,7 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 20,rare,Pseudarchaster discus,,,echinoderms,Echinodermata,Asteroidea,Paxillosida,Pseudarchasteridae,no,0,5,https://en.wikipedia.org/wiki/Pseudarchaster_discus
 20,rare,Plesionika richardi,Richard's shrimp,,crustaceans,Arthropoda,Malacostraca,Decapoda,Pandalidae,no,0,1,
 20,rare,Sympagurus dimorphus,cloaked hermit crab,,crustaceans,Arthropoda,Malacostraca,Decapoda,Parapaguridae,no,0,1,
-20,rare,Nephropsis occidentalis,Pacific lobsterette,Cigala del Pacifico,crustaceans,Arthropoda,Malacostraca,Decapoda,Nephropidae,no,0,1,
+20,rare,Nephropsis occidentalis,Pacific lobsterette,caramón gigante,crustaceans,Arthropoda,Malacostraca,Decapoda,Nephropidae,no,0,1,
 15,unlikely,Paraprionospio pinnata,,,worms,Annelida,Polychaeta,Spionida,Spionidae,yes,2,4,
 15,unlikely,Melinna cristata,,,worms,Annelida,Polychaeta,Terebellida,Melinnidae,yes,3,2,
 15,unlikely,Spiophanes kroyeri,,,worms,Annelida,Polychaeta,Spionida,Spionidae,yes,2,2,
@@ -451,7 +451,7 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 10,unlikely,Oncopagurus haigae,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Parapaguridae,no,0,1,
 10,unlikely,Lithodes turkayi,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Lithodidae,no,0,1,https://en.wikipedia.org/wiki/Lithodes_turkayi
 10,unlikely,Pasiphaea acutifrons,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Pasiphaeidae,no,0,1,
-10,unlikely,Neolithodes diomedeae,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Lithodidae,no,0,1,https://en.wikipedia.org/wiki/Neolithodes_diomedeae
+10,unlikely,Neolithodes diomedeae,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Lithodidae,no,0,1,
 10,unlikely,Munidopsis aspera,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Munidopsidae,no,0,1,
 10,unlikely,Munidopsis palmatus,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Munidopsidae,no,0,1,
 10,unlikely,Munidopsis villosa,,,crustaceans,Arthropoda,Malacostraca,Decapoda,Munidopsidae,no,0,1,
