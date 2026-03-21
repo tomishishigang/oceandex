@@ -3,11 +3,17 @@ import type { DiveSession } from '../db/types'
 import type { Species } from '../data/types'
 import { locale } from '../hooks/useLocale'
 
+export type BackgroundStyle = 'ocean' | 'deep' | 'night' | 'photo'
+export type CardStyle = 'full' | 'minimal'
+
 interface CardData {
   session: DiveSession
   speciesList: Species[]
   speciesCount: number
   badgeCount: number
+  backgroundStyle: BackgroundStyle
+  cardStyle: CardStyle
+  backgroundPhoto?: Blob | null
 }
 
 /** Load an image from URL, returns null on failure */
@@ -39,6 +45,21 @@ function roundRect(
   ctx.closePath()
 }
 
+const BACKGROUNDS: Record<BackgroundStyle, { stops: [number, string][] }> = {
+  ocean: {
+    stops: [[0, '#042f2e'], [0.4, '#115e59'], [0.7, '#0f766e'], [1, '#0d9488']],
+  },
+  deep: {
+    stops: [[0, '#0c1445'], [0.4, '#1e3a8a'], [0.7, '#1d4ed8'], [1, '#3b82f6']],
+  },
+  night: {
+    stops: [[0, '#0a0a0a'], [0.3, '#1a1a2e'], [0.7, '#16213e'], [1, '#0f3460']],
+  },
+  photo: {
+    stops: [[0, '#042f2e'], [1, '#0d9488']], // fallback if no photo
+  },
+}
+
 export async function renderCard(
   layout: CardLayout,
   data: CardData,
@@ -47,40 +68,66 @@ export async function renderCard(
   const canvas = new OffscreenCanvas(width, height)
   const ctx = canvas.getContext('2d')!
   const isEs = locale.value === 'es'
+  const isMinimal = data.cardStyle === 'minimal'
 
-  // === Background gradient ===
-  const gradient = ctx.createLinearGradient(0, 0, 0, height)
-  gradient.addColorStop(0, '#042f2e')   // ocean-950
-  gradient.addColorStop(0.4, '#115e59') // ocean-800
-  gradient.addColorStop(0.7, '#0f766e') // ocean-700
-  gradient.addColorStop(1, '#0d9488')   // ocean-600
-  ctx.fillStyle = gradient
-  ctx.fillRect(0, 0, width, height)
+  // === Background ===
+  if (data.backgroundStyle === 'photo' && data.backgroundPhoto) {
+    // User photo as background
+    const bgBitmap = await createImageBitmap(data.backgroundPhoto)
+    // Cover the canvas
+    const scale = Math.max(width / bgBitmap.width, height / bgBitmap.height)
+    const sw = width / scale
+    const sh = height / scale
+    const sx = (bgBitmap.width - sw) / 2
+    const sy = (bgBitmap.height - sh) / 2
+    ctx.drawImage(bgBitmap, sx, sy, sw, sh, 0, 0, width, height)
+    bgBitmap.close()
 
-  // === Decorative wave pattern ===
-  ctx.globalAlpha = 0.08
-  ctx.fillStyle = '#ffffff'
-  for (let i = 0; i < 5; i++) {
-    const y = height * 0.15 + i * 120
-    ctx.beginPath()
-    ctx.moveTo(0, y)
-    for (let x = 0; x <= width; x += 10) {
-      ctx.lineTo(x, y + Math.sin(x * 0.01 + i * 2) * 30)
+    // Dark overlay for text readability
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.55)'
+    ctx.fillRect(0, 0, width, height)
+
+    // Subtle gradient overlay at bottom
+    const bottomGrad = ctx.createLinearGradient(0, height * 0.6, 0, height)
+    bottomGrad.addColorStop(0, 'rgba(0,0,0,0)')
+    bottomGrad.addColorStop(1, 'rgba(0,0,0,0.4)')
+    ctx.fillStyle = bottomGrad
+    ctx.fillRect(0, 0, width, height)
+  } else {
+    // Gradient background
+    const bg = BACKGROUNDS[data.backgroundStyle]
+    const gradient = ctx.createLinearGradient(0, 0, 0, height)
+    for (const [stop, color] of bg.stops) {
+      gradient.addColorStop(stop, color)
     }
-    ctx.lineTo(width, height)
-    ctx.lineTo(0, height)
-    ctx.fill()
+    ctx.fillStyle = gradient
+    ctx.fillRect(0, 0, width, height)
+
+    // Decorative wave pattern
+    ctx.globalAlpha = 0.06
+    ctx.fillStyle = '#ffffff'
+    for (let i = 0; i < 4; i++) {
+      const y = height * 0.2 + i * 140
+      ctx.beginPath()
+      ctx.moveTo(0, y)
+      for (let x = 0; x <= width; x += 10) {
+        ctx.lineTo(x, y + Math.sin(x * 0.008 + i * 1.5) * 40)
+      }
+      ctx.lineTo(width, height)
+      ctx.lineTo(0, height)
+      ctx.fill()
+    }
+    ctx.globalAlpha = 1
   }
-  ctx.globalAlpha = 1
 
-  let cursorY = padding
+  let cursorY = padding + 20
 
-  // === Wave emoji + App title ===
-  ctx.font = `bold ${layout.titleSize}px system-ui, -apple-system, sans-serif`
+  // === Wave emoji ===
+  ctx.font = `${layout.titleSize + 10}px system-ui`
   ctx.fillStyle = '#ffffff'
   ctx.textAlign = 'center'
   ctx.fillText('🌊', width / 2, cursorY + layout.titleSize)
-  cursorY += layout.titleSize + 20
+  cursorY += layout.titleSize + 24
 
   // === Dive site name ===
   ctx.font = `bold ${layout.titleSize}px system-ui, -apple-system, sans-serif`
@@ -90,7 +137,7 @@ export async function renderCard(
 
   // === Date ===
   ctx.font = `${layout.subtitleSize}px system-ui, -apple-system, sans-serif`
-  ctx.fillStyle = '#99f6e4' // ocean-200
+  ctx.fillStyle = 'rgba(255,255,255,0.8)'
   const dateStr = new Date(data.session.date + 'T12:00:00').toLocaleDateString(
     isEs ? 'es-CL' : 'en-US',
     { year: 'numeric', month: 'long', day: 'numeric' },
@@ -99,46 +146,44 @@ export async function renderCard(
   cursorY += layout.subtitleSize + 40
 
   // === Conditions pills ===
-  const conditions: string[] = []
-  if (data.session.maxDepthM != null) conditions.push(`🌊 ${data.session.maxDepthM}m`)
-  if (data.session.waterTempC != null) conditions.push(`🌡️ ${data.session.waterTempC}°C`)
-  if (data.session.visibilityM != null) conditions.push(`👁 ${data.session.visibilityM}m`)
-  if (data.session.current) {
-    const labels: Record<string, string> = { none: '⚡ Calm', light: '⚡ Light', moderate: '⚡ Mod', strong: '⚡ Strong' }
-    conditions.push(labels[data.session.current] ?? '')
-  }
+  if (!isMinimal) {
+    const conditions: string[] = []
+    if (data.session.maxDepthM != null) conditions.push(`🌊 ${data.session.maxDepthM}m`)
+    if (data.session.waterTempC != null) conditions.push(`🌡️ ${data.session.waterTempC}°C`)
+    if (data.session.visibilityM != null) conditions.push(`👁 ${data.session.visibilityM}m`)
 
-  if (conditions.length > 0) {
-    ctx.font = `${layout.bodySize}px system-ui, -apple-system, sans-serif`
-    const condText = conditions.join('   ')
+    if (conditions.length > 0) {
+      ctx.font = `${layout.bodySize}px system-ui, -apple-system, sans-serif`
+      const condText = conditions.join('   ')
+      const textWidth = ctx.measureText(condText).width
+      const pillW = textWidth + 60
+      const pillH = layout.bodySize + 30
+      const pillX = (width - pillW) / 2
 
-    // Draw pill background
-    const textWidth = ctx.measureText(condText).width
-    const pillW = textWidth + 60
-    const pillH = layout.bodySize + 30
-    const pillX = (width - pillW) / 2
+      ctx.fillStyle = 'rgba(255,255,255,0.15)'
+      roundRect(ctx, pillX, cursorY, pillW, pillH, pillH / 2)
+      ctx.fill()
 
-    ctx.fillStyle = 'rgba(255,255,255,0.12)'
-    roundRect(ctx, pillX, cursorY, pillW, pillH, pillH / 2)
-    ctx.fill()
-
-    ctx.fillStyle = '#ccfbf1' // ocean-100
-    ctx.textAlign = 'center'
-    ctx.fillText(condText, width / 2, cursorY + pillH - 12)
-    cursorY += pillH + 40
+      ctx.fillStyle = 'rgba(255,255,255,0.9)'
+      ctx.textAlign = 'center'
+      ctx.fillText(condText, width / 2, cursorY + pillH - 12)
+      cursorY += pillH + 40
+    }
+  } else {
+    cursorY += 20
   }
 
   // === Species photo grid ===
   const { photoGridSize, photoGap, photoCols, photoRows } = layout
-  const maxPhotos = photoCols * photoRows
+  const maxPhotos = isMinimal ? Math.min(3, photoCols) : photoCols * photoRows
   const speciesWithPhotos = data.speciesList.filter(s => s.primary_photo?.url_medium)
   const photosToShow = speciesWithPhotos.slice(0, maxPhotos)
 
   if (photosToShow.length > 0) {
-    const gridW = photoCols * photoGridSize + (photoCols - 1) * photoGap
+    const actualCols = Math.min(photosToShow.length, photoCols)
+    const gridW = actualCols * photoGridSize + (actualCols - 1) * photoGap
     const startX = (width - gridW) / 2
 
-    // Load images in parallel
     const images = await Promise.all(
       photosToShow.map(s => loadImage(s.primary_photo!.url_medium!))
     )
@@ -149,15 +194,14 @@ export async function renderCard(
       const x = startX + col * (photoGridSize + photoGap)
       const y = cursorY + row * (photoGridSize + photoGap)
 
-      // Draw rounded photo
-      roundRect(ctx, x, y, photoGridSize, photoGridSize, 20)
+      // Rounded photo with shadow
       ctx.save()
+      roundRect(ctx, x, y, photoGridSize, photoGridSize, 20)
       ctx.clip()
 
       if (images[i]) {
         ctx.drawImage(images[i]!, x, y, photoGridSize, photoGridSize)
       } else {
-        // Fallback color
         ctx.fillStyle = 'rgba(255,255,255,0.1)'
         ctx.fillRect(x, y, photoGridSize, photoGridSize)
         ctx.font = `${photoGridSize * 0.4}px system-ui`
@@ -165,6 +209,12 @@ export async function renderCard(
         ctx.textAlign = 'center'
         ctx.fillText('🐟', x + photoGridSize / 2, y + photoGridSize * 0.65)
       }
+
+      // Subtle border
+      ctx.strokeStyle = 'rgba(255,255,255,0.2)'
+      ctx.lineWidth = 2
+      roundRect(ctx, x, y, photoGridSize, photoGridSize, 20)
+      ctx.stroke()
 
       ctx.restore()
     }
@@ -184,10 +234,10 @@ export async function renderCard(
   )
   cursorY += layout.subtitleSize + 24
 
-  // === Badges ===
-  if (data.badgeCount > 0) {
+  // === Badges (full style only) ===
+  if (!isMinimal && data.badgeCount > 0) {
     ctx.font = `${layout.bodySize}px system-ui, -apple-system, sans-serif`
-    ctx.fillStyle = '#fde047' // sand-300
+    ctx.fillStyle = '#fde047'
     ctx.fillText(
       `🏆 ${data.badgeCount} ${isEs ? 'logros obtenidos' : 'badges earned'}`,
       width / 2,
@@ -196,10 +246,10 @@ export async function renderCard(
     cursorY += layout.bodySize + 20
   }
 
-  // === Branding at bottom ===
+  // === Branding ===
   const brandY = height - padding
   ctx.font = `bold ${layout.bodySize}px system-ui, -apple-system, sans-serif`
-  ctx.fillStyle = 'rgba(255,255,255,0.5)'
+  ctx.fillStyle = 'rgba(255,255,255,0.4)'
   ctx.textAlign = 'center'
   ctx.fillText(
     `${isEs ? 'Registrado con' : 'Logged with'} Oceandex 🌊`,
@@ -207,6 +257,5 @@ export async function renderCard(
     brandY,
   )
 
-  // === Export as PNG ===
   return canvas.convertToBlob({ type: 'image/png' })
 }
