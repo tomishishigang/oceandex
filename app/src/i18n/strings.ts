@@ -232,6 +232,25 @@ const strings: Record<string, Record<Locale, string>> = {
   'identify.low_confidence': { es: 'Baja confianza — verifica manualmente', en: 'Low confidence — verify manually' },
   'identify.error': { es: 'Error al identificar. Intenta de nuevo.', en: 'Identification failed. Try again.' },
 
+  // V6: Community sightings
+  'community.title': { es: 'Comunidad', en: 'Community' },
+  'community.recent': { es: 'Actividad reciente', en: 'Recent activity' },
+  'community.top_species': { es: 'Especies más vistas', en: 'Most seen species' },
+  'community.stats': { es: 'Estadísticas del sitio', en: 'Site stats' },
+  'community.total_dives': { es: 'inmersiones totales', en: 'total dives' },
+  'community.total_divers': { es: 'buzos', en: 'divers' },
+  'community.total_species': { es: 'especies registradas', en: 'species recorded' },
+  'community.spotted_at': { es: 'visto en', en: 'spotted at' },
+  'community.ago': { es: 'hace', en: 'ago' },
+  'community.minutes': { es: 'minutos', en: 'minutes' },
+  'community.hours': { es: 'horas', en: 'hours' },
+  'community.days': { es: 'días', en: 'days' },
+  'community.sightings': { es: 'avistamientos', en: 'sightings' },
+  'community.divers_seen': { es: 'buzos lo han visto', en: 'divers have seen it' },
+  'community.seen_at_sites': { es: 'Visto en estos sitios', en: 'Seen at these sites' },
+  'community.no_data': { es: 'Aún no hay datos de la comunidad', en: 'No community data yet' },
+  'community.this_month': { es: 'este mes', en: 'this month' },
+
   // Language toggle
   'lang.switch': { es: 'EN', en: 'ES' },
 }
