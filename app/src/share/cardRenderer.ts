@@ -146,7 +146,7 @@ export async function renderCard(
   cursorY += layout.subtitleSize + 40
 
   // === Conditions pills ===
-  if (!isMinimal) {
+  {
     const conditions: string[] = []
     if (data.session.maxDepthM != null) conditions.push(`🌊 ${data.session.maxDepthM}m`)
     if (data.session.waterTempC != null) conditions.push(`🌡️ ${data.session.waterTempC}°C`)
@@ -168,14 +168,41 @@ export async function renderCard(
       ctx.textAlign = 'center'
       ctx.fillText(condText, width / 2, cursorY + pillH - 12)
       cursorY += pillH + 40
+    } else {
+      cursorY += 20
     }
-  } else {
-    cursorY += 20
+  }
+
+  // === Minimal: show notes if available, then skip to branding ===
+  if (isMinimal) {
+    if (data.session.notes) {
+      ctx.font = `italic ${layout.bodySize}px system-ui, -apple-system, sans-serif`
+      ctx.fillStyle = 'rgba(255,255,255,0.7)'
+      ctx.textAlign = 'center'
+      // Truncate long notes
+      const notesText = data.session.notes.length > 80
+        ? data.session.notes.slice(0, 77) + '...'
+        : data.session.notes
+      ctx.fillText(`"${notesText}"`, width / 2, cursorY + layout.bodySize)
+      cursorY += layout.bodySize + 20
+    }
+
+    // Skip species grid, count, and badges — go straight to branding
+    const brandY = height - padding
+    ctx.font = `bold ${layout.bodySize}px system-ui, -apple-system, sans-serif`
+    ctx.fillStyle = 'rgba(255,255,255,0.4)'
+    ctx.textAlign = 'center'
+    ctx.fillText(
+      `${isEs ? 'Registrado con' : 'Logged with'} Oceandex 🌊`,
+      width / 2,
+      brandY,
+    )
+    return canvas.convertToBlob({ type: 'image/png' })
   }
 
   // === Species photo grid ===
   const { photoGridSize, photoGap, photoCols, photoRows } = layout
-  const maxPhotos = isMinimal ? Math.min(3, photoCols) : photoCols * photoRows
+  const maxPhotos = photoCols * photoRows
   const speciesWithPhotos = data.speciesList.filter(s => s.primary_photo?.url_medium)
   const photosToShow = speciesWithPhotos.slice(0, maxPhotos)
 
@@ -234,8 +261,8 @@ export async function renderCard(
   )
   cursorY += layout.subtitleSize + 24
 
-  // === Badges (full style only) ===
-  if (!isMinimal && data.badgeCount > 0) {
+  // === Badges ===
+  if (data.badgeCount > 0) {
     ctx.font = `${layout.bodySize}px system-ui, -apple-system, sans-serif`
     ctx.fillStyle = '#fde047'
     ctx.fillText(
