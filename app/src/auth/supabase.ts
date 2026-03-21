@@ -14,6 +14,7 @@ export function getSupabase(): SupabaseClient {
       auth: {
         persistSession: true,
         autoRefreshToken: true,
+        flowType: 'implicit',
       },
     })
   }
