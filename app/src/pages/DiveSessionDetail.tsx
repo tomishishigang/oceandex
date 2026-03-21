@@ -14,6 +14,7 @@ import type { DiveSession, Sighting } from '../db'
 import { speciesById } from '../data/species'
 import { categoryMap } from '../data/categories'
 import { SpeciesPicker } from '../components/SpeciesPicker'
+import { PhotoCapture } from '../components/PhotoCapture'
 
 export function DiveSessionDetail() {
   const { params } = useRoute()
@@ -131,33 +132,39 @@ export function DiveSessionDetail() {
               return (
                 <div
                   key={sighting.id}
-                  class="bg-white rounded-xl p-3 shadow-sm border border-ocean-100 flex items-center gap-3"
+                  class="bg-white rounded-xl p-3 shadow-sm border border-ocean-100"
                 >
-                  <a href={href(`/species/${sp.id}`)} class="shrink-0 no-underline">
-                    {sp.primary_photo?.url_medium ? (
-                      <img
-                        src={sp.primary_photo.url_medium}
-                        alt={sp.scientific_name}
-                        class="w-12 h-12 rounded-lg object-cover"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div class="w-12 h-12 rounded-lg bg-ocean-100 flex items-center justify-center text-lg">
-                        {cat?.emoji ?? '🌊'}
-                      </div>
-                    )}
-                  </a>
-                  <a href={href(`/species/${sp.id}`)} class="flex-1 min-w-0 no-underline text-ocean-950">
-                    <p class="text-sm font-semibold truncate">{name}</p>
-                    <p class="text-[10px] text-ocean-500 italic truncate">{sp.scientific_name}</p>
-                  </a>
-                  <button
-                    onClick={() => handleRemoveSighting(sighting.id)}
-                    class="text-ocean-300 hover:text-red-500 text-xs transition-colors shrink-0"
-                    aria-label="Remove sighting"
-                  >
-                    ✕
-                  </button>
+                  <div class="flex items-center gap-3">
+                    <a href={href(`/species/${sp.id}`)} class="shrink-0 no-underline">
+                      {sp.primary_photo?.url_medium ? (
+                        <img
+                          src={sp.primary_photo.url_medium}
+                          alt={sp.scientific_name}
+                          class="w-12 h-12 rounded-lg object-cover"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div class="w-12 h-12 rounded-lg bg-ocean-100 flex items-center justify-center text-lg">
+                          {cat?.emoji ?? '🌊'}
+                        </div>
+                      )}
+                    </a>
+                    <a href={href(`/species/${sp.id}`)} class="flex-1 min-w-0 no-underline text-ocean-950">
+                      <p class="text-sm font-semibold truncate">{name}</p>
+                      <p class="text-[10px] text-ocean-500 italic truncate">{sp.scientific_name}</p>
+                    </a>
+                    <button
+                      onClick={() => handleRemoveSighting(sighting.id)}
+                      class="text-ocean-300 hover:text-red-500 text-xs transition-colors shrink-0"
+                      aria-label="Remove sighting"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  {/* Photos for this sighting */}
+                  <div class="mt-2 ml-15">
+                    <PhotoCapture sightingId={sighting.id} />
+                  </div>
                 </div>
               )
             })}

@@ -1,5 +1,6 @@
 import { db } from './db'
-import type { DiveSession, Sighting, ExportData, CurrentStrength } from './types'
+import type { DiveSession, Sighting, SightingPhoto, ExportData, ExportDataV3, ExportPhotoData, CurrentStrength } from './types'
+import { compressImage, generateThumbnail, blobToBase64, base64ToBlob } from './photos'
 
 // === Sessions ===
 
@@ -92,30 +93,80 @@ export async function getSeenCount(): Promise<number> {
   return ids.size
 }
 
+// === Photos ===
+
+export async function addPhotoToSighting(sightingId: string, file: File): Promise<SightingPhoto> {
+  const { blob, width, height } = await compressImage(file)
+  const thumbnailBlob = await generateThumbnail(blob)
+
+  const photo: SightingPhoto = {
+    id: crypto.randomUUID(),
+    sightingId,
+    blob,
+    thumbnailBlob,
+    width,
+    height,
+    createdAt: new Date().toISOString(),
+  }
+  await db.sightingPhotos.add(photo)
+  return photo
+}
+
+export async function deletePhoto(id: string): Promise<void> {
+  await db.sightingPhotos.delete(id)
+}
+
+export async function getPhotosForSighting(sightingId: string): Promise<SightingPhoto[]> {
+  return db.sightingPhotos.where('sightingId').equals(sightingId).toArray()
+}
+
+export async function getPhotoCount(): Promise<number> {
+  return db.sightingPhotos.count()
+}
+
 // === Export / Import ===
 
-export async function exportData(): Promise<ExportData> {
+export async function exportData(includePhotos = false): Promise<ExportDataV3> {
   const [sessions, sightings] = await Promise.all([
     db.diveSessions.toArray(),
     db.sightings.toArray(),
   ])
-  return {
-    version: 2,
+
+  const result: ExportDataV3 = {
+    version: 3,
     exportedAt: new Date().toISOString(),
     sessions,
     sightings,
   }
+
+  if (includePhotos) {
+    const allPhotos = await db.sightingPhotos.toArray()
+    const photoData: ExportPhotoData[] = []
+    for (const photo of allPhotos) {
+      photoData.push({
+        id: photo.id,
+        sightingId: photo.sightingId,
+        base64: await blobToBase64(photo.blob),
+        width: photo.width,
+        height: photo.height,
+        createdAt: photo.createdAt,
+      })
+    }
+    result.photos = photoData
+  }
+
+  return result
 }
 
-export async function importData(data: ExportData): Promise<{ sessions: number; sightings: number }> {
+export async function importData(data: ExportData): Promise<{ sessions: number; sightings: number; photos: number }> {
   let sessionsImported = 0
   let sightingsImported = 0
+  let photosImported = 0
 
-  await db.transaction('rw', db.diveSessions, db.sightings, async () => {
+  await db.transaction('rw', db.diveSessions, db.sightings, db.sightingPhotos, async () => {
     for (const session of data.sessions) {
       const existing = await db.diveSessions.get(session.id)
       if (!existing) {
-        // Backfill v2 fields for v1 imports
         const normalized: DiveSession = {
           ...session,
           waterTempC: session.waterTempC ?? null,
@@ -133,9 +184,29 @@ export async function importData(data: ExportData): Promise<{ sessions: number; 
         sightingsImported++
       }
     }
+    // Import photos from v3 exports
+    if ('photos' in data && data.photos) {
+      for (const photoData of data.photos) {
+        const existing = await db.sightingPhotos.get(photoData.id)
+        if (!existing) {
+          const blob = base64ToBlob(photoData.base64)
+          const thumbnailBlob = await generateThumbnail(blob)
+          await db.sightingPhotos.add({
+            id: photoData.id,
+            sightingId: photoData.sightingId,
+            blob,
+            thumbnailBlob,
+            width: photoData.width,
+            height: photoData.height,
+            createdAt: photoData.createdAt,
+          })
+          photosImported++
+        }
+      }
+    }
   })
 
-  return { sessions: sessionsImported, sightings: sightingsImported }
+  return { sessions: sessionsImported, sightings: sightingsImported, photos: photosImported }
 }
 
 // === Site-specific queries ===

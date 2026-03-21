@@ -1,5 +1,6 @@
 import { href } from '../base'
 import { t } from '../hooks/useLocale'
+import { useEarnedCount } from '../hooks/useBadges'
 import { useLiveQuery, getAllSessions, getSeenCount } from '../db'
 import type { DiveSession } from '../db'
 import { getSightingsForSession } from '../db'
@@ -43,6 +44,7 @@ function SessionCard({ session }: { session: DiveSession }) {
 export function DiveLog() {
   const sessions = useLiveQuery(() => getAllSessions(), [], [] as DiveSession[])
   const seenCount = useLiveQuery(() => getSeenCount(), [], 0)
+  const badgeCount = useEarnedCount()
 
   return (
     <div class="px-4 py-4">
@@ -60,6 +62,11 @@ export function DiveLog() {
             <span class="text-sm font-bold text-ocean-700">{seenCount}</span>
             <span class="text-xs text-ocean-500">{t('log.species_seen')}</span>
           </div>
+          <a href={href('/badges')} class="flex items-center gap-1.5 no-underline">
+            <span class="text-lg">🏆</span>
+            <span class="text-sm font-bold text-ocean-700">{badgeCount}</span>
+            <span class="text-xs text-ocean-500">{t('badges.count')}</span>
+          </a>
         </div>
 
         {/* Progress bar */}

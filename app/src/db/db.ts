@@ -1,9 +1,10 @@
 import Dexie, { type EntityTable } from 'dexie'
-import type { DiveSession, Sighting } from './types'
+import type { DiveSession, Sighting, SightingPhoto } from './types'
 
 const db = new Dexie('oceandex') as Dexie & {
   diveSessions: EntityTable<DiveSession, 'id'>
   sightings: EntityTable<Sighting, 'id'>
+  sightingPhotos: EntityTable<SightingPhoto, 'id'>
 }
 
 // v1: original schema
@@ -12,7 +13,7 @@ db.version(1).stores({
   sightings: 'id, sessionId, speciesId, [sessionId+speciesId]',
 })
 
-// v2: add dive conditions fields (indexes unchanged, just data migration)
+// v2: add dive conditions fields
 db.version(2).stores({
   diveSessions: 'id, date',
   sightings: 'id, sessionId, speciesId, [sessionId+speciesId]',
@@ -22,6 +23,13 @@ db.version(2).stores({
     session.visibilityM = session.visibilityM ?? null
     session.current = session.current ?? null
   })
+})
+
+// v3: add sighting photos table
+db.version(3).stores({
+  diveSessions: 'id, date',
+  sightings: 'id, sessionId, speciesId, [sessionId+speciesId]',
+  sightingPhotos: 'id, sightingId',
 })
 
 export { db }

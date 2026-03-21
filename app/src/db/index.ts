@@ -12,9 +12,14 @@ export {
   getSightingsForSpecies,
   getSeenSpeciesIds,
   getSeenCount,
+  addPhotoToSighting,
+  deletePhoto,
+  getPhotosForSighting,
+  getPhotoCount,
   exportData,
   importData,
   getSessionsForSite,
   getSightingsForSite,
 } from './helpers'
-export type { DiveSession, Sighting, ExportData, CurrentStrength } from './types'
+export { compressImage, blobToUrl } from './photos'
+export type { DiveSession, Sighting, SightingPhoto, ExportData, CurrentStrength } from './types'

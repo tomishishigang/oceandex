@@ -19,7 +19,17 @@ export interface Sighting {
   createdAt: string     // ISO datetime
 }
 
-export type ExportData = ExportDataV1 | ExportDataV2
+export interface SightingPhoto {
+  id: string
+  sightingId: string
+  blob: Blob
+  thumbnailBlob: Blob
+  width: number
+  height: number
+  createdAt: string
+}
+
+export type ExportData = ExportDataV1 | ExportDataV2 | ExportDataV3
 
 export interface ExportDataV1 {
   version: 1
@@ -33,4 +43,21 @@ export interface ExportDataV2 {
   exportedAt: string
   sessions: DiveSession[]
   sightings: Sighting[]
+}
+
+export interface ExportPhotoData {
+  id: string
+  sightingId: string
+  base64: string
+  width: number
+  height: number
+  createdAt: string
+}
+
+export interface ExportDataV3 {
+  version: 3
+  exportedAt: string
+  sessions: DiveSession[]
+  sightings: Sighting[]
+  photos?: ExportPhotoData[]
 }
