@@ -33,6 +33,9 @@ export function initAuth() {
 
   // Get initial session
   supabase.auth.getSession().then(({ data: { session } }) => {
+    console.log('[Auth] Initial session:', session ? session.user.email : 'none')
+    console.log('[Auth] URL hash:', window.location.hash ? 'present' : 'empty')
+    console.log('[Auth] URL search:', window.location.search ? 'present' : 'empty')
     authState.value = {
       user: session?.user ?? null,
       session,
@@ -63,7 +66,10 @@ export function initAuth() {
 /** Sign in with Google */
 export async function signInWithGoogle() {
   const supabase = getSupabase()
-  const redirectTo = `${window.location.origin}${BASE}/auth/callback`
+  // Redirect to the site root — Supabase SDK will auto-detect tokens on page load
+  const redirectTo = `${window.location.origin}${BASE}/`
+
+  console.log('[Auth] Redirect URL:', redirectTo)
 
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
