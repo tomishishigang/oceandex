@@ -232,7 +232,7 @@ function SuggestionCard({
               : suggestion.score >= 40 ? 'bg-yellow-500'
               : 'bg-red-400'
             }`}
-            style={{ width: `${suggestion.score}%` }}
+            style={{ width: `${Math.min(100, suggestion.score)}%` }}
           />
         </div>
       </div>

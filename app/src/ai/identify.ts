@@ -56,7 +56,7 @@ export async function identifySpecies(file: File): Promise<IdentifyResult> {
     .map((result: any) => {
       const taxon = result.taxon ?? {}
       const scientificName = (taxon.name ?? '').toLowerCase()
-      const score = Math.round((result.combined_score ?? result.vision_score ?? 0) * 100)
+      const score = Math.min(100, Math.round((result.combined_score ?? result.vision_score ?? 0) * 100))
 
       // Try exact match by scientific name
       let catalogMatch = catalogByScientificName.get(scientificName)
