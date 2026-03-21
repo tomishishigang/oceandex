@@ -215,6 +215,23 @@ const strings: Record<string, Record<Locale, string>> = {
   'sync.offline': { es: 'Sin conexión — se sincronizará al reconectar', en: 'Offline — will sync when reconnected' },
   'sync.error': { es: 'Error de sincronización', en: 'Sync error' },
 
+  // V5: AI Species ID
+  'nav.identify': { es: 'Identificar', en: 'Identify' },
+  'identify.title': { es: 'Identificar especie', en: 'Identify species' },
+  'identify.subtitle': { es: 'Toma o sube una foto para identificar', en: 'Take or upload a photo to identify' },
+  'identify.take_photo': { es: 'Tomar foto', en: 'Take photo' },
+  'identify.upload': { es: 'Subir imagen', en: 'Upload image' },
+  'identify.analyzing': { es: 'Analizando imagen...', en: 'Analyzing image...' },
+  'identify.results': { es: 'Resultados', en: 'Results' },
+  'identify.confidence': { es: 'Confianza', en: 'Confidence' },
+  'identify.no_results': { es: 'No se encontraron coincidencias', en: 'No matches found' },
+  'identify.not_in_catalog': { es: 'No está en el catálogo', en: 'Not in catalog' },
+  'identify.try_again': { es: 'Intentar de nuevo', en: 'Try again' },
+  'identify.add_sighting': { es: 'Registrar avistamiento', en: 'Log sighting' },
+  'identify.match_found': { es: 'Coincidencia encontrada', en: 'Match found' },
+  'identify.low_confidence': { es: 'Baja confianza — verifica manualmente', en: 'Low confidence — verify manually' },
+  'identify.error': { es: 'Error al identificar. Intenta de nuevo.', en: 'Identification failed. Try again.' },
+
   // Language toggle
   'lang.switch': { es: 'EN', en: 'ES' },
 }

@@ -8,6 +8,7 @@ export function BottomNav() {
 
   const tabs = [
     { route: '/', label: () => t('nav.species'), icon: '🐠', match: (p: string) => p === '/' || p.startsWith('/species') },
+    { route: '/identify', label: () => t('nav.identify'), icon: '📸', match: (p: string) => p.startsWith('/identify') },
     { route: '/log', label: () => t('nav.log'), icon: '🤿', match: (p: string) => p.startsWith('/log') },
     { route: '/sites', label: () => t('nav.sites'), icon: '📍', match: (p: string) => p.startsWith('/sites') },
   ]
