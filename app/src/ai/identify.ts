@@ -5,7 +5,7 @@ import type { InatSuggestion, IdentifyResult } from './types'
 const INAT_API = 'https://api.inaturalist.org/v1'
 const INAT_TOKEN = 'eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2lkIjoxMDIxNjgwNCwiZXhwIjoxNzc0MTk5MjExfQ.w47oHl-B6I_8seSUzuRO-QH-rQR0Y2onCjrsTcG6uhPocTt0zJAAwXA6dX1X799SHl8u_BLBluNTdhy53tj9jg'
 
-// Build a lookup map for matching iNat results to our catalog
+// Build lookup maps for matching iNat results to our catalog
 const catalogByScientificName = new Map(
   species.map(s => [s.scientific_name.toLowerCase(), s])
 )
@@ -29,7 +29,7 @@ export async function identifySpecies(file: File): Promise<IdentifyResult> {
   // Build FormData
   const formData = new FormData()
   formData.append('image', imageBlob, 'photo.jpg')
-  // Add Chilean central coast coordinates for regional accuracy
+  // Chilean central coast coordinates for regional accuracy
   formData.append('lat', '-33.0')
   formData.append('lng', '-71.6')
 
@@ -50,13 +50,19 @@ export async function identifySpecies(file: File): Promise<IdentifyResult> {
   const data = await response.json()
   const results = data.results ?? []
 
-  // Map iNat results to our catalog
-  const suggestions: InatSuggestion[] = results
-    .slice(0, 10)
+  // Find the max score for normalization
+  const maxScore = Math.max(...results.map((r: any) => r.combined_score ?? r.vision_score ?? 0), 1)
+
+  // Map iNat results to our format
+  const allSuggestions: InatSuggestion[] = results
+    .slice(0, 20) // Get more results for better catalog matching
     .map((result: any) => {
       const taxon = result.taxon ?? {}
       const scientificName = (taxon.name ?? '').toLowerCase()
-      const score = Math.min(100, Math.round((result.combined_score ?? result.vision_score ?? 0) * 100))
+      const rawScore = result.combined_score ?? result.vision_score ?? 0
+
+      // Normalize score to 0-100 relative to the best result
+      const score = Math.round((rawScore / maxScore) * 100)
 
       // Try exact match by scientific name
       let catalogMatch = catalogByScientificName.get(scientificName)
@@ -80,10 +86,18 @@ export async function identifySpecies(file: File): Promise<IdentifyResult> {
         catalog_species_id: catalogMatch?.id ?? null,
       }
     })
-    .filter((s: InatSuggestion) => s.score > 0)
+    .filter((s: InatSuggestion) => s.score > 5) // Filter out very low scores
+
+  // Sort: catalog species first (boosted), then by score
+  const suggestions = allSuggestions.sort((a, b) => {
+    // Catalog species get a massive boost
+    const aBoost = a.in_catalog ? 1000 : 0
+    const bBoost = b.in_catalog ? 1000 : 0
+    return (bBoost + b.score) - (aBoost + a.score)
+  })
 
   return {
-    suggestions,
+    suggestions: suggestions.slice(0, 10),
     processing_time_ms: Math.round(performance.now() - start),
   }
 }

@@ -15,14 +15,17 @@ export function Identify() {
   const [result, setResult] = useState<IdentifyResult | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [selectedSpeciesId, setSelectedSpeciesId] = useState<number | null>(null)
+  const [expandedPhoto, setExpandedPhoto] = useState<string | null>(null)
+  const [showOther, setShowOther] = useState(false)
   const fileRef = useRef<HTMLInputElement>(null)
 
   async function handleFile(file: File) {
     setState('loading')
     setError(null)
     setSelectedSpeciesId(null)
+    setShowOther(false)
+    setExpandedPhoto(null)
 
-    // Show preview
     const url = await blobToDataUrl(file)
     setPreview(url)
 
@@ -49,14 +52,20 @@ export function Identify() {
     setResult(null)
     setError(null)
     setSelectedSpeciesId(null)
+    setExpandedPhoto(null)
+    setShowOther(false)
   }
+
+  // Split results into catalog and other
+  const catalogResults = result?.suggestions.filter(s => s.in_catalog) ?? []
+  const otherResults = result?.suggestions.filter(s => !s.in_catalog) ?? []
 
   return (
     <div class="px-4 py-4 pb-6">
       <h2 class="text-xl font-bold text-ocean-800 mb-1">{t('identify.title')}</h2>
       <p class="text-sm text-ocean-500 mb-4">{t('identify.subtitle')}</p>
 
-      {/* Idle: show capture buttons */}
+      {/* Idle */}
       {state === 'idle' && (
         <div class="space-y-3">
           <label class="block bg-ocean-700 text-white rounded-2xl p-6 text-center cursor-pointer hover:bg-ocean-600 transition-colors">
@@ -106,10 +115,7 @@ export function Identify() {
           )}
           <div class="text-3xl mb-2">❌</div>
           <p class="text-red-500 text-sm mb-4">{error}</p>
-          <button
-            onClick={reset}
-            class="bg-ocean-700 text-white px-6 py-2 rounded-xl text-sm font-medium"
-          >
+          <button onClick={reset} class="bg-ocean-700 text-white px-6 py-2 rounded-xl text-sm font-medium">
             {t('identify.try_again')}
           </button>
         </div>
@@ -118,52 +124,104 @@ export function Identify() {
       {/* Results */}
       {state === 'results' && result && (
         <div>
-          {/* Preview image */}
+          {/* Uploaded photo */}
           {preview && (
             <img src={preview} alt="" class="w-full aspect-[4/3] object-cover rounded-2xl mb-4" />
           )}
 
           <div class="flex justify-between items-center mb-3">
             <h3 class="text-sm font-semibold text-ocean-700">
-              {t('identify.results')} ({result.suggestions.length})
+              {t('identify.results')}
             </h3>
-            <button
-              onClick={reset}
-              class="text-xs text-ocean-400 hover:text-ocean-600"
-            >
+            <button onClick={reset} class="text-xs text-ocean-400 hover:text-ocean-600">
               {t('identify.try_again')}
             </button>
           </div>
 
-          {result.suggestions.length === 0 ? (
-            <div class="text-center py-8">
-              <div class="text-3xl mb-2">🤷</div>
-              <p class="text-ocean-500 text-sm">{t('identify.no_results')}</p>
-            </div>
-          ) : (
-            <div class="space-y-2">
-              {result.suggestions.map((suggestion) => (
-                <SuggestionCard
-                  key={suggestion.taxon_id}
-                  suggestion={suggestion}
-                  isSelected={selectedSpeciesId === suggestion.catalog_species_id}
-                  onSelect={() => setSelectedSpeciesId(suggestion.catalog_species_id)}
-                />
-              ))}
+          {/* Catalog matches — shown first and prominently */}
+          {catalogResults.length > 0 && (
+            <div class="mb-4">
+              <p class="text-xs font-semibold text-ocean-600 uppercase tracking-wide mb-2">
+                {t('identify.match_found')} ({catalogResults.length})
+              </p>
+              <div class="space-y-2">
+                {catalogResults.map((s) => (
+                  <SuggestionCard
+                    key={s.taxon_id}
+                    suggestion={s}
+                    isSelected={selectedSpeciesId === s.catalog_species_id}
+                    onSelect={() => setSelectedSpeciesId(s.catalog_species_id)}
+                    onPhotoClick={() => setExpandedPhoto(s.photo_url ?? speciesById.get(s.catalog_species_id!)?.primary_photo?.url_medium ?? null)}
+                  />
+                ))}
+              </div>
             </div>
           )}
 
           {/* Mark as seen for selected species */}
           {selectedSpeciesId && (
-            <div class="mt-4 bg-ocean-50 rounded-2xl p-4">
+            <div class="mb-4 bg-ocean-50 rounded-2xl p-4">
               <p class="text-xs font-semibold text-ocean-600 mb-2">{t('identify.add_sighting')}</p>
               <MarkAsSeen speciesId={selectedSpeciesId} />
+            </div>
+          )}
+
+          {/* Other results — collapsed by default */}
+          {otherResults.length > 0 && (
+            <div>
+              <button
+                onClick={() => setShowOther(!showOther)}
+                class="w-full text-xs text-ocean-400 py-2 flex items-center justify-center gap-1"
+              >
+                {showOther ? '▲' : '▼'} {t('identify.not_in_catalog')} ({otherResults.length})
+              </button>
+              {showOther && (
+                <div class="space-y-2 mt-1">
+                  {otherResults.map((s) => (
+                    <SuggestionCard
+                      key={s.taxon_id}
+                      suggestion={s}
+                      isSelected={false}
+                      onSelect={() => {}}
+                      onPhotoClick={() => setExpandedPhoto(s.photo_url)}
+                      dimmed
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {catalogResults.length === 0 && otherResults.length === 0 && (
+            <div class="text-center py-8">
+              <div class="text-3xl mb-2">🤷</div>
+              <p class="text-ocean-500 text-sm">{t('identify.no_results')}</p>
             </div>
           )}
 
           <p class="text-[10px] text-ocean-300 text-center mt-4">
             Powered by iNaturalist · {result.processing_time_ms}ms
           </p>
+        </div>
+      )}
+
+      {/* Expanded photo viewer */}
+      {expandedPhoto && (
+        <div
+          class="fixed inset-0 z-[200] bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setExpandedPhoto(null)}
+        >
+          <img
+            src={expandedPhoto}
+            alt=""
+            class="max-w-full max-h-[80vh] object-contain rounded-xl"
+          />
+          <button
+            class="absolute top-4 right-4 text-white/60 text-2xl pt-[env(safe-area-inset-top)]"
+            onClick={() => setExpandedPhoto(null)}
+          >
+            ✕
+          </button>
         </div>
       )}
     </div>
@@ -174,10 +232,14 @@ function SuggestionCard({
   suggestion,
   isSelected,
   onSelect,
+  onPhotoClick,
+  dimmed,
 }: {
   suggestion: InatSuggestion
   isSelected: boolean
   onSelect: () => void
+  onPhotoClick: () => void
+  dimmed?: boolean
 }) {
   const catalogSpecies = suggestion.catalog_species_id
     ? speciesById.get(suggestion.catalog_species_id)
@@ -194,38 +256,45 @@ function SuggestionCard({
   const photoUrl = catalogSpecies?.primary_photo?.url_medium ?? suggestion.photo_url
 
   return (
-    <button
-      onClick={suggestion.in_catalog ? onSelect : undefined}
-      class={`w-full flex items-center gap-3 p-3 rounded-xl text-left transition-all ${
+    <div
+      class={`flex items-center gap-3 p-3 rounded-xl transition-all ${
         isSelected
           ? 'bg-ocean-100 border-2 border-ocean-500'
-          : suggestion.in_catalog
-            ? 'bg-white border border-ocean-100 hover:bg-ocean-50 shadow-sm'
-            : 'bg-white/50 border border-ocean-100 opacity-60'
+          : dimmed
+            ? 'bg-white/50 border border-ocean-100 opacity-60'
+            : 'bg-white border border-ocean-100 shadow-sm'
       }`}
     >
-      {/* Photo */}
-      {photoUrl ? (
-        <img src={photoUrl} alt="" class="w-14 h-14 rounded-lg object-cover shrink-0" />
-      ) : (
-        <div class="w-14 h-14 rounded-lg bg-ocean-100 flex items-center justify-center text-xl shrink-0">
-          {cat?.emoji ?? '🌊'}
-        </div>
-      )}
+      {/* Clickable photo */}
+      <button
+        onClick={(e) => { e.stopPropagation(); onPhotoClick() }}
+        class="shrink-0"
+      >
+        {photoUrl ? (
+          <img src={photoUrl} alt="" class="w-16 h-16 rounded-lg object-cover hover:ring-2 hover:ring-ocean-400 transition-all" />
+        ) : (
+          <div class="w-16 h-16 rounded-lg bg-ocean-100 flex items-center justify-center text-xl">
+            {cat?.emoji ?? '🌊'}
+          </div>
+        )}
+      </button>
 
-      {/* Info */}
-      <div class="flex-1 min-w-0">
+      {/* Info — clickable for catalog species */}
+      <button
+        onClick={suggestion.in_catalog ? onSelect : undefined}
+        class={`flex-1 min-w-0 text-left ${suggestion.in_catalog ? 'cursor-pointer' : 'cursor-default'}`}
+      >
         <p class="text-sm font-semibold truncate text-ocean-800">{displayName}</p>
         <p class="text-[10px] italic text-ocean-500 truncate">{suggestion.scientific_name}</p>
-        {!suggestion.in_catalog && (
-          <p class="text-[10px] text-ocean-400 mt-0.5">{t('identify.not_in_catalog')}</p>
+        {suggestion.in_catalog && (
+          <p class="text-[10px] text-green-600 mt-0.5">✓ {t('identify.match_found')}</p>
         )}
-      </div>
+      </button>
 
       {/* Confidence */}
-      <div class="shrink-0 text-right">
+      <div class="shrink-0 text-right w-14">
         <div class="text-sm font-bold text-ocean-700">{suggestion.score}%</div>
-        <div class="w-12 bg-ocean-100 rounded-full h-1.5 mt-1">
+        <div class="w-full bg-ocean-100 rounded-full h-1.5 mt-1">
           <div
             class={`h-1.5 rounded-full ${
               suggestion.score >= 70 ? 'bg-green-500'
@@ -236,6 +305,6 @@ function SuggestionCard({
           />
         </div>
       </div>
-    </button>
+    </div>
   )
 }
