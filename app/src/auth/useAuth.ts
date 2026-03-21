@@ -32,7 +32,6 @@ export function initAuth() {
 
   // Get initial session
   supabase.auth.getSession().then(({ data: { session } }) => {
-    console.log('[Auth] Initial session:', session ? session.user.email : 'none')
     authState.value = {
       user: session?.user ?? null,
       session,
@@ -75,7 +74,7 @@ export async function signInWithGoogleToken(idToken: string, nonce?: string) {
     throw error
   }
 
-  console.log('[Auth] Signed in:', data.user?.email)
+  // console.log('[Auth] Signed in:', data.user?.email)
   return data
 }
 
