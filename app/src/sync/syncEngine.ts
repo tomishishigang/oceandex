@@ -3,6 +3,7 @@ import { getSupabase } from '../auth/supabase'
 import { currentUserId, isLoggedIn } from '../auth/useAuth'
 import { db } from '../db/db'
 import type { DiveSession, Sighting } from '../db/types'
+import { pushPhotos, pullPhotos } from './photoSync'
 
 export type SyncStatus = 'idle' | 'syncing' | 'error' | 'offline'
 
@@ -169,6 +170,10 @@ export async function fullSync(): Promise<void> {
     // Then pull cloud → local
     await pullSessions(userId)
     await pullSightings(userId)
+
+    // Sync photos (background, don't block)
+    pushPhotos().catch(e => console.error('Photo push error:', e))
+    pullPhotos().catch(e => console.error('Photo pull error:', e))
 
     syncStatus.value = 'idle'
   } catch (e: any) {

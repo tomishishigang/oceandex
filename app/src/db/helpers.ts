@@ -3,6 +3,7 @@ import type { DiveSession, Sighting, SightingPhoto, ExportData, ExportDataV3, Ex
 import { compressImage, generateThumbnail, blobToBase64, base64ToBlob } from './photos'
 import { currentUserId } from '../auth/useAuth'
 import { scheduleSyncAfterWrite } from '../sync/syncEngine'
+import { uploadPhoto } from '../sync/photoSync'
 
 function getUserId(): string {
   return currentUserId() ?? 'local'
@@ -123,6 +124,10 @@ export async function addPhotoToSighting(sightingId: string, file: File): Promis
     createdAt: new Date().toISOString(),
   }
   await db.sightingPhotos.add(photo)
+
+  // Upload to cloud in background
+  uploadPhoto(photo.id, sightingId, blob).catch(e => console.error('Photo upload error:', e))
+
   return photo
 }
 
