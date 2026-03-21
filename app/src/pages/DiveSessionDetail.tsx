@@ -15,12 +15,16 @@ import { speciesById } from '../data/species'
 import { categoryMap } from '../data/categories'
 import { SpeciesPicker } from '../components/SpeciesPicker'
 import { PhotoCapture } from '../components/PhotoCapture'
+import { ShareModal } from '../components/ShareModal'
+import { useEarnedCount } from '../hooks/useBadges'
 
 export function DiveSessionDetail() {
   const { params } = useRoute()
   const { route } = useLocation()
   const sessionId = params.id as string
   const [showPicker, setShowPicker] = useState(false)
+  const [showShare, setShowShare] = useState(false)
+  const badgeCount = useEarnedCount()
 
   const session = useLiveQuery(
     () => getSession(sessionId),
@@ -182,13 +186,21 @@ export function DiveSessionDetail() {
         )}
       </div>
 
-      {/* Delete session */}
-      <button
-        onClick={handleDelete}
-        class="w-full mt-6 py-2.5 rounded-xl border border-red-200 text-red-500 text-sm font-medium hover:bg-red-50 transition-colors"
-      >
-        {t('log.delete')}
-      </button>
+      {/* Share + Delete */}
+      <div class="mt-6 space-y-2">
+        <button
+          onClick={() => setShowShare(true)}
+          class="w-full py-2.5 rounded-xl bg-ocean-700 text-white text-sm font-medium hover:bg-ocean-600 transition-colors"
+        >
+          📤 {t('share.button')}
+        </button>
+        <button
+          onClick={handleDelete}
+          class="w-full py-2.5 rounded-xl border border-red-200 text-red-500 text-sm font-medium hover:bg-red-50 transition-colors"
+        >
+          {t('log.delete')}
+        </button>
+      </div>
 
       {/* FAB: Add species */}
       <button
@@ -206,6 +218,16 @@ export function DiveSessionDetail() {
           alreadySelected={alreadyAdded}
           onConfirm={handleAddSpecies}
           onClose={() => setShowPicker(false)}
+        />
+      )}
+
+      {/* Share modal */}
+      {showShare && session && (
+        <ShareModal
+          session={session}
+          speciesIds={sightings.map(s => s.speciesId)}
+          badgeCount={badgeCount}
+          onClose={() => setShowShare(false)}
         />
       )}
     </div>

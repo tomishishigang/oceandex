@@ -251,6 +251,19 @@ const strings: Record<string, Record<Locale, string>> = {
   'community.no_data': { es: 'Aún no hay datos de la comunidad', en: 'No community data yet' },
   'community.this_month': { es: 'este mes', en: 'this month' },
 
+  // V7: Share dive card
+  'share.button': { es: 'Compartir inmersión', en: 'Share dive' },
+  'share.title': { es: 'Compartir', en: 'Share' },
+  'share.preview': { es: 'Vista previa', en: 'Preview' },
+  'share.story': { es: 'Historia', en: 'Story' },
+  'share.square': { es: 'Cuadrado', en: 'Square' },
+  'share.share': { es: 'Compartir', en: 'Share' },
+  'share.download': { es: 'Descargar', en: 'Download' },
+  'share.generating': { es: 'Generando imagen...', en: 'Generating image...' },
+  'share.species_seen': { es: 'especies avistadas', en: 'species spotted' },
+  'share.badges_earned': { es: 'logros obtenidos', en: 'badges earned' },
+  'share.powered_by': { es: 'Registrado con', en: 'Logged with' },
+
   // Language toggle
   'lang.switch': { es: 'EN', en: 'ES' },
 }
