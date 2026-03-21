@@ -8,6 +8,8 @@ const FUSE_OPTIONS: IFuseOptions<Species> = {
     { name: 'common_name_en', weight: 2 },
     { name: 'scientific_name', weight: 2 },
     { name: 'family', weight: 1 },
+    { name: 'tags', weight: 2 },
+    { name: 'order', weight: 1 },
   ],
   threshold: 0.35,
   minMatchCharLength: 2,

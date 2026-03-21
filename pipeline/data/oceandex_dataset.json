@@ -2,21 +2,21 @@
   "metadata": {
     "name": "Oceandex - Central Chile Marine Species",
     "version": "1.0.0",
-    "build_date": "2026-03-20",
+    "build_date": "2026-03-21",
     "region": "Central Chile (Valparaíso / Coquimbo)",
     "latitude_range": "-33.5 to -32.0",
     "longitude_range": "-71.9 to -71.3",
-    "total_species": 581,
-    "with_photos": 401,
-    "with_common_name_en": 235,
-    "with_common_name_es": 193,
+    "total_species": 583,
+    "with_photos": 403,
+    "with_common_name_en": 237,
+    "with_common_name_es": 195,
     "data_sources": [
       "OBIS",
       "WoRMS",
       "iNaturalist"
     ],
     "sightability_scored": true,
-    "sightability_date": "2026-03-20"
+    "sightability_date": "2026-03-21"
   },
   "dive_sites": [
     {
@@ -1136,6 +1136,47 @@
       }
     },
     {
+      "id": null,
+      "scientific_name": "Diaulula variolata",
+      "common_name_en": "Rough Sea Slug",
+      "common_name_es": "Babosa áspera",
+      "kingdom": "Animalia",
+      "phylum": "Mollusca",
+      "class": "Gastropoda",
+      "order": "Nudibranchia",
+      "family": "Discodorididae",
+      "genus": "Diaulula",
+      "species": "Diaulula variolata",
+      "category": "mollusks",
+      "observation_count": 0,
+      "inat_observations": 200,
+      "primary_photo": {
+        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/3284296/medium.jpg",
+        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/3284296/square.jpg",
+        "attribution": "(c) Erasmo Macaya Horta, some rights reserved (CC BY)",
+        "license": "cc-by"
+      },
+      "additional_photos": [
+        {
+          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/3284296/medium.jpg",
+          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/3284296/square.jpg",
+          "attribution": "(c) Erasmo Macaya Horta, some rights reserved (CC BY)",
+          "license": "cc-by"
+        }
+      ],
+      "wikipedia_url": "http://en.wikipedia.org/wiki/Diaulula_variolata",
+      "worms_authority": null,
+      "sightability_score": 75,
+      "sightability_tier": "common",
+      "sightability_signals": {
+        "inat": 40,
+        "obis": 0,
+        "photo": 10,
+        "name": 10,
+        "taxon": 15
+      }
+    },
+    {
       "id": 456651,
       "scientific_name": "Scurria zebrina",
       "common_name_en": null,
@@ -1245,6 +1286,47 @@
         }
       ],
       "wikipedia_url": "https://en.wikipedia.org/wiki/Doris_fontainii",
+      "worms_authority": null,
+      "sightability_score": 75,
+      "sightability_tier": "common",
+      "sightability_signals": {
+        "inat": 40,
+        "obis": 0,
+        "photo": 10,
+        "name": 10,
+        "taxon": 15
+      }
+    },
+    {
+      "id": null,
+      "scientific_name": "Phidiana lottini",
+      "common_name_en": "Flameback",
+      "common_name_es": "Nudibranquio Espalda de Fuego",
+      "kingdom": "Animalia",
+      "phylum": "Mollusca",
+      "class": "Gastropoda",
+      "order": "Nudibranchia",
+      "family": "Facelinidae",
+      "genus": "Phidiana",
+      "species": "Phidiana lottini",
+      "category": "mollusks",
+      "observation_count": 0,
+      "inat_observations": 121,
+      "primary_photo": {
+        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/511687476/medium.jpg",
+        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/511687476/square.jpg",
+        "attribution": "(c) Fernando Gracia, some rights reserved (CC BY-NC)",
+        "license": "cc-by-nc"
+      },
+      "additional_photos": [
+        {
+          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/511687476/medium.jpg",
+          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/511687476/square.jpg",
+          "attribution": "(c) Fernando Gracia, some rights reserved (CC BY-NC)",
+          "license": "cc-by-nc"
+        }
+      ],
+      "wikipedia_url": "http://en.wikipedia.org/wiki/Phidiana_lottini",
       "worms_authority": null,
       "sightability_score": 75,
       "sightability_tier": "common",

@@ -1,6 +1,7 @@
 import { useRoute } from 'preact-iso'
 import { speciesById } from '../data/species'
 import { categoryMap } from '../data/categories'
+import { tagMap } from '../data/tags'
 import { t, locale } from '../hooks/useLocale'
 import { MarkAsSeen } from '../components/MarkAsSeen'
 import { href } from '../base'
@@ -101,6 +102,15 @@ export function SpeciesDetail() {
             >
               {cat?.emoji} {locale.value === 'es' ? cat?.label_es : cat?.label_en}
             </span>
+            {sp.tags?.map(tagId => {
+              const tag = tagMap.get(tagId)
+              if (!tag) return null
+              return (
+                <span key={tagId} class="text-xs px-2.5 py-1 rounded-full bg-deep-100 text-deep-700 font-medium">
+                  {tag.emoji} {locale.value === 'es' ? tag.label_es : tag.label_en}
+                </span>
+              )
+            })}
             <span class="text-xs text-ocean-400 ml-auto">
               {t('detail.score')}: {sp.sightability_score}/100
             </span>

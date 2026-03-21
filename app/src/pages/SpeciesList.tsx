@@ -5,6 +5,7 @@ import { useSearch } from '../hooks/useSearch'
 import {
   searchQuery,
   selectedCategory,
+  selectedTag,
   selectedTier,
   showAllSpecies,
   seenFilter,
@@ -22,6 +23,7 @@ export function SpeciesList() {
   const filtered = useFilteredSpecies(
     searchResults,
     selectedCategory.value,
+    selectedTag.value,
     selectedTier.value,
     showAllSpecies.value,
     seenIds,
@@ -30,7 +32,7 @@ export function SpeciesList() {
 
   // Scroll to top when filters change
   const listRef = useRef<HTMLDivElement>(null)
-  const filterKey = `${searchQuery.value}|${selectedCategory.value}|${selectedTier.value}|${showAllSpecies.value}|${seenFilter.value}`
+  const filterKey = `${searchQuery.value}|${selectedCategory.value}|${selectedTag.value}|${selectedTier.value}|${showAllSpecies.value}|${seenFilter.value}`
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [filterKey])

@@ -56,6 +56,26 @@ const cleanSpecies = species.map((s: any) => {
   clean.sightability_tier = clean.sightability_tier ?? 'unlikely'
   // Ensure arrays
   clean.additional_photos = clean.additional_photos ?? []
+
+  // Auto-assign tags based on taxonomy
+  const tags: string[] = []
+  const order = (clean.order as string || '').toLowerCase()
+  const cls = (clean.class as string || '').toLowerCase()
+  const family = (clean.family as string || '').toLowerCase()
+
+  if (order === 'nudibranchia') tags.push('nudibranch')
+  if (order === 'carcharhiniformes' || order === 'squaliformes' || order === 'rajiformes' || order === 'myliobatiformes' || order === 'torpediniformes') tags.push('shark_ray')
+  if (order === 'octopoda') tags.push('octopus')
+  if (order === 'decapoda' && clean.category === 'crustaceans') tags.push('crab')
+  if (order === 'cetacea') tags.push('marine_mammal')
+  if (cls === 'asteroidea') tags.push('sea_star')
+  if (cls === 'echinoidea') tags.push('sea_urchin')
+  if (cls === 'holothuroidea') tags.push('sea_cucumber')
+  if (cls === 'aves') tags.push('seabird')
+  if (family.includes('mytilidae') || family.includes('ostreidae')) tags.push('bivalve')
+  if (order === 'sphenisciformes') tags.push('penguin')
+
+  clean.tags = tags
   return clean
 })
 

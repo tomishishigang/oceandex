@@ -20,9 +20,11 @@ sightability_score,sightability_tier,scientific_name,common_name_en,common_name_
 75,common,Anthothoe chilensis,striped anemone,,cnidarians,Cnidaria,Hexacorallia,Actiniaria,Sagartiidae,yes,448,20,https://en.wikipedia.org/wiki/Anthothoe_chilensis
 75,common,Hippasteria phrygiana,Arctic cushion star,,echinoderms,Echinodermata,Asteroidea,Valvatida,Goniasteridae,yes,436,2,http://en.wikipedia.org/wiki/Hippasteria_phrygiana
 75,common,Cosmasterias lurida,Common Fjord Sea Star,Estrella común de los fiordos,echinoderms,Echinodermata,Asteroidea,Forcipulatida,Stichasteridae,yes,427,2,
+75,common,Diaulula variolata,Rough Sea Slug,Babosa áspera,mollusks,Mollusca,Gastropoda,Nudibranchia,Discodorididae,yes,200,0,http://en.wikipedia.org/wiki/Diaulula_variolata
 75,common,Scurria zebrina,,Gorrito cebra,mollusks,Mollusca,Gastropoda,,Lottiidae,yes,155,37,http://en.wikipedia.org/wiki/Scurria_zebrina
 75,common,Fissurella crassa,Thick keyhole limpet,Lapa ocho,mollusks,Mollusca,Gastropoda,Lepetellida,Fissurellidae,yes,144,38,http://en.wikipedia.org/wiki/Fissurella_crassa
 75,common,Doris fontainii,Large Warted Doris,Babosa marina verrugosa,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,157,0,https://en.wikipedia.org/wiki/Doris_fontainii
+75,common,Phidiana lottini,Flameback,Nudibranquio Espalda de Fuego,mollusks,Mollusca,Gastropoda,Nudibranchia,Facelinidae,yes,121,0,http://en.wikipedia.org/wiki/Phidiana_lottini
 75,common,Sympterygia lima,Filetail Fanskate,Raya Costera Chilena,fish_and_vertebrates,Chordata,Elasmobranchii,Rajiformes,Arhynchobatidae,yes,115,1,http://en.wikipedia.org/wiki/Filetail_fanskate
 75,common,Diaulula punctuolata,Dotted Bristle Sea Slug,Babosa cerda manchada,mollusks,Mollusca,Gastropoda,Nudibranchia,,yes,105,0,http://en.wikipedia.org/wiki/Diaulula_punctuolata
 70,common,Grapsus grapsus,cliff crab,Cangrejos corredores,crustaceans,Arthropoda,Malacostraca,Decapoda,Grapsidae,yes,34136,1,http://en.wikipedia.org/wiki/Grapsus

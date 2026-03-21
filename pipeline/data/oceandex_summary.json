@@ -2,14 +2,14 @@
   "metadata": {
     "name": "Oceandex - Central Chile Marine Species",
     "version": "1.0.0",
-    "build_date": "2026-03-20",
+    "build_date": "2026-03-21",
     "region": "Central Chile (Valparaíso / Coquimbo)",
     "latitude_range": "-33.5 to -32.0",
     "longitude_range": "-71.9 to -71.3",
-    "total_species": 581,
-    "with_photos": 401,
-    "with_common_name_en": 235,
-    "with_common_name_es": 193,
+    "total_species": 583,
+    "with_photos": 403,
+    "with_common_name_en": 237,
+    "with_common_name_es": 195,
     "data_sources": [
       "OBIS",
       "WoRMS",
@@ -1107,6 +1107,17 @@
       "observation_count": 1
     },
     {
+      "id": null,
+      "scientific_name": "Diaulula variolata",
+      "common_name_en": "Rough Sea Slug",
+      "common_name_es": "Babosa áspera",
+      "category": "mollusks",
+      "phylum": "Mollusca",
+      "family": "Discodorididae",
+      "has_photo": true,
+      "observation_count": 0
+    },
+    {
       "id": 282685,
       "scientific_name": "Schroederichthys chilensis",
       "common_name_en": "Redspotted Catshark",
@@ -1490,6 +1501,17 @@
       "family": "Cassidae",
       "has_photo": true,
       "observation_count": 1
+    },
+    {
+      "id": null,
+      "scientific_name": "Phidiana lottini",
+      "common_name_en": "Flameback",
+      "common_name_es": "Nudibranquio Espalda de Fuego",
+      "category": "mollusks",
+      "phylum": "Mollusca",
+      "family": "Facelinidae",
+      "has_photo": true,
+      "observation_count": 0
     },
     {
       "id": 282919,

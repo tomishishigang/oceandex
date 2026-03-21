@@ -38,6 +38,7 @@ export interface Species {
   worms_authority: string | null
   sightability_score: number
   sightability_tier: SightabilityTier
+  tags: string[]
 }
 
 export interface DiveSite {

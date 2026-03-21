@@ -1,6 +1,7 @@
 import { t, locale } from '../hooks/useLocale'
-import { selectedCategory, selectedTier, showAllSpecies, seenFilter, clearFilters } from '../hooks/useFilters'
+import { selectedCategory, selectedTag, selectedTier, showAllSpecies, seenFilter, clearFilters } from '../hooks/useFilters'
 import { categories } from '../data/categories'
+import { tags } from '../data/tags'
 import type { SightabilityTier } from '../data/types'
 
 const tiers: { id: SightabilityTier; color: string }[] = [
@@ -11,7 +12,12 @@ const tiers: { id: SightabilityTier; color: string }[] = [
 ]
 
 export function FilterChips() {
-  const hasFilters = selectedCategory.value || selectedTier.value || seenFilter.value !== 'all'
+  const hasFilters = selectedCategory.value || selectedTag.value || selectedTier.value || seenFilter.value !== 'all'
+
+  // Show tags relevant to the selected category, or all tags if no category selected
+  const visibleTags = selectedCategory.value
+    ? tags.filter(tag => tag.parentCategory === selectedCategory.value)
+    : tags
 
   return (
     <div class="space-y-2">
@@ -58,6 +64,13 @@ export function FilterChips() {
               key={cat.id}
               onClick={() => {
                 selectedCategory.value = isActive ? null : cat.id
+                // Clear tag if switching category
+                if (selectedTag.value) {
+                  const tagInfo = tags.find(t => t.id === selectedTag.value)
+                  if (tagInfo && tagInfo.parentCategory !== cat.id) {
+                    selectedTag.value = null
+                  }
+                }
               }}
               class={`flex items-center gap-1 text-xs px-2.5 py-1 rounded-full whitespace-nowrap transition-colors ${
                 isActive
@@ -71,6 +84,35 @@ export function FilterChips() {
           )
         })}
       </div>
+
+      {/* Tag sub-filters (shown when relevant) */}
+      {visibleTags.length > 0 && (
+        <div class="flex gap-1.5 overflow-x-auto pb-1 -mx-4 px-4 scrollbar-none">
+          {visibleTags.map((tag) => {
+            const isActive = selectedTag.value === tag.id
+            return (
+              <button
+                key={tag.id}
+                onClick={() => {
+                  selectedTag.value = isActive ? null : tag.id
+                  // Auto-select parent category if not already selected
+                  if (!isActive && tag.parentCategory && selectedCategory.value !== tag.parentCategory) {
+                    selectedCategory.value = tag.parentCategory
+                  }
+                }}
+                class={`flex items-center gap-1 text-xs px-2.5 py-1 rounded-full whitespace-nowrap transition-colors ${
+                  isActive
+                    ? 'bg-deep-600 text-white'
+                    : 'bg-ocean-50 text-ocean-600 border border-ocean-200'
+                }`}
+              >
+                <span>{tag.emoji}</span>
+                {locale.value === 'es' ? tag.label_es : tag.label_en}
+              </button>
+            )
+          })}
+        </div>
+      )}
 
       {/* Tier + Seen chips */}
       <div class="flex gap-1.5 flex-wrap">
