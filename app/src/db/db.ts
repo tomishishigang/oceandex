@@ -32,4 +32,21 @@ db.version(3).stores({
   sightingPhotos: 'id, sightingId',
 })
 
+// v4: add userId + updatedAt for cloud sync
+db.version(4).stores({
+  diveSessions: 'id, date, userId',
+  sightings: 'id, sessionId, speciesId, userId, [sessionId+speciesId]',
+  sightingPhotos: 'id, sightingId',
+}).upgrade(tx => {
+  const now = new Date().toISOString()
+  tx.table('diveSessions').toCollection().modify(session => {
+    session.userId = session.userId ?? 'local'
+    session.updatedAt = session.updatedAt ?? session.createdAt ?? now
+  })
+  tx.table('sightings').toCollection().modify(sighting => {
+    sighting.userId = sighting.userId ?? 'local'
+    sighting.updatedAt = sighting.updatedAt ?? sighting.createdAt ?? now
+  })
+})
+
 export { db }

@@ -2,6 +2,7 @@ export type CurrentStrength = 'none' | 'light' | 'moderate' | 'strong'
 
 export interface DiveSession {
   id: string
+  userId: string        // 'local' for anonymous, UUID for authenticated
   siteName: string
   date: string          // ISO date: "2026-03-19"
   maxDepthM: number | null
@@ -10,13 +11,16 @@ export interface DiveSession {
   current: CurrentStrength | null
   notes: string | null
   createdAt: string     // ISO datetime
+  updatedAt: string     // ISO datetime
 }
 
 export interface Sighting {
   id: string
+  userId: string        // 'local' for anonymous, UUID for authenticated
   sessionId: string
   speciesId: number
   createdAt: string     // ISO datetime
+  updatedAt: string     // ISO datetime
 }
 
 export interface SightingPhoto {

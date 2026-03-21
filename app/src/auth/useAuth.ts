@@ -2,6 +2,7 @@ import { signal } from '@preact/signals'
 import { getSupabase, hasSupabaseConfig } from './supabase'
 import type { User, Session } from '@supabase/supabase-js'
 import { BASE } from '../base'
+import { onFirstLogin, fullSync } from '../sync/syncEngine'
 
 export interface AuthState {
   user: User | null
@@ -42,11 +43,19 @@ export function initAuth() {
 
   // Listen for auth changes
   supabase.auth.onAuthStateChange((_event, session) => {
+    const wasLoggedOut = !authState.value.user
     authState.value = {
       user: session?.user ?? null,
       session,
       loading: false,
       initialized: true,
+    }
+
+    // Trigger sync on login
+    if (session?.user && wasLoggedOut) {
+      onFirstLogin()
+    } else if (session?.user) {
+      fullSync()
     }
   })
 }

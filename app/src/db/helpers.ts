@@ -1,6 +1,12 @@
 import { db } from './db'
 import type { DiveSession, Sighting, SightingPhoto, ExportData, ExportDataV3, ExportPhotoData, CurrentStrength } from './types'
 import { compressImage, generateThumbnail, blobToBase64, base64ToBlob } from './photos'
+import { currentUserId } from '../auth/useAuth'
+import { scheduleSyncAfterWrite } from '../sync/syncEngine'
+
+function getUserId(): string {
+  return currentUserId() ?? 'local'
+}
 
 // === Sessions ===
 
@@ -13,8 +19,10 @@ export async function createSession(data: {
   current?: CurrentStrength | null
   notes?: string | null
 }): Promise<DiveSession> {
+  const now = new Date().toISOString()
   const session: DiveSession = {
     id: crypto.randomUUID(),
+    userId: getUserId(),
     siteName: data.siteName,
     date: data.date,
     maxDepthM: data.maxDepthM ?? null,
@@ -22,9 +30,11 @@ export async function createSession(data: {
     visibilityM: data.visibilityM ?? null,
     current: data.current ?? null,
     notes: data.notes ?? null,
-    createdAt: new Date().toISOString(),
+    createdAt: now,
+    updatedAt: now,
   }
   await db.diveSessions.add(session)
+  scheduleSyncAfterWrite()
   return session
 }
 
@@ -61,13 +71,17 @@ export async function createSighting(
 
   if (existing) return null // Already recorded
 
+  const now = new Date().toISOString()
   const sighting: Sighting = {
     id: crypto.randomUUID(),
+    userId: getUserId(),
     sessionId,
     speciesId,
-    createdAt: new Date().toISOString(),
+    createdAt: now,
+    updatedAt: now,
   }
   await db.sightings.add(sighting)
+  scheduleSyncAfterWrite()
   return sighting
 }
 
@@ -169,9 +183,11 @@ export async function importData(data: ExportData): Promise<{ sessions: number; 
       if (!existing) {
         const normalized: DiveSession = {
           ...session,
+          userId: session.userId ?? getUserId(),
           waterTempC: session.waterTempC ?? null,
           visibilityM: session.visibilityM ?? null,
           current: session.current ?? null,
+          updatedAt: session.updatedAt ?? session.createdAt ?? new Date().toISOString(),
         }
         await db.diveSessions.add(normalized)
         sessionsImported++
