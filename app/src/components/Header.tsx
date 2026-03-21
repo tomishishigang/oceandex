@@ -1,12 +1,14 @@
 import { t, toggleLocale } from '../hooks/useLocale'
 import { useEarnedCount } from '../hooks/useBadges'
 import { href } from '../base'
-import { authState, getUserAvatar } from '../auth/useAuth'
+import { authState } from '../auth/useAuth'
 
 export function Header() {
   const earnedCount = useEarnedCount()
-  const { user } = authState.value
-  const avatar = getUserAvatar()
+
+  // Access signal .value in render for reactivity
+  const user = authState.value.user
+  const avatar = user?.user_metadata?.avatar_url ?? null
 
   return (
     <header class="bg-ocean-700 text-white px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] flex items-center justify-between shadow-md sticky top-0 z-50">

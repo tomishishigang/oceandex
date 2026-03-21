@@ -1,22 +1,61 @@
 import { useEffect } from 'preact/hooks'
 import { useLocation } from 'preact-iso'
 import { href } from '../base'
+import { getSupabase } from './supabase'
+import { authState } from './useAuth'
 
 /**
  * Handles the OAuth callback redirect from Supabase.
- * Supabase JS SDK auto-detects the hash fragment and completes the auth flow.
- * We just redirect to the home page after a short delay.
+ * Waits for the session to be established before redirecting.
  */
 export function AuthCallback() {
   const { route } = useLocation()
 
   useEffect(() => {
-    // Supabase client auto-processes the URL hash/params
-    // Give it a moment to complete, then redirect
-    const timer = setTimeout(() => {
-      route(href('/'))
-    }, 1000)
-    return () => clearTimeout(timer)
+    const supabase = getSupabase()
+
+    // Supabase SDK reads the hash fragment automatically when initialized.
+    // We need to explicitly exchange the code if using PKCE flow (code in URL params).
+    const params = new URLSearchParams(window.location.search)
+    const code = params.get('code')
+
+    async function handleCallback() {
+      if (code) {
+        // PKCE flow: exchange code for session
+        const { error } = await supabase.auth.exchangeCodeForSession(code)
+        if (error) {
+          console.error('Auth callback error:', error)
+        }
+      }
+
+      // Wait for auth state to update
+      const checkSession = () => {
+        if (authState.value.user) {
+          route(href('/'))
+        } else {
+          // Also check via getSession in case the signal hasn't fired yet
+          supabase.auth.getSession().then(({ data: { session } }) => {
+            if (session) {
+              authState.value = {
+                user: session.user,
+                session,
+                loading: false,
+                initialized: true,
+              }
+              route(href('/'))
+            } else {
+              // No session after callback — something went wrong
+              setTimeout(() => route(href('/login')), 2000)
+            }
+          })
+        }
+      }
+
+      // Give it a moment for the hash fragment to be processed
+      setTimeout(checkSession, 500)
+    }
+
+    handleCallback()
   }, [])
 
   return (
