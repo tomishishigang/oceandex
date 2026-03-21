@@ -172,6 +172,13 @@ export function SpeciesDetail() {
 
         {/* Actions */}
         <div class="mt-3 space-y-2">
+          <a
+            href={href('/compare')}
+            class="flex items-center justify-center gap-2 bg-white rounded-2xl p-3 shadow-sm text-sm text-ocean-600 font-medium no-underline hover:bg-ocean-50 transition-colors border border-ocean-200"
+          >
+            <span>⚖️</span>
+            {t('compare.title')}
+          </a>
           {sp.wikipedia_url && (
             <a
               href={sp.wikipedia_url}

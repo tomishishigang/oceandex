@@ -1,5 +1,6 @@
 import { diveSites } from '../data/diveSites'
 import { t } from '../hooks/useLocale'
+import { href } from '../base'
 
 const difficultyColors: Record<string, string> = {
   beginner: 'bg-green-100 text-green-700',
@@ -36,9 +37,10 @@ export function DiveSites() {
 
             <div class="space-y-2">
               {zoneSites.map((site) => (
-                <div
+                <a
                   key={site.name}
-                  class="bg-white rounded-2xl p-4 shadow-sm border border-ocean-100"
+                  href={href(`/sites/${encodeURIComponent(site.name)}`)}
+                  class="block bg-white rounded-2xl p-4 shadow-sm border border-ocean-100 no-underline text-ocean-950 hover:shadow-md transition-shadow"
                 >
                   {/* Site name and difficulty */}
                   <div class="flex items-start justify-between gap-2">
@@ -72,17 +74,11 @@ export function DiveSites() {
                     ))}
                   </div>
 
-                  {/* Map link */}
-                  <a
-                    href={`https://www.google.com/maps?q=${site.lat},${site.lng}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center gap-1 mt-3 text-xs text-deep-600 font-medium no-underline hover:text-deep-700"
-                  >
-                    <span>🗺️</span>
-                    {t('sites.map')}
-                  </a>
-                </div>
+                  {/* View detail hint */}
+                  <p class="text-[10px] text-ocean-400 mt-3">
+                    {t('site.detail_title')} →
+                  </p>
+                </a>
               ))}
             </div>
           </div>

@@ -14,5 +14,7 @@ export {
   getSeenCount,
   exportData,
   importData,
+  getSessionsForSite,
+  getSightingsForSite,
 } from './helpers'
-export type { DiveSession, Sighting, ExportData } from './types'
+export type { DiveSession, Sighting, ExportData, CurrentStrength } from './types'

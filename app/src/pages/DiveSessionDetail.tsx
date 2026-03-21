@@ -1,3 +1,4 @@
+import { useState } from 'preact/hooks'
 import { useRoute, useLocation } from 'preact-iso'
 import { href } from '../base'
 import { t, locale } from '../hooks/useLocale'
@@ -7,15 +8,18 @@ import {
   getSightingsForSession,
   deleteSession,
   deleteSighting,
+  createSighting,
 } from '../db'
 import type { DiveSession, Sighting } from '../db'
 import { speciesById } from '../data/species'
 import { categoryMap } from '../data/categories'
+import { SpeciesPicker } from '../components/SpeciesPicker'
 
 export function DiveSessionDetail() {
   const { params } = useRoute()
   const { route } = useLocation()
   const sessionId = params.id as string
+  const [showPicker, setShowPicker] = useState(false)
 
   const session = useLiveQuery(
     () => getSession(sessionId),
@@ -27,6 +31,8 @@ export function DiveSessionDetail() {
     [sessionId],
     [] as Sighting[],
   )
+
+  const alreadyAdded = new Set(sightings.map(s => s.speciesId))
 
   if (session === undefined) {
     return (
@@ -51,6 +57,13 @@ export function DiveSessionDetail() {
     await deleteSighting(sightingId)
   }
 
+  async function handleAddSpecies(speciesIds: number[]) {
+    for (const spId of speciesIds) {
+      await createSighting(sessionId, spId)
+    }
+    setShowPicker(false)
+  }
+
   return (
     <div class="px-4 py-4 pb-6">
       {/* Back */}
@@ -62,11 +75,39 @@ export function DiveSessionDetail() {
       <div class="bg-white rounded-2xl p-5 shadow-sm">
         <h2 class="text-xl font-bold text-ocean-800">{session.siteName}</h2>
         <p class="text-sm text-ocean-500 mt-1">{session.date}</p>
-        {session.maxDepthM && (
-          <p class="text-xs text-ocean-400 mt-1">🌊 {t('sites.depth')}: {session.maxDepthM}m</p>
+
+        {/* Conditions grid */}
+        {(session.maxDepthM || session.waterTempC || session.visibilityM || session.current) && (
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3">
+            {session.maxDepthM != null && (
+              <div class="bg-ocean-50 rounded-lg p-2 text-center">
+                <div class="text-xs text-ocean-400">🌊 {t('sites.depth')}</div>
+                <div class="text-sm font-semibold text-ocean-800">{session.maxDepthM}m</div>
+              </div>
+            )}
+            {session.waterTempC != null && (
+              <div class="bg-ocean-50 rounded-lg p-2 text-center">
+                <div class="text-xs text-ocean-400">🌡️ {t('conditions.temp')}</div>
+                <div class="text-sm font-semibold text-ocean-800">{session.waterTempC}°C</div>
+              </div>
+            )}
+            {session.visibilityM != null && (
+              <div class="bg-ocean-50 rounded-lg p-2 text-center">
+                <div class="text-xs text-ocean-400">👁 {t('conditions.visibility')}</div>
+                <div class="text-sm font-semibold text-ocean-800">{session.visibilityM}m</div>
+              </div>
+            )}
+            {session.current && (
+              <div class="bg-ocean-50 rounded-lg p-2 text-center">
+                <div class="text-xs text-ocean-400">💨 {t('conditions.current')}</div>
+                <div class="text-sm font-semibold text-ocean-800">{t(`current.${session.current}`)}</div>
+              </div>
+            )}
+          </div>
         )}
+
         {session.notes && (
-          <p class="text-sm text-ocean-600 mt-2 bg-ocean-50 rounded-xl p-3">{session.notes}</p>
+          <p class="text-sm text-ocean-600 mt-3 bg-ocean-50 rounded-xl p-3">{session.notes}</p>
         )}
       </div>
 
@@ -141,6 +182,25 @@ export function DiveSessionDetail() {
       >
         {t('log.delete')}
       </button>
+
+      {/* FAB: Add species */}
+      <button
+        onClick={() => setShowPicker(true)}
+        class="fixed bottom-20 right-4 bg-ocean-700 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-2xl hover:bg-ocean-600 transition-colors z-40"
+        aria-label={t('picker.add_species')}
+      >
+        +
+      </button>
+
+      {/* Species picker modal */}
+      {showPicker && (
+        <SpeciesPicker
+          mode="multi"
+          alreadySelected={alreadyAdded}
+          onConfirm={handleAddSpecies}
+          onClose={() => setShowPicker(false)}
+        />
+      )}
     </div>
   )
 }

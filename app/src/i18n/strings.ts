@@ -109,6 +109,40 @@ const strings: Record<string, Record<Locale, string>> = {
   'export.success': { es: 'Datos importados correctamente', en: 'Data imported successfully' },
   'export.error': { es: 'Error al importar datos', en: 'Error importing data' },
 
+  // V2: Dive conditions
+  'conditions.title': { es: 'Condiciones', en: 'Conditions' },
+  'conditions.temp': { es: 'Temp. agua (°C)', en: 'Water temp (°C)' },
+  'conditions.visibility': { es: 'Visibilidad (m)', en: 'Visibility (m)' },
+  'conditions.current': { es: 'Corriente', en: 'Current' },
+  'current.none': { es: 'Sin corriente', en: 'None' },
+  'current.light': { es: 'Suave', en: 'Light' },
+  'current.moderate': { es: 'Moderada', en: 'Moderate' },
+  'current.strong': { es: 'Fuerte', en: 'Strong' },
+
+  // V2: Species picker
+  'picker.title': { es: 'Agregar especies', en: 'Add species' },
+  'picker.search': { es: 'Buscar especie...', en: 'Search species...' },
+  'picker.selected': { es: 'seleccionadas', en: 'selected' },
+  'picker.add': { es: 'Agregar', en: 'Add' },
+  'picker.close': { es: 'Cerrar', en: 'Close' },
+  'picker.add_species': { es: 'Agregar especies', en: 'Add species' },
+
+  // V2: Species at site
+  'site.detail_title': { es: 'Detalle del sitio', en: 'Site detail' },
+  'site.your_sightings': { es: 'Tus avistamientos aquí', en: 'Your sightings here' },
+  'site.no_sightings': { es: 'Aún no has registrado avistamientos en este sitio', en: 'No sightings logged at this site yet' },
+  'site.dive_here': { es: 'Registrar inmersión aquí', en: 'Log a dive here' },
+  'site.dives_count': { es: 'inmersiones aquí', en: 'dives here' },
+
+  // V2: Species comparison
+  'compare.title': { es: 'Comparar especies', en: 'Compare species' },
+  'compare.select_first': { es: 'Selecciona la primera especie', en: 'Select first species' },
+  'compare.select_second': { es: 'Selecciona la segunda especie', en: 'Select second species' },
+  'compare.vs': { es: 'vs', en: 'vs' },
+  'compare.differences': { es: 'Diferencias', en: 'Differences' },
+  'compare.same': { es: 'Igual', en: 'Same' },
+  'compare.change': { es: 'Cambiar', en: 'Change' },
+
   // Language toggle
   'lang.switch': { es: 'EN', en: 'ES' },
 }

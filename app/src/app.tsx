@@ -6,9 +6,11 @@ import { ErrorBoundary } from './components/ErrorBoundary'
 import { SpeciesList } from './pages/SpeciesList'
 import { SpeciesDetail } from './pages/SpeciesDetail'
 import { DiveSites } from './pages/DiveSites'
+import { DiveSiteDetail } from './pages/DiveSiteDetail'
 import { DiveLog } from './pages/DiveLog'
 import { NewDiveSession } from './pages/NewDiveSession'
 import { DiveSessionDetail } from './pages/DiveSessionDetail'
+import { Compare } from './pages/Compare'
 import { NotFound } from './pages/NotFound'
 import { BASE } from './base'
 
@@ -26,7 +28,9 @@ export function App() {
               <Route path={`${BASE}/log`} component={DiveLog} />
               <Route path={`${BASE}/log/new`} component={NewDiveSession} />
               <Route path={`${BASE}/log/:id`} component={DiveSessionDetail} />
+              <Route path={`${BASE}/compare`} component={Compare} />
               <Route path={`${BASE}/sites`} component={DiveSites} />
+              <Route path={`${BASE}/sites/:name`} component={DiveSiteDetail} />
               <Route default component={NotFound} />
             </Router>
           </main>

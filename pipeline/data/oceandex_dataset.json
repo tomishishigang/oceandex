@@ -2,21 +2,21 @@
   "metadata": {
     "name": "Oceandex - Central Chile Marine Species",
     "version": "1.0.0",
-    "build_date": "2026-03-17",
+    "build_date": "2026-03-20",
     "region": "Central Chile (Valparaíso / Coquimbo)",
     "latitude_range": "-33.5 to -32.0",
     "longitude_range": "-71.9 to -71.3",
     "total_species": 581,
     "with_photos": 401,
-    "with_common_name_en": 239,
-    "with_common_name_es": 189,
+    "with_common_name_en": 243,
+    "with_common_name_es": 196,
     "data_sources": [
       "OBIS",
       "WoRMS",
       "iNaturalist"
     ],
     "sightability_scored": true,
-    "sightability_date": "2026-03-17"
+    "sightability_date": "2026-03-20"
   },
   "dive_sites": [
     {
@@ -544,7 +544,7 @@
     {
       "id": 533427,
       "scientific_name": "Siphonaria lessonii",
-      "common_name_en": null,
+      "common_name_en": "Lesson's False Limpet",
       "common_name_es": "Lapa pulmonada",
       "kingdom": "Animalia",
       "phylum": "Mollusca",
@@ -6010,7 +6010,7 @@
       "id": null,
       "scientific_name": "Phidiana lottini",
       "common_name_en": "Lottin's Aeolid",
-      "common_name_es": null,
+      "common_name_es": "Nudibranquio Espalda de Fuego",
       "kingdom": "Animalia",
       "phylum": "Mollusca",
       "class": "Gastropoda",
@@ -7584,6 +7584,47 @@
       }
     },
     {
+      "id": null,
+      "scientific_name": "Diaulula variolata",
+      "common_name_en": null,
+      "common_name_es": "Babosa áspera",
+      "kingdom": "Animalia",
+      "phylum": "Mollusca",
+      "class": "Gastropoda",
+      "order": "Nudibranchia",
+      "family": "Discodorididae",
+      "genus": "Diaulula",
+      "species": "Diaulula variolata",
+      "category": "mollusks",
+      "observation_count": 0,
+      "inat_observations": 18,
+      "primary_photo": {
+        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/230142985/medium.jpg",
+        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/230142985/square.jpg",
+        "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
+        "license": "cc-by-nc"
+      },
+      "additional_photos": [
+        {
+          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/230142985/medium.jpg",
+          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/230142985/square.jpg",
+          "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
+          "license": "cc-by-nc"
+        }
+      ],
+      "wikipedia_url": null,
+      "worms_authority": null,
+      "sightability_score": 60,
+      "sightability_tier": "common",
+      "sightability_signals": {
+        "inat": 25,
+        "obis": 0,
+        "photo": 10,
+        "name": 10,
+        "taxon": 15
+      }
+    },
+    {
       "id": 282394,
       "scientific_name": "Psammobatis scobina",
       "common_name_en": "Raspthorn Sandskate",
@@ -7728,6 +7769,47 @@
       "sightability_signals": {
         "inat": 20,
         "obis": 5,
+        "photo": 10,
+        "name": 10,
+        "taxon": 15
+      }
+    },
+    {
+      "id": null,
+      "scientific_name": "Tyrinna delicata",
+      "common_name_en": "Delicate Sea Slug",
+      "common_name_es": "Babosa delicada",
+      "kingdom": "Animalia",
+      "phylum": "Mollusca",
+      "class": "Gastropoda",
+      "order": "Nudibranchia",
+      "family": "Tyrinidae",
+      "genus": "Tyrinna",
+      "species": "Tyrinna delicata",
+      "category": "mollusks",
+      "observation_count": 0,
+      "inat_observations": 12,
+      "primary_photo": {
+        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/205816752/medium.jpg",
+        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/205816752/square.jpg",
+        "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
+        "license": "cc-by-nc"
+      },
+      "additional_photos": [
+        {
+          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/205816752/medium.jpg",
+          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/205816752/square.jpg",
+          "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
+          "license": "cc-by-nc"
+        }
+      ],
+      "wikipedia_url": null,
+      "worms_authority": null,
+      "sightability_score": 60,
+      "sightability_tier": "common",
+      "sightability_signals": {
+        "inat": 25,
+        "obis": 0,
         "photo": 10,
         "name": 10,
         "taxon": 15
@@ -9637,6 +9719,47 @@
     },
     {
       "id": null,
+      "scientific_name": "Cadlina sparsa",
+      "common_name_en": "Dark-spot Cadlina",
+      "common_name_es": "cadlina de manchas dispersas",
+      "kingdom": "Animalia",
+      "phylum": "Mollusca",
+      "class": "Gastropoda",
+      "order": "Nudibranchia",
+      "family": "Cadlinidae",
+      "genus": "Cadlina",
+      "species": "Cadlina sparsa",
+      "category": "mollusks",
+      "observation_count": 0,
+      "inat_observations": 9,
+      "primary_photo": {
+        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/192345678/medium.jpg",
+        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/192345678/square.jpg",
+        "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
+        "license": "cc-by-nc"
+      },
+      "additional_photos": [
+        {
+          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/192345678/medium.jpg",
+          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/192345678/square.jpg",
+          "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
+          "license": "cc-by-nc"
+        }
+      ],
+      "wikipedia_url": null,
+      "worms_authority": null,
+      "sightability_score": 55,
+      "sightability_tier": "uncommon",
+      "sightability_signals": {
+        "inat": 20,
+        "obis": 0,
+        "photo": 10,
+        "name": 10,
+        "taxon": 15
+      }
+    },
+    {
+      "id": null,
       "scientific_name": "Flabellina trilineata",
       "common_name_en": "Three-lined Aeolid",
       "common_name_es": null,
@@ -9680,7 +9803,7 @@
       "id": null,
       "scientific_name": "Tritonia challengeriana",
       "common_name_en": "Challenger Tritonia",
-      "common_name_es": null,
+      "common_name_es": "Tritonia pálida",
       "kingdom": "Animalia",
       "phylum": "Mollusca",
       "class": "Gastropoda",
@@ -9788,6 +9911,47 @@
         }
       ],
       "wikipedia_url": "https://en.wikipedia.org/wiki/Limacia_clavigera",
+      "worms_authority": null,
+      "sightability_score": 55,
+      "sightability_tier": "uncommon",
+      "sightability_signals": {
+        "inat": 20,
+        "obis": 0,
+        "photo": 10,
+        "name": 10,
+        "taxon": 15
+      }
+    },
+    {
+      "id": null,
+      "scientific_name": "Doto uva",
+      "common_name_en": "Grape-cluster Nudibranch",
+      "common_name_es": null,
+      "kingdom": "Animalia",
+      "phylum": "Mollusca",
+      "class": "Gastropoda",
+      "order": "Nudibranchia",
+      "family": "Dotidae",
+      "genus": "Doto",
+      "species": "Doto uva",
+      "category": "mollusks",
+      "observation_count": 0,
+      "inat_observations": 5,
+      "primary_photo": {
+        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/173245678/medium.jpg",
+        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/173245678/square.jpg",
+        "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
+        "license": "cc-by-nc"
+      },
+      "additional_photos": [
+        {
+          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/173245678/medium.jpg",
+          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/173245678/square.jpg",
+          "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
+          "license": "cc-by-nc"
+        }
+      ],
+      "wikipedia_url": null,
       "worms_authority": null,
       "sightability_score": 55,
       "sightability_tier": "uncommon",
@@ -10445,47 +10609,6 @@
       }
     },
     {
-      "id": null,
-      "scientific_name": "Diaulula variolata",
-      "common_name_en": null,
-      "common_name_es": null,
-      "kingdom": "Animalia",
-      "phylum": "Mollusca",
-      "class": "Gastropoda",
-      "order": "Nudibranchia",
-      "family": "Discodorididae",
-      "genus": "Diaulula",
-      "species": "Diaulula variolata",
-      "category": "mollusks",
-      "observation_count": 0,
-      "inat_observations": 18,
-      "primary_photo": {
-        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/230142985/medium.jpg",
-        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/230142985/square.jpg",
-        "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
-        "license": "cc-by-nc"
-      },
-      "additional_photos": [
-        {
-          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/230142985/medium.jpg",
-          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/230142985/square.jpg",
-          "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
-          "license": "cc-by-nc"
-        }
-      ],
-      "wikipedia_url": null,
-      "worms_authority": null,
-      "sightability_score": 50,
-      "sightability_tier": "uncommon",
-      "sightability_signals": {
-        "inat": 25,
-        "obis": 0,
-        "photo": 10,
-        "name": 0,
-        "taxon": 15
-      }
-    },
-    {
       "id": 282909,
       "scientific_name": "Strangomera bentincki",
       "common_name_en": "Araucanian herring",
@@ -10724,44 +10847,37 @@
       }
     },
     {
-      "id": null,
-      "scientific_name": "Tyrinna delicata",
+      "id": 281898,
+      "scientific_name": "Ophiogobius jenynsi",
       "common_name_en": null,
-      "common_name_es": null,
+      "common_name_es": "Chanquete",
       "kingdom": "Animalia",
-      "phylum": "Mollusca",
-      "class": "Gastropoda",
-      "order": "Nudibranchia",
-      "family": "Tyrinidae",
-      "genus": "Tyrinna",
-      "species": "Tyrinna delicata",
-      "category": "mollusks",
-      "observation_count": 0,
-      "inat_observations": 12,
+      "phylum": "Chordata",
+      "class": "Teleostei",
+      "order": "Gobiiformes",
+      "family": "Gobiidae",
+      "genus": "Ophiogobius",
+      "species": "Ophiogobius jenynsi",
+      "category": "fish_and_vertebrates",
+      "observation_count": 2,
+      "inat_observations": 10,
       "primary_photo": {
-        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/205816752/medium.jpg",
-        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/205816752/square.jpg",
-        "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
-        "license": "cc-by-nc"
+        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/91447151/medium.jpg",
+        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/91447151/square.jpg",
+        "attribution": "(c) MatiasG, some rights reserved (CC BY-ND), uploaded by MatiasG",
+        "license": "cc-by-nd"
       },
-      "additional_photos": [
-        {
-          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/205816752/medium.jpg",
-          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/205816752/square.jpg",
-          "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
-          "license": "cc-by-nc"
-        }
-      ],
-      "wikipedia_url": null,
+      "additional_photos": [],
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ophiogobius_jenynsi",
       "worms_authority": null,
       "sightability_score": 50,
       "sightability_tier": "uncommon",
       "sightability_signals": {
         "inat": 25,
-        "obis": 0,
+        "obis": 5,
         "photo": 10,
-        "name": 0,
-        "taxon": 15
+        "name": 10,
+        "taxon": 0
       }
     },
     {
@@ -12150,47 +12266,6 @@
       }
     },
     {
-      "id": null,
-      "scientific_name": "Cadlina sparsa",
-      "common_name_en": null,
-      "common_name_es": null,
-      "kingdom": "Animalia",
-      "phylum": "Mollusca",
-      "class": "Gastropoda",
-      "order": "Nudibranchia",
-      "family": "Cadlinidae",
-      "genus": "Cadlina",
-      "species": "Cadlina sparsa",
-      "category": "mollusks",
-      "observation_count": 0,
-      "inat_observations": 9,
-      "primary_photo": {
-        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/192345678/medium.jpg",
-        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/192345678/square.jpg",
-        "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
-        "license": "cc-by-nc"
-      },
-      "additional_photos": [
-        {
-          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/192345678/medium.jpg",
-          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/192345678/square.jpg",
-          "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
-          "license": "cc-by-nc"
-        }
-      ],
-      "wikipedia_url": null,
-      "worms_authority": null,
-      "sightability_score": 45,
-      "sightability_tier": "uncommon",
-      "sightability_signals": {
-        "inat": 20,
-        "obis": 0,
-        "photo": 10,
-        "name": 0,
-        "taxon": 15
-      }
-    },
-    {
       "id": 342233,
       "scientific_name": "Semirossia patagonica",
       "common_name_en": "Little Patagonian Bobtail",
@@ -12314,47 +12389,6 @@
     },
     {
       "id": null,
-      "scientific_name": "Doto uva",
-      "common_name_en": null,
-      "common_name_es": null,
-      "kingdom": "Animalia",
-      "phylum": "Mollusca",
-      "class": "Gastropoda",
-      "order": "Nudibranchia",
-      "family": "Dotidae",
-      "genus": "Doto",
-      "species": "Doto uva",
-      "category": "mollusks",
-      "observation_count": 0,
-      "inat_observations": 5,
-      "primary_photo": {
-        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/173245678/medium.jpg",
-        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/173245678/square.jpg",
-        "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
-        "license": "cc-by-nc"
-      },
-      "additional_photos": [
-        {
-          "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/173245678/medium.jpg",
-          "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/173245678/square.jpg",
-          "attribution": "(c) Gonzalo Bravo, some rights reserved (CC BY-NC)",
-          "license": "cc-by-nc"
-        }
-      ],
-      "wikipedia_url": null,
-      "worms_authority": null,
-      "sightability_score": 45,
-      "sightability_tier": "uncommon",
-      "sightability_signals": {
-        "inat": 20,
-        "obis": 0,
-        "photo": 10,
-        "name": 0,
-        "taxon": 15
-      }
-    },
-    {
-      "id": null,
       "scientific_name": "Bornella anguilla",
       "common_name_en": "Anguilla Bornella",
       "common_name_es": null,
@@ -12398,7 +12432,7 @@
       "id": null,
       "scientific_name": "Felimare agassizii",
       "common_name_en": "Agassiz's Chromodorid",
-      "common_name_es": null,
+      "common_name_es": "Nudibranquio de Agassiz",
       "kingdom": "Animalia",
       "phylum": "Mollusca",
       "class": "Gastropoda",
@@ -12594,40 +12628,6 @@
       },
       "additional_photos": [],
       "wikipedia_url": null,
-      "worms_authority": null,
-      "sightability_score": 40,
-      "sightability_tier": "uncommon",
-      "sightability_signals": {
-        "inat": 25,
-        "obis": 5,
-        "photo": 10,
-        "name": 0,
-        "taxon": 0
-      }
-    },
-    {
-      "id": 281898,
-      "scientific_name": "Ophiogobius jenynsi",
-      "common_name_en": null,
-      "common_name_es": null,
-      "kingdom": "Animalia",
-      "phylum": "Chordata",
-      "class": "Teleostei",
-      "order": "Gobiiformes",
-      "family": "Gobiidae",
-      "genus": "Ophiogobius",
-      "species": "Ophiogobius jenynsi",
-      "category": "fish_and_vertebrates",
-      "observation_count": 2,
-      "inat_observations": 10,
-      "primary_photo": {
-        "url_medium": "https://inaturalist-open-data.s3.amazonaws.com/photos/91447151/medium.jpg",
-        "url_square": "https://inaturalist-open-data.s3.amazonaws.com/photos/91447151/square.jpg",
-        "attribution": "(c) MatiasG, some rights reserved (CC BY-ND), uploaded by MatiasG",
-        "license": "cc-by-nd"
-      },
-      "additional_photos": [],
-      "wikipedia_url": "https://en.wikipedia.org/wiki/Ophiogobius_jenynsi",
       "worms_authority": null,
       "sightability_score": 40,
       "sightability_tier": "uncommon",

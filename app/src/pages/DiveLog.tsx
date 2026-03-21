@@ -28,9 +28,11 @@ function SessionCard({ session }: { session: DiveSession }) {
           <span class="text-[10px] text-ocean-400 ml-1">🐟</span>
         </div>
       </div>
-      {session.maxDepthM && (
-        <p class="text-xs text-ocean-400 mt-1">🌊 {session.maxDepthM}m</p>
-      )}
+      <div class="flex gap-2 mt-1 text-xs text-ocean-400 flex-wrap">
+        {session.maxDepthM != null && <span>🌊 {session.maxDepthM}m</span>}
+        {session.waterTempC != null && <span>🌡️ {session.waterTempC}°C</span>}
+        {session.visibilityM != null && <span>👁 {session.visibilityM}m</span>}
+      </div>
       {session.notes && (
         <p class="text-xs text-ocean-400 mt-1 truncate">{session.notes}</p>
       )}

@@ -3,7 +3,10 @@ import { useLocation } from 'preact-iso'
 import { t } from '../hooks/useLocale'
 import { href } from '../base'
 import { createSession } from '../db'
+import type { CurrentStrength } from '../db'
 import { diveSites } from '../data/diveSites'
+
+const CURRENT_OPTIONS: CurrentStrength[] = ['none', 'light', 'moderate', 'strong']
 
 export function NewDiveSession() {
   const { route } = useLocation()
@@ -12,6 +15,9 @@ export function NewDiveSession() {
   const [siteName, setSiteName] = useState('')
   const [date, setDate] = useState(today)
   const [depth, setDepth] = useState('')
+  const [waterTemp, setWaterTemp] = useState('')
+  const [visibility, setVisibility] = useState('')
+  const [current, setCurrent] = useState<CurrentStrength | ''>('')
   const [notes, setNotes] = useState('')
   const [showSites, setShowSites] = useState(false)
 
@@ -23,10 +29,15 @@ export function NewDiveSession() {
       siteName: siteName.trim(),
       date,
       maxDepthM: depth ? Number(depth) : null,
+      waterTempC: waterTemp ? Number(waterTemp) : null,
+      visibilityM: visibility ? Number(visibility) : null,
+      current: current || null,
       notes: notes.trim() || null,
     })
     route(href(`/log/${session.id}`))
   }
+
+  const inputClass = "w-full px-3 py-2.5 rounded-xl bg-white border border-ocean-200 text-sm text-ocean-800 placeholder:text-ocean-300 focus:outline-none focus:ring-2 focus:ring-ocean-400"
 
   return (
     <div class="px-4 py-4">
@@ -45,7 +56,7 @@ export function NewDiveSession() {
               onInput={(e) => setSiteName((e.target as HTMLInputElement).value)}
               onFocus={() => setShowSites(true)}
               placeholder={t('newdive.site_placeholder')}
-              class="w-full px-3 py-2.5 rounded-xl bg-white border border-ocean-200 text-sm text-ocean-800 placeholder:text-ocean-300 focus:outline-none focus:ring-2 focus:ring-ocean-400"
+              class={inputClass}
             />
             {showSites && (
               <div class="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-lg border border-ocean-200 max-h-48 overflow-y-auto z-20">
@@ -76,24 +87,67 @@ export function NewDiveSession() {
             type="date"
             value={date}
             onInput={(e) => setDate((e.target as HTMLInputElement).value)}
-            class="w-full px-3 py-2.5 rounded-xl bg-white border border-ocean-200 text-sm text-ocean-800 focus:outline-none focus:ring-2 focus:ring-ocean-400"
+            class={inputClass}
           />
         </div>
 
-        {/* Depth */}
-        <div>
-          <label class="block text-xs font-semibold text-ocean-600 mb-1">
-            {t('newdive.depth')}
-          </label>
-          <input
-            type="number"
-            value={depth}
-            onInput={(e) => setDepth((e.target as HTMLInputElement).value)}
-            min="0"
-            max="100"
-            placeholder="0"
-            class="w-full px-3 py-2.5 rounded-xl bg-white border border-ocean-200 text-sm text-ocean-800 placeholder:text-ocean-300 focus:outline-none focus:ring-2 focus:ring-ocean-400"
-          />
+        {/* Depth + Temp row */}
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-ocean-600 mb-1">
+              {t('newdive.depth')}
+            </label>
+            <input
+              type="number"
+              value={depth}
+              onInput={(e) => setDepth((e.target as HTMLInputElement).value)}
+              min="0" max="100" placeholder="0"
+              class={inputClass}
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-ocean-600 mb-1">
+              {t('conditions.temp')}
+            </label>
+            <input
+              type="number"
+              value={waterTemp}
+              onInput={(e) => setWaterTemp((e.target as HTMLInputElement).value)}
+              min="0" max="35" placeholder="12"
+              class={inputClass}
+            />
+          </div>
+        </div>
+
+        {/* Visibility + Current row */}
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-ocean-600 mb-1">
+              {t('conditions.visibility')}
+            </label>
+            <input
+              type="number"
+              value={visibility}
+              onInput={(e) => setVisibility((e.target as HTMLInputElement).value)}
+              min="0" max="50" placeholder="10"
+              class={inputClass}
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-ocean-600 mb-1">
+              {t('conditions.current')}
+            </label>
+            <select
+              value={current}
+              onChange={(e) => setCurrent((e.target as HTMLSelectElement).value as CurrentStrength | '')}
+              class={inputClass}
+            >
+              <option value="">—</option>
+              {CURRENT_OPTIONS.map((opt) => (
+                <option key={opt} value={opt}>{t(`current.${opt}`)}</option>
+              ))}
+            </select>
+          </div>
         </div>
 
         {/* Notes */}
@@ -106,7 +160,7 @@ export function NewDiveSession() {
             onInput={(e) => setNotes((e.target as HTMLTextAreaElement).value)}
             placeholder={t('newdive.notes_placeholder')}
             rows={3}
-            class="w-full px-3 py-2.5 rounded-xl bg-white border border-ocean-200 text-sm text-ocean-800 placeholder:text-ocean-300 focus:outline-none focus:ring-2 focus:ring-ocean-400 resize-none"
+            class={`${inputClass} resize-none`}
           />
         </div>
 

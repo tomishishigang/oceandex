@@ -1,5 +1,5 @@
 import { db } from './db'
-import type { DiveSession, Sighting, ExportData } from './types'
+import type { DiveSession, Sighting, ExportData, CurrentStrength } from './types'
 
 // === Sessions ===
 
@@ -7,6 +7,9 @@ export async function createSession(data: {
   siteName: string
   date: string
   maxDepthM?: number | null
+  waterTempC?: number | null
+  visibilityM?: number | null
+  current?: CurrentStrength | null
   notes?: string | null
 }): Promise<DiveSession> {
   const session: DiveSession = {
@@ -14,6 +17,9 @@ export async function createSession(data: {
     siteName: data.siteName,
     date: data.date,
     maxDepthM: data.maxDepthM ?? null,
+    waterTempC: data.waterTempC ?? null,
+    visibilityM: data.visibilityM ?? null,
+    current: data.current ?? null,
     notes: data.notes ?? null,
     createdAt: new Date().toISOString(),
   }
@@ -94,7 +100,7 @@ export async function exportData(): Promise<ExportData> {
     db.sightings.toArray(),
   ])
   return {
-    version: 1,
+    version: 2,
     exportedAt: new Date().toISOString(),
     sessions,
     sightings,
@@ -109,7 +115,14 @@ export async function importData(data: ExportData): Promise<{ sessions: number; 
     for (const session of data.sessions) {
       const existing = await db.diveSessions.get(session.id)
       if (!existing) {
-        await db.diveSessions.add(session)
+        // Backfill v2 fields for v1 imports
+        const normalized: DiveSession = {
+          ...session,
+          waterTempC: session.waterTempC ?? null,
+          visibilityM: session.visibilityM ?? null,
+          current: session.current ?? null,
+        }
+        await db.diveSessions.add(normalized)
         sessionsImported++
       }
     }
@@ -123,4 +136,18 @@ export async function importData(data: ExportData): Promise<{ sessions: number; 
   })
 
   return { sessions: sessionsImported, sightings: sightingsImported }
+}
+
+// === Site-specific queries ===
+
+export async function getSessionsForSite(siteName: string): Promise<DiveSession[]> {
+  return db.diveSessions.where('date').above('').filter(s => s.siteName === siteName).reverse().toArray()
+}
+
+export async function getSightingsForSite(siteName: string): Promise<number[]> {
+  const sessions = await getSessionsForSite(siteName)
+  const sessionIds = sessions.map(s => s.id)
+  if (sessionIds.length === 0) return []
+  const sightings = await db.sightings.where('sessionId').anyOf(sessionIds).toArray()
+  return [...new Set(sightings.map(s => s.speciesId))]
 }
