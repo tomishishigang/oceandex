@@ -24,6 +24,7 @@ export function DiveSessionDetail() {
   const sessionId = params.id as string
   const [showPicker, setShowPicker] = useState(false)
   const [showShare, setShowShare] = useState(false)
+  const [deleting, setDeleting] = useState(false)
   const badgeCount = useEarnedCount()
 
   const session = useLiveQuery(
@@ -39,7 +40,7 @@ export function DiveSessionDetail() {
 
   const alreadyAdded = new Set(sightings.map(s => s.speciesId))
 
-  if (session === undefined) {
+  if (session === undefined && !deleting) {
     return (
       <div class="px-4 py-16 text-center">
         <div class="text-5xl mb-3">🤿</div>
@@ -53,6 +54,7 @@ export function DiveSessionDetail() {
 
   async function handleDelete() {
     if (confirm(t('log.delete_confirm'))) {
+      setDeleting(true)
       await deleteSession(sessionId)
       route(href('/log'))
     }
