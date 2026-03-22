@@ -72,9 +72,6 @@ export async function renderCard(
     ctx.drawImage(bgBitmap, sx, sy, sw, sh, 0, 0, width, height)
     bgBitmap.close()
 
-    // Light overlay for text readability
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)'
-    ctx.fillRect(0, 0, width, height)
   } else {
     // Gradient background
     const bg = BACKGROUNDS[data.backgroundStyle]
