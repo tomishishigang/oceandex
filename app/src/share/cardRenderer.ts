@@ -200,56 +200,6 @@ export async function renderCard(
     return canvas.convertToBlob({ type: 'image/png' })
   }
 
-  // === Species photo grid ===
-  const { photoGridSize, photoGap, photoCols, photoRows } = layout
-  const maxPhotos = photoCols * photoRows
-  const speciesWithPhotos = data.speciesList.filter(s => s.primary_photo?.url_medium)
-  const photosToShow = speciesWithPhotos.slice(0, maxPhotos)
-
-  if (photosToShow.length > 0) {
-    const actualCols = Math.min(photosToShow.length, photoCols)
-    const gridW = actualCols * photoGridSize + (actualCols - 1) * photoGap
-    const startX = (width - gridW) / 2
-
-    const images = await Promise.all(
-      photosToShow.map(s => loadImage(s.primary_photo!.url_medium!))
-    )
-
-    for (let i = 0; i < images.length; i++) {
-      const col = i % photoCols
-      const row = Math.floor(i / photoCols)
-      const x = startX + col * (photoGridSize + photoGap)
-      const y = cursorY + row * (photoGridSize + photoGap)
-
-      // Rounded photo with shadow
-      ctx.save()
-      roundRect(ctx, x, y, photoGridSize, photoGridSize, 20)
-      ctx.clip()
-
-      if (images[i]) {
-        ctx.drawImage(images[i]!, x, y, photoGridSize, photoGridSize)
-      } else {
-        ctx.fillStyle = 'rgba(255,255,255,0.1)'
-        ctx.fillRect(x, y, photoGridSize, photoGridSize)
-        ctx.font = `${photoGridSize * 0.4}px system-ui`
-        ctx.fillStyle = 'rgba(255,255,255,0.3)'
-        ctx.textAlign = 'center'
-        ctx.fillText('🐟', x + photoGridSize / 2, y + photoGridSize * 0.65)
-      }
-
-      // Subtle border
-      ctx.strokeStyle = 'rgba(255,255,255,0.2)'
-      ctx.lineWidth = 2
-      roundRect(ctx, x, y, photoGridSize, photoGridSize, 20)
-      ctx.stroke()
-
-      ctx.restore()
-    }
-
-    const totalRows = Math.ceil(photosToShow.length / photoCols)
-    cursorY += totalRows * (photoGridSize + photoGap) + 30
-  }
-
   // === Species count ===
   ctx.font = `bold ${layout.subtitleSize + 8}px system-ui, -apple-system, sans-serif`
   ctx.fillStyle = '#ffffff'
