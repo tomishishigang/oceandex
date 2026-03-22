@@ -72,15 +72,8 @@ export async function renderCard(
     ctx.drawImage(bgBitmap, sx, sy, sw, sh, 0, 0, width, height)
     bgBitmap.close()
 
-    // Dark overlay for text readability
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.55)'
-    ctx.fillRect(0, 0, width, height)
-
-    // Subtle gradient overlay at bottom
-    const bottomGrad = ctx.createLinearGradient(0, height * 0.6, 0, height)
-    bottomGrad.addColorStop(0, 'rgba(0,0,0,0)')
-    bottomGrad.addColorStop(1, 'rgba(0,0,0,0.4)')
-    ctx.fillStyle = bottomGrad
+    // Light overlay for text readability
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.25)'
     ctx.fillRect(0, 0, width, height)
   } else {
     // Gradient background
