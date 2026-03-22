@@ -16,17 +16,6 @@ interface CardData {
   backgroundPhoto?: Blob | null
 }
 
-/** Load an image from URL, returns null on failure */
-async function loadImage(url: string): Promise<ImageBitmap | null> {
-  try {
-    const resp = await fetch(url, { mode: 'cors' })
-    const blob = await resp.blob()
-    return createImageBitmap(blob)
-  } catch {
-    return null
-  }
-}
-
 /** Draw a rounded rectangle path */
 function roundRect(
   ctx: OffscreenCanvasRenderingContext2D,
