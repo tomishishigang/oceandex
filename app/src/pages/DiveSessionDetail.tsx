@@ -40,7 +40,16 @@ export function DiveSessionDetail() {
 
   const alreadyAdded = new Set(sightings.map(s => s.speciesId))
 
-  if (session === undefined && !deleting) {
+  if (deleting) {
+    return (
+      <div class="px-4 py-16 text-center">
+        <div class="text-5xl mb-3">🗑️</div>
+        <p class="text-ocean-500">{t('log.deleting') ?? 'Eliminando...'}</p>
+      </div>
+    )
+  }
+
+  if (session === undefined) {
     return (
       <div class="px-4 py-16 text-center">
         <div class="text-5xl mb-3">🤿</div>
