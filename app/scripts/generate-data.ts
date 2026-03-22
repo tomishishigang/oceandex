@@ -37,6 +37,7 @@ const SPECIES_FIELDS = [
   'category', 'observation_count', 'inat_observations',
   'primary_photo', 'additional_photos', 'wikipedia_url', 'worms_authority',
   'sightability_score', 'sightability_tier',
+  'description_es', 'description_en', 'size_cm', 'depth_range_m', 'habitat',
 ]
 
 let nextId = Math.max(...species.map((s: any) => s.id ?? 0)) + 1

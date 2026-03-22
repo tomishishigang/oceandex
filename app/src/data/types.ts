@@ -39,6 +39,11 @@ export interface Species {
   sightability_score: number
   sightability_tier: SightabilityTier
   tags: string[]
+  description_es: string | null
+  description_en: string | null
+  size_cm: number | null
+  depth_range_m: string | null
+  habitat: string | null
 }
 
 export interface DiveSite {

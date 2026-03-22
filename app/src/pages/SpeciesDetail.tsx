@@ -136,6 +136,37 @@ export function SpeciesDetail() {
           </div>
         </div>
 
+        {/* Description */}
+        {(sp.description_es || sp.description_en) && (
+          <div class="bg-white rounded-2xl p-4 shadow-sm mt-3">
+            <p class="text-sm text-ocean-700 leading-relaxed">
+              {locale.value === 'es'
+                ? sp.description_es ?? sp.description_en
+                : sp.description_en ?? sp.description_es}
+            </p>
+            {/* Quick facts */}
+            {(sp.size_cm || sp.depth_range_m || sp.habitat) && (
+              <div class="flex flex-wrap gap-2 mt-3">
+                {sp.size_cm && (
+                  <span class="text-[10px] bg-ocean-50 text-ocean-600 px-2 py-1 rounded-full">
+                    📏 {sp.size_cm}cm
+                  </span>
+                )}
+                {sp.depth_range_m && (
+                  <span class="text-[10px] bg-ocean-50 text-ocean-600 px-2 py-1 rounded-full">
+                    🌊 {sp.depth_range_m}m
+                  </span>
+                )}
+                {sp.habitat && (
+                  <span class="text-[10px] bg-ocean-50 text-ocean-600 px-2 py-1 rounded-full">
+                    🏠 {sp.habitat}
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
         {/* Community stats */}
         {communityStats && communityStats.total_sightings > 0 && (
           <div class="bg-white rounded-2xl p-4 shadow-sm mt-3">
