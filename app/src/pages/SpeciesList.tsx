@@ -30,11 +30,27 @@ export function SpeciesList() {
     seenFilter.value,
   )
 
-  // Scroll to top when filters change
+  // Restore scroll position when returning from detail page
   const listRef = useRef<HTMLDivElement>(null)
   const filterKey = `${searchQuery.value}|${selectedCategory.value}|${selectedTag.value}|${selectedTier.value}|${showAllSpecies.value}|${seenFilter.value}`
+  const prevFilterKey = useRef(filterKey)
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    if (prevFilterKey.current !== filterKey) {
+      // Filters changed — scroll to top
+      prevFilterKey.current = filterKey
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      sessionStorage.removeItem('speciesListScroll')
+    } else {
+      // Returning from detail — restore scroll position
+      const saved = sessionStorage.getItem('speciesListScroll')
+      if (saved) {
+        requestAnimationFrame(() => {
+          window.scrollTo({ top: parseInt(saved, 10) })
+        })
+        sessionStorage.removeItem('speciesListScroll')
+      }
+    }
   }, [filterKey])
 
   return (
