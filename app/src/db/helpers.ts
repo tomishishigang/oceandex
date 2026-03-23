@@ -104,6 +104,10 @@ export async function getSightingsForSpecies(speciesId: number): Promise<Sightin
   return db.sightings.where('speciesId').equals(speciesId).toArray()
 }
 
+export async function getAllSightings(): Promise<Sighting[]> {
+  return db.sightings.toArray()
+}
+
 export async function getSeenSpeciesIds(): Promise<Set<number>> {
   const all = await db.sightings.toArray()
   return new Set(all.map((s) => s.speciesId))

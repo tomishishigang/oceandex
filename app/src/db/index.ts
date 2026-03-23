@@ -10,6 +10,7 @@ export {
   deleteSighting,
   getSightingsForSession,
   getSightingsForSpecies,
+  getAllSightings,
   getSeenSpeciesIds,
   getSeenCount,
   addPhotoToSighting,

@@ -101,6 +101,14 @@ const strings: Record<string, Record<Locale, string>> = {
   // Stats
   'stats.progress': { es: 'Progreso del Oceandex', en: 'Oceandex progress' },
   'stats.seen_of': { es: 'de', en: 'of' },
+  'stats.records': { es: 'Récords personales', en: 'Personal records' },
+  'stats.deepest': { es: 'Mayor profundidad', en: 'Deepest dive' },
+  'stats.coldest': { es: 'Agua más fría', en: 'Coldest water' },
+  'stats.best_visibility': { es: 'Mejor visibilidad', en: 'Best visibility' },
+  'stats.favorite_sites': { es: 'Sitios favoritos', en: 'Favorite sites' },
+  'stats.by_category': { es: 'Especies por categoría', en: 'Species by category' },
+  'stats.monthly': { es: 'Actividad mensual', en: 'Monthly activity' },
+  'stats.dives_label': { es: 'inmersiones', en: 'dives' },
 
   // Export/Import
   'export.title': { es: 'Exportar datos', en: 'Export data' },
