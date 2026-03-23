@@ -64,7 +64,7 @@ export function SpeciesCard({ species: sp, isSeen }: Props) {
     setTimeout(() => setFeedback(null), 1500)
   }
 
-  function handleSaveScroll(e: Event) {
+  function handleSaveScroll() {
     // Save scroll position before navigating to detail
     sessionStorage.setItem('speciesListScroll', String(window.scrollY))
   }
