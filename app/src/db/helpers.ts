@@ -3,6 +3,7 @@ import type { DiveSession, Sighting, SightingPhoto, ExportData, ExportDataV3, Ex
 import { compressImage, generateThumbnail, blobToBase64, base64ToBlob } from './photos'
 import { currentUserId } from '../auth/useAuth'
 import { scheduleSyncAfterWrite } from '../sync/syncEngine'
+import { deleteSessionFromCloud } from '../sync/syncDelete'
 import { uploadPhoto } from '../sync/photoSync'
 
 function getUserId(): string {
@@ -40,16 +41,22 @@ export async function createSession(data: {
 }
 
 export async function deleteSession(id: string): Promise<void> {
+  // Get sighting IDs before deleting locally
+  const sightings = await db.sightings.where('sessionId').equals(id).toArray()
+  const sightingIds = sightings.map(s => s.id)
+
   await db.transaction('rw', db.diveSessions, db.sightings, db.sightingPhotos, async () => {
-    const sightings = await db.sightings.where('sessionId').equals(id).toArray()
-    const sightingIds = sightings.map(s => s.id)
     if (sightingIds.length > 0) {
       await db.sightingPhotos.where('sightingId').anyOf(sightingIds).delete()
     }
     await db.sightings.where('sessionId').equals(id).delete()
     await db.diveSessions.delete(id)
   })
-  scheduleSyncAfterWrite()
+
+  // Delete from cloud (non-blocking)
+  deleteSessionFromCloud(id, sightingIds).catch(e =>
+    console.error('Cloud delete error:', e)
+  )
 }
 
 export async function getSession(id: string): Promise<DiveSession | undefined> {
