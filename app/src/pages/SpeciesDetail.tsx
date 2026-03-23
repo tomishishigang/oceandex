@@ -4,14 +4,14 @@ import { categoryMap } from '../data/categories'
 import { tagMap } from '../data/tags'
 import { t, locale } from '../hooks/useLocale'
 import { MarkAsSeen } from '../components/MarkAsSeen'
-import { useSpeciesCommunityStats } from '../hooks/useCommunity'
+import { useSpeciesCommunityStats } from '../hooks/useCommunityStats'
 import { href } from '../base'
 
 export function SpeciesDetail() {
   const { params } = useRoute()
   const id = Number(params.id)
   const sp = speciesById.get(id)
-  const communityStats = useSpeciesCommunityStats(id)
+  const community = useSpeciesCommunityStats(id)
 
   if (!sp) {
     return (
@@ -167,42 +167,6 @@ export function SpeciesDetail() {
           </div>
         )}
 
-        {/* Community stats */}
-        {communityStats && communityStats.total_sightings > 0 && (
-          <div class="bg-white rounded-2xl p-4 shadow-sm mt-3">
-            <h3 class="text-xs font-semibold text-ocean-600 mb-3 uppercase tracking-wide">
-              🌐 {t('community.title')}
-            </h3>
-            <div class="flex gap-3 mb-3">
-              <div class="text-center flex-1 p-2 bg-ocean-50 rounded-xl">
-                <div class="text-lg font-bold text-ocean-800">{communityStats.total_sightings}</div>
-                <div class="text-[10px] text-ocean-500">{t('community.sightings')}</div>
-              </div>
-              <div class="text-center flex-1 p-2 bg-ocean-50 rounded-xl">
-                <div class="text-lg font-bold text-ocean-800">{communityStats.unique_divers}</div>
-                <div class="text-[10px] text-ocean-500">{t('community.divers_seen')}</div>
-              </div>
-            </div>
-            {communityStats.sites.length > 0 && (
-              <div>
-                <p class="text-[10px] text-ocean-400 uppercase tracking-wide mb-1">{t('community.seen_at_sites')}</p>
-                <div class="space-y-1">
-                  {communityStats.sites.map(site => (
-                    <a
-                      key={site.site_name}
-                      href={href(`/sites/${encodeURIComponent(site.site_name)}`)}
-                      class="flex justify-between text-xs no-underline text-ocean-700 hover:text-ocean-900"
-                    >
-                      <span>📍 {site.site_name}</span>
-                      <span class="text-ocean-400">{site.sighting_count}x</span>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
         {/* Taxonomy */}
         {taxonomyRows.length > 0 && (
           <div class="bg-white rounded-2xl p-4 shadow-sm mt-3">
@@ -247,6 +211,57 @@ export function SpeciesDetail() {
         {/* Mark as seen */}
         <div class="mt-4">
           <MarkAsSeen speciesId={sp.id} />
+        </div>
+
+        {/* Community stats */}
+        <div class="bg-white rounded-2xl p-4 shadow-sm mt-3">
+          <h3 class="text-xs font-semibold text-ocean-600 mb-3 uppercase tracking-wide">
+            🌐 {t('community.title')}
+          </h3>
+
+          {community.offline ? (
+            <p class="text-xs text-ocean-400">{t('community.offline')}</p>
+          ) : community.loading ? (
+            <div class="flex justify-center py-4">
+              <div class="w-5 h-5 border-2 border-ocean-200 border-t-ocean-500 rounded-full animate-spin" />
+            </div>
+          ) : community.data && community.data.total_sightings > 0 ? (
+            <>
+              <div class="flex gap-3 mb-3">
+                <div class="text-center flex-1 p-2 bg-ocean-50 rounded-xl">
+                  <div class="text-lg font-bold text-ocean-800">{community.data.total_sightings}</div>
+                  <div class="text-[10px] text-ocean-500">{t('community.sightings_by_divers')}</div>
+                </div>
+                <div class="text-center flex-1 p-2 bg-ocean-50 rounded-xl">
+                  <div class="text-lg font-bold text-ocean-800">{community.data.unique_divers}</div>
+                  <div class="text-[10px] text-ocean-500">{t('community.unique_divers')}</div>
+                </div>
+                <div class="text-center flex-1 p-2 bg-ocean-50 rounded-xl">
+                  <div class="text-lg font-bold text-ocean-800">{community.data.sites.length}</div>
+                  <div class="text-[10px] text-ocean-500">{t('community.spotted_at_sites')}</div>
+                </div>
+              </div>
+              {community.data.sites.length > 0 && (
+                <div>
+                  <p class="text-[10px] text-ocean-400 uppercase tracking-wide mb-1">{t('community.seen_at_sites')}</p>
+                  <div class="space-y-1">
+                    {community.data.sites.map(site => (
+                      <a
+                        key={site.site_name}
+                        href={href(`/sites/${encodeURIComponent(site.site_name)}`)}
+                        class="flex justify-between text-xs no-underline text-ocean-700 hover:text-ocean-900"
+                      >
+                        <span>{site.site_name}</span>
+                        <span class="text-ocean-400">{site.count} {t('community.times_spotted')}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </>
+          ) : (
+            <p class="text-xs text-ocean-400">{t('community.no_community_sightings')}</p>
+          )}
         </div>
 
         {/* Actions */}
