@@ -42,21 +42,23 @@ export function useSiteCommunityStats(siteName: string): CommunityResult<SiteCom
 
     setState(prev => ({ ...prev, loading: true, error: null }))
 
-    const supabase = getSupabase()
-    supabase
-      .rpc('get_site_community_stats', { p_site_name: siteName })
-      .then(({ data, error }) => {
+    async function fetch() {
+      try {
+        const supabase = getSupabase()
+        const { data, error } = await supabase.rpc('get_site_community_stats', { p_site_name: siteName })
         if (error) {
           console.warn('get_site_community_stats error:', error.message)
           setState({ loading: false, data: null, error: error.message, offline: false })
           return
         }
         setState({ loading: false, data: data as SiteCommunityStats | null, error: null, offline: false })
-      })
-      .catch((err: Error) => {
-        console.warn('get_site_community_stats exception:', err.message)
-        setState({ loading: false, data: null, error: err.message, offline: false })
-      })
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Unknown error'
+        console.warn('get_site_community_stats exception:', msg)
+        setState({ loading: false, data: null, error: msg, offline: false })
+      }
+    }
+    fetch()
   }, [siteName])
 
   return state
@@ -83,21 +85,23 @@ export function useSpeciesCommunityStats(speciesId: number): CommunityResult<Spe
 
     setState(prev => ({ ...prev, loading: true, error: null }))
 
-    const supabase = getSupabase()
-    supabase
-      .rpc('get_species_community_stats', { p_species_id: speciesId })
-      .then(({ data, error }) => {
+    async function fetch() {
+      try {
+        const supabase = getSupabase()
+        const { data, error } = await supabase.rpc('get_species_community_stats', { p_species_id: speciesId })
         if (error) {
           console.warn('get_species_community_stats error:', error.message)
           setState({ loading: false, data: null, error: error.message, offline: false })
           return
         }
         setState({ loading: false, data: data as SpeciesCommunityStats | null, error: null, offline: false })
-      })
-      .catch((err: Error) => {
-        console.warn('get_species_community_stats exception:', err.message)
-        setState({ loading: false, data: null, error: err.message, offline: false })
-      })
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Unknown error'
+        console.warn('get_species_community_stats exception:', msg)
+        setState({ loading: false, data: null, error: msg, offline: false })
+      }
+    }
+    fetch()
   }, [speciesId])
 
   return state
